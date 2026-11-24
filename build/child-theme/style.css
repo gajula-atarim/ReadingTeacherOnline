@@ -532,3 +532,11 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
 /* Contact list: email is a tap-to-email link – keep the text colour, underline on hover */
 .rto-contact-list a { color: inherit; }
 .rto-contact-list a:hover .elementor-icon-list-text, .rto-contact-list a:focus-visible .elementor-icon-list-text { color: var(--rto-teal); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Hero arrows on phones: smaller and closer to the edges, so they don't crowd the text */
+@media (max-width: 767px) {
+	.rto-hero-arrow { width: 34px; height: 34px; font-size: 14px; box-shadow: 0 6px 14px -6px rgba(0, 0, 0, .45); }
+	.rto-hero-arrow--prev { left: 8px; }
+	.rto-hero-arrow--next { right: 8px; }
+	.e-con.rto-slide-inner { --padding-left: 48px; --padding-right: 48px; }
+}
