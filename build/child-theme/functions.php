@@ -108,9 +108,8 @@ add_action(
 		if ( ! is_front_page() ) {
 			return;
 		}
-		if ( wp_style_is( 'e-swiper', 'registered' ) ) {
-			wp_enqueue_style( 'e-swiper' );
-		} elseif ( defined( 'ELEMENTOR_ASSETS_URL' ) ) {
+		// Own handle on purpose: Elementor's asset optimiser drops its "e-swiper" handle when no carousel widget is present.
+		if ( defined( 'ELEMENTOR_ASSETS_URL' ) ) {
 			wp_enqueue_style( 'rto-e-swiper', ELEMENTOR_ASSETS_URL . 'css/conditionals/e-swiper.min.css', array(), defined( 'ELEMENTOR_VERSION' ) ? ELEMENTOR_VERSION : null );
 		}
 	},
