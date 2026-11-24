@@ -86,7 +86,8 @@ input, textarea, button, select { font-family: inherit; }
 .rto-brand:hover img { animation: rto-logo-wiggle .6s ease-in-out; }
 .rto-wordmark .elementor-heading-title span { color: var(--rto-teal); }
 @media (max-width: 759px) { .rto-wordmark { display: none; } }
-@media (max-width: 1099px) { .rto-header-cta { display: none; } }
+/* Free Consultation button: shown on desktop and (compact) on phones, hidden on tablets where the full menu needs the room */
+@media (min-width: 768px) and (max-width: 1099px) { .rto-header-cta { display: none; } }
 
 /* Navigation: yellow blob behind current item, grows on hover */
 .rto-nav .hfe-nav-menu__layout-horizontal .hfe-nav-menu { flex-wrap: wrap; row-gap: 8px; }
@@ -350,11 +351,6 @@ form.rto-newsletter .rto-newsletter-row { align-items: stretch; }
 .rto-nav li.menu-item > a::before { display: none !important; }
 .rto-nav li.rto-current > a, .rto-nav li.menu-item:first-child > a,
 .rto-nav li.menu-item > a:hover, .rto-nav li.menu-item > a:focus-visible { background-size: 100% 100%; }
-/* Small screens: the menu stays beside the logo while it fits (tablets, e.g. iPad mini 744px)
-   and only wraps to its own row when it genuinely doesn't (phones) */
-@media (max-width: 759px) {
-	.rto-mainbar .rto-inner { row-gap: 8px !important; }
-}
 
 /* Ways to Get Started: step text wraps inside the card instead of running off the edge */
 .e-con.rto-step > .e-con:not(.rto-step-badge) { flex: 1 1 0% !important; min-width: 0; width: auto !important; }
@@ -446,19 +442,49 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
 .rto-footer-links .elementor-icon-list-item a:hover .elementor-icon-list-text,
 .rto-footer-links .elementor-icon-list-item a:focus-visible .elementor-icon-list-text { background-size: 100% 2px; }
 
-/* Phones: logo and menu stay on one row – text, gaps and logo scale with the screen */
-@media (max-width: 480px) {
-	.rto-mainbar .rto-inner { flex-wrap: nowrap !important; column-gap: clamp(8px, 3vw, 16px) !important; }
-	.rto-mainbar .rto-brand img { width: clamp(38px, 11vw, 51px) !important; height: auto; }
-	.rto-nav .hfe-nav-menu { flex-wrap: nowrap !important; }
-	.rto-nav .hfe-nav-menu > li.menu-item { margin-right: clamp(7px, 2.6vw, 14px) !important; margin-left: 0 !important; }
-	.rto-nav .hfe-nav-menu > li.menu-item:last-child { margin-right: 0 !important; }
-	.rto-nav .hfe-nav-menu a.hfe-menu-item, .rto-nav li.menu-item > a { font-size: clamp(12.5px, 3.75vw, 16px) !important; white-space: nowrap; }
-	.rto-nav li.menu-item > a { background-image: radial-gradient(circle at 50% 65%, var(--rto-blob) 14px, transparent 15px); }
-}
-@media (max-width: 340px) {
-	.rto-mainbar .rto-inner { column-gap: 8px !important; }
-	.rto-nav .hfe-nav-menu > li.menu-item { margin-right: 6px !important; }
-	.rto-nav .hfe-nav-menu a.hfe-menu-item, .rto-nav li.menu-item > a { font-size: 12px !important; }
-	.rto-mainbar .rto-brand img { width: 36px !important; }
+/* ==========================================================================
+   Phones (< 768px): Logo | ……… | Free Consultation | ☰ hamburger
+   The UAE menu switches to its hamburger at Elementor's mobile breakpoint;
+   the same menu list then drops down as a full-width panel under the header.
+   ========================================================================== */
+@media (max-width: 767px) {
+	.rto-mainbar .rto-inner { flex-wrap: nowrap !important; column-gap: 12px !important; }
+	.rto-mainbar .rto-brand { order: 1; margin-right: auto; }
+	.rto-mainbar .rto-header-cta { order: 2; display: block; flex: 0 0 auto !important; }
+	.rto-mainbar .rto-inner > .elementor-widget.rto-nav { order: 3; flex: 0 0 auto !important; width: auto !important; position: static; }
+	.rto-mainbar .rto-brand img { width: 46px !important; height: auto; }
+
+	/* compact Free Consultation pill */
+	.rto-header-cta .elementor-button { padding: 9px 16px !important; font-size: 14px !important; line-height: 1.2 !important; }
+
+	/* hamburger button */
+	.rto-nav .hfe-nav-menu__toggle {
+		width: 44px; height: 44px; margin: 0 !important; padding: 0 !important; border-radius: 12px;
+		border: 2px solid #E3ECEE !important; background: #fff; color: var(--rto-ink);
+		display: flex !important; align-items: center; justify-content: center; transition: background .25s, border-color .25s, color .25s;
+	}
+	.rto-nav .hfe-nav-menu__toggle:hover, .rto-nav .hfe-nav-menu__toggle:focus-visible,
+	.rto-nav .hfe-nav-menu__toggle.hfe-active-menu { border-color: var(--rto-teal) !important; color: var(--rto-teal); outline: none; }
+	.rto-nav .hfe-nav-menu-icon { padding: 0 !important; display: flex; align-items: center; justify-content: center; color: inherit; }
+	.rto-nav .hfe-nav-menu-icon svg { width: 20px !important; height: 20px !important; fill: currentColor; }
+	.rto-nav .hfe-nav-menu-icon i { font-size: 20px; color: inherit; }
+
+	/* drop-down panel: full width under the header bar */
+	/* positioned against the full-width header bar, not the narrow menu widget */
+	.e-con.rto-mainbar { position: relative; }
+	.rto-mainbar .rto-inner, .rto-nav > div, .rto-nav .hfe-nav-menu-layout, .rto-nav .elementor-widget-container { position: static !important; }
+	.rto-nav .hfe-nav-menu__layout-horizontal { position: absolute !important; left: 0 !important; right: 0 !important; width: auto !important; top: 100% !important; z-index: 40; }
+	.rto-nav .hfe-nav-menu__layout-horizontal .hfe-nav-menu {
+		display: block !important; background: #fff; margin: 0 !important; padding: 6px 0 10px !important;
+		border-top: 1px solid #F0ECE6; box-shadow: 0 18px 30px -18px rgba(0, 27, 66, .35); border-radius: 0 0 18px 18px;
+	}
+	.rto-nav .hfe-nav-menu__layout-horizontal li.menu-item { margin: 0 !important; width: 100%; border-bottom: 1px solid #F4F1EC; }
+	.rto-nav .hfe-nav-menu__layout-horizontal li.menu-item:last-child { border-bottom: 0; }
+	.rto-nav .hfe-nav-menu__layout-horizontal li.menu-item > a {
+		display: block; padding: 14px clamp(16px, 3vw, 32px) !important; font-size: 16px !important; color: var(--rto-ink);
+		background-image: none !important;
+	}
+	.rto-nav .hfe-nav-menu__layout-horizontal li.menu-item > a:hover,
+	.rto-nav .hfe-nav-menu__layout-horizontal li.menu-item > a:focus-visible { background: #F3FAFA; color: var(--rto-teal); }
+	.rto-nav .hfe-nav-menu__layout-horizontal li.rto-current > a { color: var(--rto-teal); box-shadow: inset 4px 0 0 var(--rto-yellow); }
 }

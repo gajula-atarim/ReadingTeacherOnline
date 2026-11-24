@@ -422,7 +422,7 @@ def header():
         heading('Reading <span>Teacher</span>', "span", 22, 800, INK, None, 1, css="rto-wordmark", link="/"),
     ], css="rto-brand", direction="row", gap=10, flex_align_items="center", _flex_size="none")
     nav = widget("navigation-menu", {
-        "menu": "primary-homepage", "layout": "horizontal", "dropdown": "none", "navmenu_align": "center",
+        "menu": "primary-homepage", "layout": "horizontal", "dropdown": "mobile", "hamburger_align": "right", "navmenu_align": "center",
         "color_menu_item": INK, "color_menu_item_hover": TEAL, "color_menu_item_active": INK,
         "padding_horizontal_menu_item": px(0), "padding_vertical_menu_item": px(4),
         "menu_space_between": custom("clamp(14px,2.6vw,40px)"), "menu_row_space": px(8),
