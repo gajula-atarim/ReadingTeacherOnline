@@ -278,7 +278,7 @@ def reading_programs():
         background_background="classic", background_color="#FBF7F2")
 
 
-def step(num, label, title, sub, bg, badge_bg, link, color="#FFFFFF"):
+def step(num, label, title, sub, bg, badge_bg, link, color="#FFFFFF", external=False):
     return con([
         con([
             heading(num, "span", 17, 800, color, "center", 1),
@@ -290,7 +290,7 @@ def step(num, label, title, sub, bg, badge_bg, link, color="#FFFFFF"):
             text("<p>%s</p>" % sub, 13, color, 1.4),
         ], gap=4, flex_justify_content="center", _flex_size="grow"),
     ], css="rto-step", direction="row", gap=18, pad=dims(16, 22), flex_align_items="center", flex_wrap="nowrap",
-        html_tag="a", link={"url": link, "is_external": "", "nofollow": ""},
+        html_tag="a", link={"url": link, "is_external": "on" if external else "", "nofollow": ""},
         background_background="classic", background_color=bg)
 
 
@@ -303,7 +303,7 @@ def get_started():
                 step("01", "FREE", "Free Email Consultation", "Marilyn replies personally", "#F26A3D", "#D8552B", "#contact"),
                 step("02", "FREE", "How to Teach Phonics at Home", "Free guide, no email needed", "#4FC79A", "#3BAF84", "#services"),
                 step("03", "KIT", "Reading Program for Kids", "Course delivered by email", "#3C9BE0", "#2C84C6", "#services"),
-                step("04", "BOOKS", "Books on Amazon", "Reading Program for Kids · Phonics for Kids", YELLOW, "#F0B42A", "#services", INK),
+                step("04", "BOOKS", "Books on Amazon", "Reading Program for Kids · Phonics for Kids", YELLOW, "#F0B42A", "https://www.amazon.com/dp/0648797775", INK, external=True),
             ], css="rto-steps", gap=16),
         ], "repeat(auto-fit,minmax(min(100%,340px),1fr))", gap=48, grid_align_items="center"),
     ], css="rto-inner", gap=44)
