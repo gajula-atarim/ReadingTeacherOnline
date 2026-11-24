@@ -491,3 +491,13 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
 
 /* Menu anchors (#about, #services, #blog, #contact) stop below the sticky header instead of under it */
 .e-con.rto-section, .e-con.rto-hero, #newsletter { scroll-margin-top: 76px; }
+
+/* Footer on tablets (768–1099px): one row of four columns like desktop, newsletter column a bit wider */
+@media (min-width: 768px) and (max-width: 1099px) {
+	.e-grid.rto-footer-inner { grid-template-columns: 1.1fr .9fr .9fr 1.3fr !important; column-gap: clamp(20px, 2.6vw, 32px) !important; }
+	.rto-footer-inner .rto-footer-links .elementor-icon-list-text { white-space: nowrap; }
+}
+/* Large phones / small tablets (480–767px): a balanced 2 × 2 grid instead of 3 + 1 */
+@media (min-width: 480px) and (max-width: 767px) {
+	.e-grid.rto-footer-inner { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
