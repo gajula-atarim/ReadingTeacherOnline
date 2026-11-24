@@ -346,11 +346,11 @@ def latest_media():
         section_head("Our Latest Media", "Reading Matters: ideas and practical tips about reading, learning and education."),
         grid([
             post("blog1", "Featured", "Why Reading is a Big Deal for a Child's Brain",
-                 "https://readingteacheronline.com.au/blog/why-reading-is-a-big-deal-for-a-childs-brain"),
+                 "#"),
             post("dyslexia", "Dyslexia", "Understanding Dyslexia: Beyond Reading and Writing",
-                 "https://readingteacheronline.com.au/blog/understanding-dyslexia-beyond-reading-and-writing"),
+                 "#"),
             post("p8613089", "Learning", "It Is Never Too Late to Learn to Read",
-                 "https://readingteacheronline.com.au/blog/it-is-never-too-late-to-learn-to-read"),
+                 "#"),
         ], "repeat(auto-fit,minmax(min(100%,260px),1fr))", gap=36),
     ], css="rto-inner", gap=44)
     return section([decor("sun", 56, "start", pct(12), "start", px(40), "rto-spin"), inner],

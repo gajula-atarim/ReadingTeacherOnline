@@ -186,7 +186,16 @@
 		});
 	}
 
+	/* Placeholder links (href="#", e.g. blog cards until the blog exists) do nothing instead of jumping to the top */
+	function initPlaceholderLinks() {
+		d.addEventListener('click', function (e) {
+			var a = e.target.closest && e.target.closest('a[href="#"]');
+			if (a) e.preventDefault();
+		}, true);
+	}
+
 	function ready() {
+		initPlaceholderLinks();
 		initAnchorOffset();
 		initGallery();
 		setTopbar(); initHero(); initReveal(); initToTop(); initOllie();
