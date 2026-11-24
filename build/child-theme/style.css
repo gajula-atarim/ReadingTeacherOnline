@@ -384,3 +384,7 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
 /* Tighter rhythm in the top bar and footer link lists */
 .rto-topbar p, .rto-topbar .elementor-heading-title { line-height: 1.15 !important; }
 .rto-footer-links .elementor-icon-list-text { line-height: 1.15 !important; }
+/* Hero on small phones: never wrap slide content into a second column; give the
+   longest slide enough height so its button stays visible */
+.e-con.rto-slide-inner { flex-wrap: nowrap !important; }
+@media (max-width: 420px) { .e-con.rto-hero { height: 580px; } }
