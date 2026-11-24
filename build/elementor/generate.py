@@ -361,6 +361,7 @@ def contact():
     contact_list = widget("icon-list", {
         "icon_list": [
             {"_id": uid(), "text": "marilyn@readingteacheronline.com.au",
+             "link": {"url": "mailto:marilyn@readingteacheronline.com.au", "is_external": "", "nofollow": ""},
              "selected_icon": {"value": "far fa-envelope", "library": "fa-regular"}},
             {"_id": uid(), "text": "Taylors Lakes, Melbourne, Victoria",
              "selected_icon": {"value": "fas fa-home", "library": "fa-solid"}},

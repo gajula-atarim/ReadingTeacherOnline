@@ -528,3 +528,7 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
 	.elementor-lightbox .elementor-swiper-button-prev { justify-content: flex-start !important; padding-left: 10px; }
 	.elementor-lightbox .elementor-swiper-button-next { justify-content: flex-end !important; padding-right: 10px; }
 }
+
+/* Contact list: email is a tap-to-email link – keep the text colour, underline on hover */
+.rto-contact-list a { color: inherit; }
+.rto-contact-list a:hover .elementor-icon-list-text, .rto-contact-list a:focus-visible .elementor-icon-list-text { color: var(--rto-teal); text-decoration: underline; text-underline-offset: 3px; }
