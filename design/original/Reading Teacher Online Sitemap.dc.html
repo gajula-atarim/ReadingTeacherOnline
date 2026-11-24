@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFF8EF;color:#001B42;font-family:'Lexend',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#00727E;text-decoration:underline;text-underline-offset:3px}
+a:hover{color:#173B4C}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column">
+  <header style="background:linear-gradient(160deg,#173B4C 0%,#01617B 45%,#00727E 100%);color:#fff">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end;justify-content:space-between">
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:680px">
+        <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.28em;font-size:13px;color:#CDEFF0">SITEMAP · V1 · NOVEMBER 2026</div>
+        <h1 style="margin:0;font-weight:600;font-size:clamp(36px,5vw,60px);line-height:1.04;letter-spacing:-0.02em">readingteacheronline.com.au</h1>
+        <p style="margin:0;font-size:17px;line-height:1.6;font-weight:300;text-wrap:pretty">Page structure for the new site, using the five pages Marilyn chose: Home, About Us, Services, Blog and Contact Us. Newsletter signup sits on the homepage, blog posts and footer.</p>
+      </div>
+      <div style="background:#fff;border-radius:18px;padding:14px;width:120px">
+        <img src="assets/logo.jpg" alt="Reading Teacher Online" style="width:100%;display:block">
+      </div>
+    </div>
+  </header>
+
+  <main style="max-width:1320px;width:100%;margin:0 auto;padding:48px clamp(20px,4vw,48px) 96px;display:flex;flex-direction:column;gap:56px">
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;font-size:13px;color:#3F5866">
+      <span style="font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.2em;font-size:12px;color:#173B4C">KEY</span>
+      <span style="display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;border-radius:4px;background:#173B4C"></span>Main navigation</span>
+      <span style="display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;border-radius:4px;background:#fff;border:1px solid #C9C2B0"></span>Sub-page / section</span>
+      <span style="display:flex;align-items:center;gap:8px"><span style="background:#DDEDEE;color:#173B4C;font-size:11px;font-weight:600;padding:3px 8px;border-radius:999px">Kit.com</span>Hosted on Kit</span>
+      <span style="display:flex;align-items:center;gap:8px"><span style="background:#F3EBDD;color:#001B42;font-size:11px;font-weight:600;padding:3px 8px;border-radius:999px">Amazon</span>External link</span>
+      <span style="display:flex;align-items:center;gap:8px"><span style="background:#DFF3E6;color:#0F5E4A;font-size:11px;font-weight:600;padding:3px 8px;border-radius:999px">PDF</span>Direct download, no email</span>
+      <span style="display:flex;align-items:center;gap:8px"><span style="background:#FBE3E7;color:#8A2438;font-size:11px;font-weight:600;padding:3px 8px;border-radius:999px">TBC</span>Needs confirming</span>
+    </div>
+
+    <section data-screen-label="Sitemap tree" style="display:flex;flex-direction:column;align-items:center">
+      <div style="background:linear-gradient(160deg,#173B4C,#00727E);color:#fff;border-radius:18px;padding:18px 28px;display:flex;flex-direction:column;align-items:center;gap:4px;box-shadow:0 18px 40px -20px rgba(0,27,66,0.6)">
+        <span style="font-size:22px;font-weight:600">Home</span>
+        <span style="font-size:13px;opacity:0.85">/</span>
+      </div>
+      <div style="width:2px;height:28px;background:#9FB3C4"></div>
+      <div style="width:100%;border-top:2px solid #9FB3C4"></div>
+
+      <div style="width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px 18px">
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;align-items:stretch">
+            <div style="align-self:center;width:2px;height:22px;background:#9FB3C4"></div>
+            <div style="background:#173B4C;color:#fff;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:3px">
+              <span style="font-family:'Josefin Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.2em;color:#7CC4C2">{{ s.num }}</span>
+              <span style="font-size:17px;font-weight:600">{{ s.title }}</span>
+              <span style="font-size:12px;color:#CDEFF0">{{ s.url }}</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;padding:10px 0 0 14px;border-left:2px solid #D5DEE6;margin-left:16px">
+              <sc-for list="{{ s.children }}" as="c" hint-placeholder-count="3">
+                <div style="background:#fff;border:1px solid #EDE3D3;border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:6px">
+                  <span style="font-size:14px;font-weight:500;line-height:1.35;color:#001B42">{{ c.name }}</span>
+                  <sc-if value="{{ c.hasTags }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:flex;flex-wrap:wrap;gap:6px">
+                      <sc-for list="{{ c.tags }}" as="t" hint-placeholder-count="1">
+                        <span style="font-size:11px;font-weight:600;padding:3px 8px;border-radius:999px;background:{{ t.bg }};color:{{ t.fg }}">{{ t.label }}</span>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section data-screen-label="Utility pages" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+      <span style="font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.2em;font-size:12px;color:#173B4C;margin-right:8px">FOOTER &amp; UTILITY</span>
+      <span style="background:#fff;border:1px solid #EDE3D3;border-radius:999px;padding:8px 14px;font-size:14px">Privacy Policy</span>
+      <span style="background:#fff;border:1px solid #EDE3D3;border-radius:999px;padding:8px 14px;font-size:14px">Terms of Use</span>
+      <span style="background:#fff;border:1px solid #EDE3D3;border-radius:999px;padding:8px 14px;font-size:14px">Newsletter thank-you</span>
+      <span style="background:#fff;border:1px solid #EDE3D3;border-radius:999px;padding:8px 14px;font-size:14px">404 page</span>
+    </section>
+
+    <section data-screen-label="Homepage sections" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.24em;font-size:13px;color:#00727E">HOMEPAGE FLOW</div>
+          <h2 style="margin:0;font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-0.015em;line-height:1.15;color:#173B4C">Every offer, one scroll</h2>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#3F5866;text-wrap:pretty">The homepage introduces Marilyn, then points to each offer. The newsletter appears twice, since growing the list is the main goal.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ homeFlow }}" as="h" hint-placeholder-count="8">
+            <div style="background:#fff;border:1px solid #EDE3D3;border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;align-items:start">
+              <span style="font-size:18px;font-weight:600;color:#00727E;line-height:1.3">{{ h.n }}</span>
+              <div style="display:flex;flex-direction:column;gap:3px">
+                <span style="font-size:15px;font-weight:600;color:#001B42">{{ h.title }}</span>
+                <span style="font-size:14px;line-height:1.5;color:#3F5866">{{ h.desc }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.24em;font-size:13px;color:#00727E">TO CONFIRM WITH MARILYN</div>
+          <h2 style="margin:0;font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-0.015em;line-height:1.15;color:#173B4C">Open questions</h2>
+        </div>
+        <div style="background:#173B4C;color:#fff;border-radius:18px;padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ questions }}" as="q" hint-placeholder-count="6">
+            <div style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;font-size:15px;line-height:1.55">
+              <span style="width:10px;height:10px;border-radius:50%;background:#7CC4C2;margin-top:7px"></span>
+              <span>{{ q }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const T = {
+      kit: { label: 'Kit.com', bg: '#DDEDEE', fg: '#173B4C' },
+      amz: { label: 'Amazon', bg: '#F3EBDD', fg: '#001B42' },
+      pdf: { label: 'PDF', bg: '#DFF3E6', fg: '#0F5E4A' },
+      tbc: { label: 'TBC', bg: '#FBE3E7', fg: '#8A2438' },
+    };
+    const c = (name, ...tags) => ({ name, tags, hasTags: tags.length > 0 });
+    const sections = [
+      { num: '01', title: 'About Us', url: '/about', children: [
+        c("Marilyn's story & experience"), c('Teaching approach'), c('Testimonials', T.tbc) ] },
+      { num: '02', title: 'Services', url: '/services', children: [
+        c('Online tutoring: children & adults'), c('Course 1: Reading Program for Kids', T.kit), c('Course 2', T.kit, T.tbc),
+        c('Book 1', T.amz, T.tbc), c('Book 2', T.amz, T.tbc),
+        c('Free download: How to Teach Phonics at Home', T.pdf), c('Free download 2', T.pdf, T.tbc) ] },
+      { num: '03', title: 'Blog', url: '/blog', children: [
+        c('All posts'), c('Categories'), c('Single post + newsletter signup', T.kit) ] },
+      { num: '04', title: 'Contact Us', url: '/contact', children: [
+        c('Free email consultation form'), c('Location: Taylors Lakes, Melbourne') ] },
+    ];
+    const homeFlow = [
+      { n: '1', title: 'Hero', desc: 'Who Marilyn helps, with buttons for courses and the free phonics guide.' },
+      { n: '2', title: 'Meet Marilyn', desc: 'Portrait, short introduction, link to About.' },
+      { n: '3', title: 'Reading support', desc: 'Three levels of online tutoring, linking to Services.' },
+      { n: '4', title: 'Courses', desc: 'Two course cards linking to Kit.com.' },
+      { n: '5', title: 'Newsletter', desc: 'Weekly tip signup (first placement).' },
+      { n: '6', title: 'Books', desc: 'Two covers linking to Amazon.' },
+      { n: '7', title: 'Free resources', desc: 'Two direct downloads, no email required.' },
+      { n: '8', title: 'Latest from the blog', desc: 'Three recent posts.' },
+      { n: '9', title: 'Footer', desc: 'Newsletter signup (second placement), nav, contact, legal links.' },
+    ];
+    const questions = [
+      'How do families book tutoring: consultation form only, or a booking link?',
+      'Names and Kit.com links for the two courses.',
+      'Titles, covers and Amazon links for both books.',
+      'Title and file for the second free download.',
+      'Blog categories, and whether posts move over from the current site.',
+      'Testimonials from families or adult learners, if available.',
+      'Newsletter platform: Kit.com or the current Beehiiv list?',
+    ];
+    return { sections, homeFlow, questions };
+  }
+}
+</script>
+</body>
+</html>

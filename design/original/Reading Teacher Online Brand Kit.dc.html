@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFF8EF;color:#001B42;font-family:'Lexend',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#00727E;text-decoration:underline;text-underline-offset:3px}
+a:hover{color:#173B4C}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<div style="min-height:100vh">
+
+  <header style="background:linear-gradient(160deg,#173B4C 0%,#01617B 40%,#00727E 80%,#4FA3A5 100%);color:#fff">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,8vw,104px) clamp(20px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:48px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.28em;font-size:13px;text-transform:uppercase;color:#CDEFF0">Brand Kit · Version 1.0 · 2026</div>
+        <h1 style="margin:0;font-weight:600;font-size:clamp(40px,6vw,72px);line-height:1.02;letter-spacing:-0.02em;text-wrap:balance">Reading Teacher Online</h1>
+        <p style="margin:0;font-size:clamp(17px,1.6vw,20px);line-height:1.55;font-weight:300;max-width:520px;text-wrap:pretty">Colours, type, logo use and imagery for Marilyn Martyn's online reading tuition, books, courses and newsletter.</p>
+        <div style="display:flex;align-items:center;gap:12px;font-family:'Josefin Sans',sans-serif;font-size:14px;letter-spacing:0.22em;text-transform:uppercase">
+          <span style="width:40px;height:3px;background:#7CC4C2;border-radius:2px"></span>
+          <span>Supporting a brighter reading future</span>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <div style="background:#fff;border-radius:28px;padding:36px;box-shadow:0 30px 60px -20px rgba(0,27,66,0.5);width:min(100%,380px)">
+          <img src="assets/logo.jpg" alt="Reading Teacher Online logo" style="width:100%;display:block">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav style="position:sticky;top:0;z-index:5;background:rgba(247,245,239,0.94);backdrop-filter:blur(8px);border-bottom:1px solid #EDE3D3">
+    <div style="max-width:1200px;margin:0 auto;padding:14px clamp(20px,5vw,56px);display:flex;flex-wrap:wrap;gap:8px 28px;font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase">
+      <a href="#logo" style="color:#173B4C;text-decoration:none">01 Logo</a>
+      <a href="#colour" style="color:#173B4C;text-decoration:none">02 Colour</a>
+      <a href="#type" style="color:#173B4C;text-decoration:none">03 Typography</a>
+      <a href="#imagery" style="color:#173B4C;text-decoration:none">04 Imagery</a>
+      <a href="#voice" style="color:#173B4C;text-decoration:none">05 Voice</a>
+      <a href="#applications" style="color:#173B4C;text-decoration:none">06 Applications</a>
+    </div>
+  </nav>
+
+  <main style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,56px)">
+
+    <!-- 01 LOGO -->
+    <section id="logo" data-screen-label="01 Logo" style="padding:96px 0 80px;border-bottom:1px solid #EDE3D3;display:flex;flex-direction:column;gap:40px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px 64px;align-items:end">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.24em;font-size:13px;color:#00727E">01 — LOGO</div>
+          <h2 style="margin:0;font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.015em;line-height:1.1">An open book on a screen</h2>
+        </div>
+        <p style="margin:0;font-size:17px;line-height:1.65;color:#3F5866;text-wrap:pretty">The mark combines a monitor and an open book: real reading instruction, delivered online. Keep it whole. The icon may be used alone where the name already appears nearby, such as a social avatar or favicon.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px">
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+          <div style="background:#fff;border-radius:20px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:40px;border:1px solid #EDE3D3">
+            <img src="assets/logo.jpg" alt="Primary logo" style="max-width:100%;max-height:100%;display:block">
+          </div>
+          <figcaption style="font-size:14px;color:#3F5866"><strong style="color:#001B42;font-weight:600">Primary.</strong> Stacked lockup on white. Use wherever space allows.</figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+          <div style="background:#173B4C;border-radius:20px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:40px">
+            <div style="background:#fff;border-radius:18px;padding:22px;width:72%">
+              <img src="assets/logo.jpg" alt="Logo on a white tile" style="width:100%;display:block">
+            </div>
+          </div>
+          <figcaption style="font-size:14px;color:#3F5866"><strong style="color:#001B42;font-weight:600">On dark or photo.</strong> Place the logo on a white rounded tile. Never drop it straight onto colour.</figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+          <div style="background:#fff;border-radius:20px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid #EDE3D3;position:relative">
+            <div style="position:relative;width:54%;outline:2px dashed #4FA3A5;outline-offset:22px">
+              <img src="assets/logo.jpg" alt="Clear space" style="width:100%;display:block">
+            </div>
+            <div style="position:absolute;right:14px;bottom:12px;font-family:'Josefin Sans',sans-serif;font-size:12px;letter-spacing:0.14em;color:#00727E;font-weight:600">CLEAR SPACE = 1 × "O"</div>
+          </div>
+          <figcaption style="font-size:14px;color:#3F5866"><strong style="color:#001B42;font-weight:600">Clear space.</strong> Keep the height of the "O" in ONLINE free on all sides. Minimum width 120px on screen, 30mm in print.</figcaption>
+        </figure>
+      </div>
+
+      <div style="background:#fff;border-radius:20px;border:1px solid #EDE3D3;padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:32px;align-items:center">
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:6px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:clamp(26px,3.4vw,40px);letter-spacing:0.08em;color:#00727E;line-height:1">READING TEACHER</div>
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:clamp(28px,3.8vw,46px);letter-spacing:0.62em;color:#173B4C;line-height:1.1">ONLINE</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.2em;font-size:12px;color:#00727E">WORDMARK TYPE</div>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:#3F5866">Josefin Sans Light for "Reading Teacher", Josefin Sans Bold with very wide tracking for "Online". Use this pairing only to echo the logo, for example in a website header or email footer, and never as a replacement for the logo file.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 COLOUR -->
+    <section id="colour" data-screen-label="02 Colour" style="padding:96px 0 80px;border-bottom:1px solid #EDE3D3;display:flex;flex-direction:column;gap:40px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px 64px;align-items:end">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.24em;font-size:13px;color:#00727E">02 — COLOUR</div>
+          <h2 style="margin:0;font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.015em;line-height:1.1">Slate navy and teal</h2>
+        </div>
+        <p style="margin:0;font-size:17px;line-height:1.65;color:#3F5866;text-wrap:pretty">The core colours are taken from the graphics on readingteacheronline.com.au and match the teal in the logo. Light Teal is the accent, used for highlights and secondary calls to action. Soft tints colour-code topics and cards.</p>
+      </div>
+
+      <div style="height:72px;border-radius:16px;background:linear-gradient(90deg,#173B4C 0%,#01617B 30%,#00727E 65%,#4FA3A5 100%)"></div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px">
+        <div style="background:#fff;border-radius:18px;overflow:hidden;border:1px solid #EDE3D3;display:flex;flex-direction:column">
+          <div style="background:#173B4C;height:140px;padding:16px;color:#fff;font-size:13px;display:flex;align-items:flex-end">Primary · text &amp; headers</div>
+          <div style="padding:16px 18px 20px;display:flex;flex-direction:column;gap:4px;font-size:13px;color:#3F5866"><strong style="font-size:16px;color:#001B42;font-weight:600">Slate Navy</strong><span>#173B4C</span><span>RGB 23 59 76</span></div>
+        </div>
+        <div style="background:#fff;border-radius:18px;overflow:hidden;border:1px solid #EDE3D3;display:flex;flex-direction:column">
+          <div style="background:#01617B;height:140px;padding:16px;color:#fff;font-size:13px;display:flex;align-items:flex-end">Links &amp; secondary</div>
+          <div style="padding:16px 18px 20px;display:flex;flex-direction:column;gap:4px;font-size:13px;color:#3F5866"><strong style="font-size:16px;color:#001B42;font-weight:600">Deep Teal</strong><span>#01617B</span><span>RGB 1 97 123</span></div>
+        </div>
+        <div style="background:#fff;border-radius:18px;overflow:hidden;border:1px solid #EDE3D3;display:flex;flex-direction:column">
+          <div style="background:#00727E;height:140px;padding:16px;color:#fff;font-size:13px;display:flex;align-items:flex-end">Buttons &amp; accents</div>
+          <div style="padding:16px 18px 20px;display:flex;flex-direction:column;gap:4px;font-size:13px;color:#3F5866"><strong style="font-size:16px;color:#001B42;font-weight:600">Reading Teal</strong><span>#00727E</span><span>RGB 0 114 126</span></div>
+        </div>
+        <div style="background:#fff;border-radius:18px;overflow:hidden;border:1px solid #EDE3D3;display:flex;flex-direction:column">
+          <div style="background:#4FA3A5;height:140px;padding:16px;color:#001B42;font-size:13px;display:flex;align-items:flex-end">Gradients &amp; icons only</div>
+          <div style="padding:16px 18px 20px;display:flex;flex-direction:column;gap:4px;font-size:13px;color:#3F5866"><strong style="font-size:16px;color:#001B42;font-weight:600">Soft Teal</strong><span>#4FA3A5</span><span>RGB 79 163 165</span></div>
+        </div>
+        <div style="background:#fff;border-radius:18px;overflow:hidden;border:1px solid #EDE3D3;display:flex;flex-direction:column">
+          <div style="background:#7CC4C2;height:140px;padding:16px;color:#001B42;font-size:13px;display:flex;align-items:flex-end">Accent · highlights</div>
+          <div style="padding:16px 18px 20px;display:flex;flex-direction:column;gap:4px;font-size:13px;color:#3F5866"><strong style="font-size:16px;color:#001B42;font-weight:600">Light Teal</strong><span>#7CC4C2</span><span>RGB 124 196 194</span></div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+        <div style="background:#fff;border-radius:18px;border:1px solid #EDE3D3;padding:24px;display:flex;flex-direction:column;gap:16px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.2em;font-size:12px;color:#00727E">NEUTRALS</div>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:#3F5866"><div style="height:64px;border-radius:12px;background:#FFF8EF;border:1px solid #EDE3D3"></div><strong style="color:#001B42;font-weight:600">Paper</strong>#FFF8EF</div>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:#3F5866"><div style="height:64px;border-radius:12px;background:#EDE3D3"></div><strong style="color:#001B42;font-weight:600">Linen</strong>#EDE3D3</div>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:#3F5866"><div style="height:64px;border-radius:12px;background:#001B42"></div><strong style="color:#001B42;font-weight:600">Ink</strong>#001B42</div>
+          </div>
+        </div>
+        <div style="background:#fff;border-radius:18px;border:1px solid #EDE3D3;padding:24px;display:flex;flex-direction:column;gap:16px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.2em;font-size:12px;color:#00727E">LEARNING TINTS</div>
+          <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px">
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:#3F5866"><div style="height:64px;border-radius:12px;background:#DDEDEE"></div><strong style="color:#001B42;font-weight:600">Mist</strong>#DDEDEE</div>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:#3F5866"><div style="height:64px;border-radius:12px;background:#DFF3E6"></div><strong style="color:#001B42;font-weight:600">Mint</strong>#DFF3E6</div>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:#3F5866"><div style="height:64px;border-radius:12px;background:#FBE3E7"></div><strong style="color:#001B42;font-weight:600">Blush</strong>#FBE3E7</div>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:#3F5866"><div style="height:64px;border-radius:12px;background:#F3EBDD"></div><strong style="color:#001B42;font-weight:600">Sand</strong>#F3EBDD</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#3F5866;max-width:760px">Text on Reading Teal, Deep Teal or Slate Navy is always white. Text on Light Teal, Soft Teal and the tints is always Ink. Aim for roughly 60% Paper and white, 30% navy and teal, 10% Light Teal.</p>
+    </section>
+
+    <!-- 03 TYPE -->
+    <section id="type" data-screen-label="03 Typography" style="padding:96px 0 80px;border-bottom:1px solid #EDE3D3;display:flex;flex-direction:column;gap:40px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px 64px;align-items:end">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.24em;font-size:13px;color:#00727E">03 — TYPOGRAPHY</div>
+          <h2 style="margin:0;font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.015em;line-height:1.1">Type chosen for readers</h2>
+        </div>
+        <p style="margin:0;font-size:17px;line-height:1.65;color:#3F5866;text-wrap:pretty">Lexend was designed to improve reading fluency, with open letterforms and generous spacing. It carries all headings and body copy. Josefin Sans appears only in small uppercase labels, echoing the logo. Both are free on Google Fonts.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px">
+        <div style="background:#173B4C;color:#fff;border-radius:20px;padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;gap:20px;min-height:320px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.2em;font-size:12px;color:#CDEFF0">PRIMARY · LEXEND</div>
+          <div style="font-size:clamp(88px,12vw,140px);font-weight:500;line-height:0.9;letter-spacing:-0.03em">Aa</div>
+          <div style="font-size:18px;line-height:1.5;font-weight:300;letter-spacing:0.02em">a b c d e f g h i j k l m n o p q r s t u v w x y z<br>0 1 2 3 4 5 6 7 8 9</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:13px"><span style="border:1px solid rgba(255,255,255,0.4);border-radius:999px;padding:5px 12px;font-weight:300">Light 300</span><span style="border:1px solid rgba(255,255,255,0.4);border-radius:999px;padding:5px 12px">Regular 400</span><span style="border:1px solid rgba(255,255,255,0.4);border-radius:999px;padding:5px 12px;font-weight:600">SemiBold 600</span></div>
+        </div>
+        <div style="background:#fff;border:1px solid #EDE3D3;border-radius:20px;padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;gap:20px;min-height:320px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.2em;font-size:12px;color:#00727E">LABELS · JOSEFIN SANS</div>
+          <div style="font-family:'Josefin Sans',sans-serif;font-size:clamp(88px,12vw,140px);font-weight:300;line-height:0.9;color:#173B4C">Aa</div>
+          <div style="font-family:'Josefin Sans',sans-serif;font-size:18px;line-height:1.6;letter-spacing:0.24em;color:#173B4C;font-weight:600">PRACTICAL ADVICE<br>SIMPLE STRATEGIES<br>REAL PROGRESS</div>
+          <div style="font-size:13px;color:#3F5866">Uppercase only, tracked 0.18–0.3em, 12–16px.</div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #EDE3D3;border-radius:20px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:24px clamp(20px,3vw,36px);border-bottom:1px solid #EFEBE1;align-items:baseline">
+          <div style="font-size:12px;color:#3F5866;line-height:1.5">H1<br>56 / 1.05<br>SemiBold</div>
+          <div style="font-size:clamp(34px,4.6vw,56px);font-weight:600;line-height:1.05;letter-spacing:-0.02em;color:#173B4C">Every child can learn to read</div>
+        </div>
+        <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:24px clamp(20px,3vw,36px);border-bottom:1px solid #EFEBE1;align-items:baseline">
+          <div style="font-size:12px;color:#3F5866;line-height:1.5">H2<br>36 / 1.15<br>SemiBold</div>
+          <div style="font-size:clamp(26px,3vw,36px);font-weight:600;line-height:1.15;letter-spacing:-0.01em;color:#173B4C">How to teach phonics at home</div>
+        </div>
+        <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:24px clamp(20px,3vw,36px);border-bottom:1px solid #EFEBE1;align-items:baseline">
+          <div style="font-size:12px;color:#3F5866;line-height:1.5">H3<br>22 / 1.3<br>Medium</div>
+          <div style="font-size:22px;font-weight:500;line-height:1.3;color:#001B42">Blend and read words</div>
+        </div>
+        <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:24px clamp(20px,3vw,36px);border-bottom:1px solid #EFEBE1;align-items:baseline">
+          <div style="font-size:12px;color:#3F5866;line-height:1.5">Body<br>18 / 1.65<br>Light</div>
+          <div style="font-size:18px;font-weight:300;line-height:1.65;color:#001B42;max-width:640px">I tutor children and adults in reading skills online. Lessons are calm, structured and built around each learner's next step.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:24px clamp(20px,3vw,36px);align-items:baseline">
+          <div style="font-size:12px;color:#3F5866;line-height:1.5">Label<br>13 / tracked<br>Josefin 600</div>
+          <div style="font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.24em;color:#00727E">FREE DOWNLOAD · NO EMAIL NEEDED</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 IMAGERY -->
+    <section id="imagery" data-screen-label="04 Imagery" style="padding:96px 0 80px;border-bottom:1px solid #EDE3D3;display:flex;flex-direction:column;gap:40px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px 64px;align-items:end">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.24em;font-size:13px;color:#00727E">04 — IMAGERY</div>
+          <h2 style="margin:0;font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.015em;line-height:1.1">Real faces, real books</h2>
+        </div>
+        <p style="margin:0;font-size:17px;line-height:1.65;color:#3F5866;text-wrap:pretty">Show adults and children reading together in warm, natural light. Books and pages should be visible. Marilyn's portrait anchors the About page, newsletter and course material so families know who is teaching.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px">
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+          <div style="border-radius:20px;overflow:hidden;aspect-ratio:4/5;background:#DDEDEE">
+            <img src="assets/marilyn.png" alt="Marilyn Martyn" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block">
+          </div>
+          <figcaption style="font-size:14px;color:#3F5866"><strong style="color:#001B42;font-weight:600">Founder portrait.</strong> Crop at the shoulders. Set on white, Mist or Paper.</figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+          <div style="border-radius:20px;overflow:hidden;aspect-ratio:4/5">
+            <img src="assets/phonics-guide.png" alt="How to Teach Phonics at Home cover" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+          </div>
+          <figcaption style="font-size:14px;color:#3F5866"><strong style="color:#001B42;font-weight:600">Guides &amp; downloads.</strong> Bright and friendly, using the learning tints for topic cards.</figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+          <div style="border-radius:20px;overflow:hidden;aspect-ratio:4/5">
+            <img src="assets/reading-with-children.png" alt="Parent reading with child" style="width:100%;height:100%;object-fit:cover;object-position:18% center;display:block">
+          </div>
+          <figcaption style="font-size:14px;color:#3F5866"><strong style="color:#001B42;font-weight:600">Lifestyle.</strong> Families of all backgrounds, sharing a book, faces visible.</figcaption>
+        </figure>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+        <div style="background:#DFF3E6;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.2em;font-size:12px;color:#0F5E4A">DO</div>
+          <div style="font-size:15px;line-height:1.7;color:#001B42">Warm daylight and soft backgrounds<br>Books, letters and pages in frame<br>Genuine smiles and focus<br>Round image corners (16–24px)</div>
+        </div>
+        <div style="background:#FBE3E7;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.2em;font-size:12px;color:#8A2438">AVOID</div>
+          <div style="font-size:15px;line-height:1.7;color:#001B42">Cold office or classroom stock<br>Children alone on tablets<br>Heavy filters or dark overlays<br>Text placed over faces</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 VOICE -->
+    <section id="voice" data-screen-label="05 Voice" style="padding:96px 0 80px;border-bottom:1px solid #EDE3D3;display:flex;flex-direction:column;gap:40px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px 64px;align-items:end">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.24em;font-size:13px;color:#00727E">05 — VOICE</div>
+          <h2 style="margin:0;font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.015em;line-height:1.1">An experienced teacher at the kitchen table</h2>
+        </div>
+        <p style="margin:0;font-size:17px;line-height:1.65;color:#3F5866;text-wrap:pretty">Write in the first person, as Marilyn. Speak to parents, grandparents and adult learners as capable partners. Plain words, short paragraphs, one clear next step.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+        <div style="background:#fff;border:1px solid #EDE3D3;border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-size:36px;font-weight:600;color:#00727E;line-height:1">01</div>
+          <div style="font-size:20px;font-weight:600;color:#173B4C">Practical advice</div>
+          <div style="font-size:15px;line-height:1.6;color:#3F5866">Things a parent can try tonight, with a book already on the shelf.</div>
+        </div>
+        <div style="background:#fff;border:1px solid #EDE3D3;border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-size:36px;font-weight:600;color:#00727E;line-height:1">02</div>
+          <div style="font-size:20px;font-weight:600;color:#173B4C">Simple strategies</div>
+          <div style="font-size:15px;line-height:1.6;color:#3F5866">Explain phonics terms the first time they appear. No jargon left unexplained.</div>
+        </div>
+        <div style="background:#fff;border:1px solid #EDE3D3;border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-size:36px;font-weight:600;color:#00727E;line-height:1">03</div>
+          <div style="font-size:20px;font-weight:600;color:#173B4C">Real progress</div>
+          <div style="font-size:15px;line-height:1.6;color:#3F5866">Celebrate small wins. Encourage without overpromising.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 APPLICATIONS -->
+    <section id="applications" data-screen-label="06 Applications" style="padding:96px 0 112px;display:flex;flex-direction:column;gap:40px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px 64px;align-items:end">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.24em;font-size:13px;color:#00727E">06 — APPLICATIONS</div>
+          <h2 style="margin:0;font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.015em;line-height:1.1">The kit in use</h2>
+        </div>
+        <p style="margin:0;font-size:17px;line-height:1.65;color:#3F5866;text-wrap:pretty">Buttons, a website hero, a newsletter signup and a product card, built only from the colours and type above.</p>
+      </div>
+
+      <div style="background:#fff;border:1px solid #EDE3D3;border-radius:20px;padding:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+        <a href="#applications" style="background:#00727E;color:#fff;text-decoration:none;font-weight:500;font-size:16px;padding:14px 26px;border-radius:999px" style-hover="background:#173B4C">Join the newsletter</a>
+        <a href="#applications" style="background:#7CC4C2;color:#001B42;text-decoration:none;font-weight:600;font-size:16px;padding:14px 26px;border-radius:999px" style-hover="background:#5FB3B1">Get the free guide</a>
+        <a href="#applications" style="background:transparent;color:#173B4C;text-decoration:none;font-weight:500;font-size:16px;padding:12px 24px;border-radius:999px;border:2px solid #173B4C" style-hover="background:#173B4C;color:#fff">View courses</a>
+        <a href="#applications" style="color:#00727E;font-weight:500;font-size:16px">Read the blog →</a>
+        <span style="font-size:13px;color:#3F5866;margin-left:auto">Teal = primary · Light Teal = free offer · Outline = secondary</span>
+      </div>
+
+      <div style="border-radius:24px;overflow:hidden;border:1px solid #EDE3D3;background:#fff">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px clamp(20px,3vw,36px);border-bottom:1px solid #EFEBE1">
+          <div style="display:flex;align-items:center;gap:12px">
+            <img src="assets/logo.jpg" alt="" style="height:44px;display:block">
+            <div style="display:flex;flex-direction:column;line-height:1.1">
+              <span style="font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:14px;letter-spacing:0.08em;color:#00727E">READING TEACHER</span>
+              <span style="font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.5em;color:#173B4C">ONLINE</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:22px;font-size:14px;color:#001B42;align-items:center">
+            <span>About</span><span>Courses</span><span>Books</span><span>Blog</span><span>Contact</span>
+            <span style="background:#00727E;color:#fff;padding:9px 18px;border-radius:999px;font-weight:500">Newsletter</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));background:#FFF8EF">
+          <div style="padding:clamp(32px,5vw,64px);display:flex;flex-direction:column;gap:20px;justify-content:center">
+            <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.24em;font-size:12px;color:#00727E">ONLINE READING TUITION · CHILDREN &amp; ADULTS</div>
+            <h3 style="margin:0;font-size:clamp(32px,4vw,52px);font-weight:600;line-height:1.05;letter-spacing:-0.02em;color:#173B4C;text-wrap:balance">Helping every learner become a <span style="background:linear-gradient(transparent 68%,#7CC4C2 68%,#7CC4C2 90%,transparent 90%)">confident reader</span></h3>
+            <p style="margin:0;font-size:17px;line-height:1.6;font-weight:300;color:#001B42;max-width:460px">Lessons, courses and books from an experienced reading teacher, for parents, grandparents and adult learners.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:12px">
+              <span style="background:#00727E;color:#fff;font-weight:500;font-size:15px;padding:13px 24px;border-radius:999px">Explore courses</span>
+              <span style="background:#7CC4C2;color:#001B42;font-weight:600;font-size:15px;padding:13px 24px;border-radius:999px">Free phonics guide</span>
+            </div>
+          </div>
+          <div style="min-height:380px;background:#DDEDEE;position:relative">
+            <img src="assets/marilyn.png" alt="Marilyn Martyn" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block">
+            <div style="position:absolute;left:20px;bottom:20px;background:#fff;border-radius:14px;padding:12px 16px;display:flex;flex-direction:column;gap:2px;box-shadow:0 12px 30px -12px rgba(0,27,66,0.35)">
+              <span style="font-weight:600;font-size:15px;color:#173B4C">Marilyn Martyn</span>
+              <span style="font-size:13px;color:#3F5866">Reading teacher</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px">
+        <div style="background:#173B4C;color:#fff;border-radius:20px;padding:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:16px">
+          <div style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.24em;font-size:12px;color:#7CC4C2">WEEKLY NEWSLETTER</div>
+          <div style="font-size:26px;font-weight:600;line-height:1.2">One practical reading tip, every week</div>
+          <div style="font-size:15px;line-height:1.6;font-weight:300;color:#DDEDEE">Join parents and grandparents helping children read at home.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <div style="flex:1 1 200px;background:#fff;color:#6B7D90;border-radius:999px;padding:13px 20px;font-size:15px">Your email address</div>
+            <div style="background:#7CC4C2;color:#001B42;font-weight:600;border-radius:999px;padding:13px 22px;font-size:15px">Subscribe</div>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #EDE3D3;border-radius:20px;padding:clamp(20px,3vw,28px);display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;align-items:center">
+          <img src="assets/phonics-guide.png" alt="" style="width:100%;border-radius:10px;display:block;box-shadow:0 14px 28px -14px rgba(0,27,66,0.45)">
+          <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+            <span style="background:#F3EBDD;color:#001B42;font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.16em;font-size:11px;padding:6px 10px;border-radius:999px">FREE DOWNLOAD</span>
+            <div style="font-size:20px;font-weight:600;color:#173B4C;line-height:1.25">How to Teach Phonics at Home</div>
+            <div style="font-size:14px;line-height:1.55;color:#3F5866">A step-by-step guide for parents and grandparents.</div>
+            <a href="#applications" style="font-weight:500;font-size:15px">Download now →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#001B42;color:#DDEDEE">
+    <div style="max-width:1200px;margin:0 auto;padding:40px clamp(20px,5vw,56px);display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center;font-size:14px">
+      <span style="font-family:'Josefin Sans',sans-serif;letter-spacing:0.22em;font-weight:600;font-size:13px">READING TEACHER ONLINE · BRAND KIT</span>
+      <span>readingteacheronline.com.au</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

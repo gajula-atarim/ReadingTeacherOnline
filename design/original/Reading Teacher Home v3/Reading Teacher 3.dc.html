@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&family=Josefin+Sans:wght@300;400;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#fff;color:#001B42;font-family:'Nunito',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#00727E;text-decoration:none}
+a:hover{color:#173B4C}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+input,textarea,button{font-family:inherit}
+</style>
+</helmet>
+
+<div style="overflow-x:hidden;background:#fff;font-family:'Nunito',sans-serif;color:#5B6478">
+
+  <div style="background:#fff;border-bottom:1px solid #F0ECE6;font-size:13px">
+    <div style="max-width:1200px;margin:0 auto;padding:9px clamp(16px,3vw,32px);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center;color:#00727E;font-weight:700">
+      <span style="display:flex;flex-wrap:wrap;gap:8px 28px"><span>✉ marilyn@readingteacheronline.com.au</span><span>⌂ Taylors Lakes, Melbourne</span></span>
+      <a href="#newsletter" style="color:#00727E">Free weekly reading tips →</a>
+    </div>
+  </div>
+
+  <header style="position:sticky;top:0;z-index:30;background:#fff;box-shadow:0 8px 24px -18px rgba(0,27,66,0.3)">
+    <div style="max-width:1200px;margin:0 auto;padding:12px clamp(16px,3vw,32px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <a href="#top" style="display:flex;align-items:center;gap:10px"><img src="assets/logo.jpg" alt="Reading Teacher Online" style="height:54px;display:block"><span style="display:{{ wordmarkDisplay }};font-family:'Nunito',sans-serif;font-weight:800;font-size:22px;color:#1E2A4A;line-height:1">Reading <span style="color:#00727E">Teacher</span></span></a>
+      <nav style="display:flex;flex-wrap:wrap;align-items:center;gap:8px clamp(14px,2.6vw,40px);font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;white-space:nowrap">
+        <a href="#top" style="position:relative;isolation:isolate;color:#1E2A4A"><span aria-hidden="true" style="position:absolute;left:50%;top:65%;width:36px;height:36px;border-radius:50%;background:#FFE7A3;transform:translate(-50%,-50%);z-index:-1"></span>Home</a>
+        <a href="#about" style="color:#1E2A4A" style-hover="color:#00727E">About Us</a>
+        <a href="#services" style="color:#1E2A4A" style-hover="color:#00727E">Services</a>
+        <a href="#blog" style="color:#1E2A4A" style-hover="color:#00727E">Blog</a>
+        <a href="#contact" style="color:#1E2A4A" style-hover="color:#00727E">Contact</a>
+      </nav>
+      <a href="#contact" style="display:{{ ctaDisplay }};color:#00727E;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;padding:11px 26px;border-radius:999px;border:2px solid #00727E;white-space:nowrap;transition:background .25s,color .25s" style-hover="background:#00727E;color:#fff">Free Consultation</a>
+    </div>
+  </header>
+
+  <!-- HERO SLIDER -->
+  <section id="top" data-screen-label="Hero" style="position:relative;height:clamp(480px,52vw,660px);overflow:hidden;background:#173B4C">
+    <sc-for list="{{ heroSlides }}" as="s" hint-placeholder-count="1">
+      <div style="position:absolute;inset:0;opacity:{{ s.op }};transition:opacity 1s ease"><img ref="{{ s.ref }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transform:scale({{ s.zoom }});transition:transform 7s ease"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,27,66,0.35),rgba(0,27,66,0.55))"></div></div>
+    </sc-for>
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0"><div data-float="bob" style="position:absolute;left:6%;bottom:16%;width:64px"><svg viewBox="0 0 64 64" width="64" height="64" style="display:block"><path d="M32 16 C24 10 12 10 6 13 L6 50 C12 47 24 47 32 52 C40 47 52 47 58 50 L58 13 C52 10 40 10 32 16 Z M32 16 L32 52" stroke="rgba(255,255,255,0.55)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div data-float="bob" style="position:absolute;left:10%;top:22%;width:56px"><svg viewBox="0 0 64 64" width="56" height="56" style="display:block"><path d="M6 30 L58 8 L40 56 L30 36 Z M30 36 L58 8" stroke="rgba(255,201,74,0.9)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div data-float="spin" style="position:absolute;right:9%;bottom:20%;width:50px"><svg viewBox="0 0 64 64" width="50" height="50" style="display:block"><path d="M32 6 L39 24 L58 25 L43 37 L48 56 L32 45 L16 56 L21 37 L6 25 L25 24 Z" stroke="rgba(255,201,74,0.9)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div data-float="bob" style="position:absolute;right:12%;top:18%;width:46px"><svg viewBox="0 0 64 64" width="46" height="46" style="display:block"><path d="M32 54 C10 40 6 28 12 18 C18 9 28 11 32 19 C36 11 46 9 52 18 C58 28 54 40 32 54 Z" stroke="rgba(255,255,255,0.55)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div>
+    <div style="position:relative;z-index:2;height:100%;max-width:900px;margin:0 auto;padding:0 clamp(60px,8vw,90px);display:grid;align-items:center">
+      <sc-for list="{{ heroSlides }}" as="s" hint-placeholder-count="1">
+        <div style="grid-area:1/1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;pointer-events:{{ s.pe }};visibility:{{ s.vis }}">
+          <h1 style="margin:0;font-family:'Nunito',sans-serif;font-weight:800;font-size:clamp(38px,5.4vw,72px);line-height:1.08;display:flex;flex-wrap:wrap;justify-content:center;column-gap:0.24em;text-shadow:0 4px 18px rgba(0,0,0,0.25)">
+            <sc-for list="{{ s.words }}" as="w" hint-placeholder-count="4">
+              <span style="display:inline-block;overflow:hidden;padding-bottom:0.08em"><span style="display:inline-block;color:{{ w.color }};opacity:{{ w.op }};transform:{{ w.tf }};transition:opacity .6s ease {{ w.delay }},transform .8s cubic-bezier(.2,.8,.2,1) {{ w.delay }}">{{ w.text }}</span></span>
+            </sc-for>
+          </h1>
+          <p style="margin:0;font-size:17px;line-height:1.75;color:#fff;max-width:620px;opacity:{{ s.op }};transform:{{ s.tf }};transition:opacity .7s ease .45s,transform .8s ease .45s">{{ s.body }}</p>
+          <div style="display:flex;opacity:{{ s.op }};transform:{{ s.tf }};transition:opacity .7s ease .6s,transform .8s ease .6s"><a href="#services" style="align-self:center;background:#00727E;color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;padding:14px 34px;border-radius:999px;border:2px dashed rgba(255,255,255,0.95);box-shadow:0 0 0 4px #00727E;white-space:nowrap;transition:transform .25s,box-shadow .25s,background .25s" style-hover="transform:translateY(-3px);background:#173B4C;box-shadow:0 0 0 4px #173B4C;color:#fff">View More</a></div>
+        </div>
+      </sc-for>
+    </div>
+    <button onClick="{{ heroPrev }}" aria-label="Previous slide" style="position:absolute;left:clamp(12px,2vw,28px);top:50%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:#1E2A4A;font-size:18px;cursor:pointer;box-shadow:0 8px 20px -8px rgba(0,0,0,0.4)">←</button>
+    <button onClick="{{ heroNext }}" aria-label="Next slide" style="position:absolute;right:clamp(12px,2vw,28px);top:50%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:#1E2A4A;font-size:18px;cursor:pointer;box-shadow:0 8px 20px -8px rgba(0,0,0,0.4)">→</button>
+  </section>
+
+  <!-- WHAT WE OFFER -->
+  <section id="about" data-screen-label="What We Offer" style="position:relative;background:#fff;padding:clamp(40px,4.5vw,60px) clamp(20px,4vw,40px) clamp(40px,4.5vw,60px)">
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0"><div data-float="spin" style="position:absolute;right:6%;top:40px;width:70px"><img src="assets/illus/sun.png" alt="" style="width:100%;display:block"></div><div style="position:absolute;left:-30px;top:-10px;width:180px;height:120px;background:repeating-linear-gradient(-45deg,#9FE3E0 0 6px,transparent 6px 16px);opacity:0.7;border-radius:0 0 60px 0"></div></div>
+    <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1;display:flex;flex-direction:column;gap:44px">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;max-width:640px;margin:0 auto">
+        <h2 style="margin:0;font-family:'Nunito',sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,44px);line-height:1.15;color:#1E2A4A">What We Offer</h2>
+        <p style="margin:0;font-size:16px;line-height:1.8;color:#5B6478">I'm a qualified and experienced literacy teacher, and I love helping children and adults become more confident readers.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(18px,2.4vw,30px)">
+        <a href="#services" style="display:flex;flex-direction:column;border-radius:28px;overflow:hidden;background:#39A0DA;color:#fff;box-shadow:0 26px 40px -30px rgba(0,27,66,0.55);transition:transform .35s" style-hover="transform:translateY(-8px);color:#fff">
+          <div style="aspect-ratio:16/9;overflow:hidden"><img src="https://images.pexels.com/photos/8317829/pexels-photo-8317829.jpeg?auto=compress&cs=tinysrgb&w=900" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+          <div style="background:#2F8CC4;padding:22px;text-align:center;font-family:'Nunito',sans-serif;font-weight:800;font-size:clamp(20px,2.2vw,28px)">Parents &amp; Grandparents</div>
+        </a>
+        <a href="#services" style="display:flex;flex-direction:column;border-radius:28px;overflow:hidden;background:#4FD1C5;color:#fff;box-shadow:0 26px 40px -30px rgba(0,27,66,0.55);transition:transform .35s" style-hover="transform:translateY(-8px);color:#fff">
+          <div style="aspect-ratio:16/9;overflow:hidden"><img src="https://images.pexels.com/photos/5303549/pexels-photo-5303549.jpeg?auto=compress&cs=tinysrgb&w=900" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+          <div style="background:#3EB8AD;padding:22px;text-align:center;font-family:'Nunito',sans-serif;font-weight:800;font-size:clamp(20px,2.2vw,28px)">Online Reading Lessons</div>
+        </a>
+      </div>
+      <a href="#services" style="align-self:center;background:#E24D7A;color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;padding:14px 34px;border-radius:999px;border:2px dashed rgba(255,255,255,0.95);box-shadow:0 0 0 4px #E24D7A;white-space:nowrap;transition:transform .25s,box-shadow .25s,background .25s" style-hover="transform:translateY(-3px);background:#173B4C;box-shadow:0 0 0 4px #173B4C;color:#fff">Learn More</a>
+    </div>
+  </section>
+
+  <!-- EDUCATIONAL PROGRAMS -->
+  <section id="services" data-screen-label="Reading Programs" style="position:relative;background:#FBF7F2;padding:clamp(44px,5vw,70px) clamp(20px,4vw,40px)">
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0"><div data-float="bob" style="position:absolute;left:5%;top:60px;width:70px"><img src="assets/illus/rainbow.png" alt="" style="width:100%;display:block"></div><div data-float="bob" style="position:absolute;right:5%;top:40px;width:70px"><img src="assets/illus/owl.png" alt="" style="width:100%;display:block"></div><div data-float="bob" style="position:absolute;right:2%;bottom:30px;width:80px"><img src="assets/illus/laptop.png" alt="" style="width:100%;display:block"></div></div>
+    <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1;display:flex;flex-direction:column;gap:44px">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;max-width:640px;margin:0 auto">
+        <h2 style="margin:0;font-family:'Nunito',sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,44px);line-height:1.15;color:#1E2A4A">Reading Programs</h2>
+        <p style="margin:0;font-size:16px;line-height:1.8;color:#5B6478">Through structured, step-by-step lessons and personal online support, I help learners develop their reading skills, understanding and confidence.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(16px,2.4vw,30px)">
+        <article style="position:relative;background:#FFF1C9;border-radius:40px;padding:0 0 28px;display:flex;flex-direction:column;overflow:hidden;transition:transform .35s,box-shadow .35s" style-hover="transform:translateY(-10px);box-shadow:0 30px 50px -30px rgba(0,27,66,0.45)"><div style="aspect-ratio:4/3;overflow:hidden;border-radius:0 0 50% 50% / 0 0 18% 18%"><img src="https://images.pexels.com/photos/6972770/pexels-photo-6972770.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div><span style="align-self:center;margin-top:-26px;position:relative;background:#E0A800;color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;padding:9px 16px;white-space:nowrap;border-radius:999px;border:4px solid #FFF1C9">Beginning Skills</span><div style="padding:16px 26px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px"><h3 style="margin:0;font-family:'Nunito',sans-serif;font-weight:800;font-size:24px;color:#173B4C">For a Child Learning to Read</h3><p style="margin:0;font-size:15px;line-height:1.65;color:#3F5866">Build the foundations of reading through recognising letters, understanding sounds and learning to read simple words.</p><a href="#contact" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;color:#E0A800" style-hover="color:#173B4C">Find out more&nbsp;→</a></div></article><article style="position:relative;background:#DDF1EC;border-radius:40px;padding:0 0 28px;display:flex;flex-direction:column;overflow:hidden;transition:transform .35s,box-shadow .35s" style-hover="transform:translateY(-10px);box-shadow:0 30px 50px -30px rgba(0,27,66,0.45)"><div style="aspect-ratio:4/3;overflow:hidden;border-radius:0 0 50% 50% / 0 0 18% 18%"><img src="https://images.pexels.com/photos/8065063/pexels-photo-8065063.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div><span style="align-self:center;margin-top:-26px;position:relative;background:#00727E;color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;padding:9px 16px;white-space:nowrap;border-radius:999px;border:4px solid #DDF1EC">Consolidating Skills</span><div style="padding:16px 26px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px"><h3 style="margin:0;font-family:'Nunito',sans-serif;font-weight:800;font-size:24px;color:#173B4C">For Children Who Find Reading Difficult</h3><p style="margin:0;font-size:15px;line-height:1.65;color:#3F5866">Strengthen essential reading and spelling skills through patient, step-by-step teaching that builds confidence and fluency.</p><a href="#contact" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;color:#00727E" style-hover="color:#173B4C">Find out more&nbsp;→</a></div></article><article style="position:relative;background:#DCEBF6;border-radius:40px;padding:0 0 28px;display:flex;flex-direction:column;overflow:hidden;transition:transform .35s,box-shadow .35s" style-hover="transform:translateY(-10px);box-shadow:0 30px 50px -30px rgba(0,27,66,0.45)"><div style="aspect-ratio:4/3;overflow:hidden;border-radius:0 0 50% 50% / 0 0 18% 18%"><img src="https://images.pexels.com/photos/8055848/pexels-photo-8055848.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div><span style="align-self:center;margin-top:-26px;position:relative;background:#2F6E9E;color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;padding:9px 16px;white-space:nowrap;border-radius:999px;border:4px solid #DCEBF6">Advanced Skills</span><div style="padding:16px 26px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px"><h3 style="margin:0;font-family:'Nunito',sans-serif;font-weight:800;font-size:24px;color:#173B4C">For Older Learners and Adults</h3><p style="margin:0;font-size:15px;line-height:1.65;color:#3F5866">Develop reading accuracy, fluency, vocabulary and comprehension skills, including support for adults learning English.</p><a href="#contact" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;color:#2F6E9E" style-hover="color:#173B4C">Find out more&nbsp;→</a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET STARTED -->
+  <section data-screen-label="Get Started" style="position:relative;background:#fff;padding:clamp(44px,5vw,70px) clamp(20px,4vw,40px)">
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0"><div data-float="bob" style="position:absolute;left:4%;top:80px;width:52px"><svg viewBox="0 0 64 64" width="52" height="52" style="display:block"><path d="M32 54 C10 40 6 28 12 18 C18 9 28 11 32 19 C36 11 46 9 52 18 C58 28 54 40 32 54 Z" stroke="#E5487A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div data-float="bob" style="position:absolute;right:4%;top:60px;width:70px"><img src="assets/illus/bear.png" alt="" style="width:100%;display:block"></div></div>
+    <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1;display:flex;flex-direction:column;gap:44px">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;max-width:640px;margin:0 auto">
+        <h2 style="margin:0;font-family:'Nunito',sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,44px);line-height:1.15;color:#1E2A4A">Ways to Get Started</h2>
+        <p style="margin:0;font-size:16px;line-height:1.8;color:#5B6478">Courses, books and free resources for learning at home.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,4vw,48px);align-items:center">
+        <div style="border-radius:24px;overflow:hidden;aspect-ratio:0.85;max-height:520px;box-shadow:0 26px 44px -30px rgba(0,27,66,0.55)"><img src="https://images.pexels.com/photos/4908526/pexels-photo-4908526.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Mother reading with children" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <a href="#contact" style="display:flex;align-items:center;gap:18px;background:#F26A3D;color:#fff;border-radius:14px;padding:16px 22px;transition:transform .3s,box-shadow .3s" style-hover="transform:translateX(8px);box-shadow:0 18px 30px -20px rgba(0,27,66,0.5);color:#fff">
+            <span style="flex:none;width:58px;height:58px;border-radius:50%;background:#D8552B;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1"><strong style="font-family:'Nunito',sans-serif;font-weight:800;font-size:17px">01</strong><span style="font-size:11px;margin-top:3px">FREE</span></span>
+            <span style="display:flex;flex-direction:column;gap:4px"><strong style="font-family:'Nunito',sans-serif;font-weight:800;font-size:17px">Free Email Consultation</strong><span style="font-size:13px;opacity:0.9">Marilyn replies personally</span></span>
+          </a>
+          <a href="#services" style="display:flex;align-items:center;gap:18px;background:#4FC79A;color:#fff;border-radius:14px;padding:16px 22px;transition:transform .3s,box-shadow .3s" style-hover="transform:translateX(8px);box-shadow:0 18px 30px -20px rgba(0,27,66,0.5);color:#fff">
+            <span style="flex:none;width:58px;height:58px;border-radius:50%;background:#3BAF84;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1"><strong style="font-family:'Nunito',sans-serif;font-weight:800;font-size:17px">02</strong><span style="font-size:11px;margin-top:3px">FREE</span></span>
+            <span style="display:flex;flex-direction:column;gap:4px"><strong style="font-family:'Nunito',sans-serif;font-weight:800;font-size:17px">How to Teach Phonics at Home</strong><span style="font-size:13px;opacity:0.9">Free guide, no email needed</span></span>
+          </a>
+          <a href="#services" style="display:flex;align-items:center;gap:18px;background:#3C9BE0;color:#fff;border-radius:14px;padding:16px 22px;transition:transform .3s,box-shadow .3s" style-hover="transform:translateX(8px);box-shadow:0 18px 30px -20px rgba(0,27,66,0.5);color:#fff">
+            <span style="flex:none;width:58px;height:58px;border-radius:50%;background:#2C84C6;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1"><strong style="font-family:'Nunito',sans-serif;font-weight:800;font-size:17px">03</strong><span style="font-size:11px;margin-top:3px">KIT</span></span>
+            <span style="display:flex;flex-direction:column;gap:4px"><strong style="font-family:'Nunito',sans-serif;font-weight:800;font-size:17px">Reading Program for Kids</strong><span style="font-size:13px;opacity:0.9">Course delivered by email</span></span>
+          </a>
+          <a href="#services" style="display:flex;align-items:center;gap:18px;background:#FFC94A;color:#1E2A4A;border-radius:14px;padding:16px 22px;transition:transform .3s,box-shadow .3s" style-hover="transform:translateX(8px);box-shadow:0 18px 30px -20px rgba(0,27,66,0.5);color:#1E2A4A">
+            <span style="flex:none;width:58px;height:58px;border-radius:50%;background:#F0B42A;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1"><strong style="font-family:'Nunito',sans-serif;font-weight:800;font-size:17px">04</strong><span style="font-size:11px;margin-top:3px">BOOKS</span></span>
+            <span style="display:flex;flex-direction:column;gap:4px"><strong style="font-family:'Nunito',sans-serif;font-weight:800;font-size:17px">Books on Amazon</strong><span style="font-size:13px;opacity:0.9">Reading Program for Kids · Phonics for Kids</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section data-screen-label="Photo Gallery" style="position:relative;background:#fff;padding:clamp(28px,3.5vw,44px) 0 0">
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0"><div data-float="spin" style="position:absolute;left:4%;top:20px;width:60px"><img src="assets/illus/sun.png" alt="" style="width:100%;display:block"></div><div data-float="bob" style="position:absolute;right:4%;top:30px;width:44px"><svg viewBox="0 0 64 64" width="44" height="44" style="display:block"><path d="M32 54 C10 40 6 28 12 18 C18 9 28 11 32 19 C36 11 46 9 52 18 C58 28 54 40 32 54 Z" stroke="#E5487A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div>
+    <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:40px">
+      <div style="padding:0 clamp(20px,4vw,40px)"><div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;max-width:640px;margin:0 auto">
+        <h2 style="margin:0;font-family:'Nunito',sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,44px);line-height:1.15;color:#1E2A4A">Our Photo Gallery</h2>
+        <p style="margin:0;font-size:16px;line-height:1.8;color:#5B6478">Reading together at home, one page at a time.</p>
+      </div></div>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(120px,17vw,250px);grid-auto-flow:dense"><div style="overflow:hidden;grid-row:2 / span 2;grid-column:span 2;"><img src="https://images.pexels.com/photos/8317829/pexels-photo-8317829.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s" style-hover="transform:scale(1.08)"></div><div style="overflow:hidden;"><img src="https://images.pexels.com/photos/6972770/pexels-photo-6972770.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s" style-hover="transform:scale(1.08)"></div><div style="overflow:hidden;"><img src="https://images.pexels.com/photos/5692247/pexels-photo-5692247.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s" style-hover="transform:scale(1.08)"></div><div style="overflow:hidden;grid-row:span 2;"><img src="https://images.pexels.com/photos/4908526/pexels-photo-4908526.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s" style-hover="transform:scale(1.08)"></div><div style="overflow:hidden;"><img src="https://images.pexels.com/photos/8065063/pexels-photo-8065063.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s" style-hover="transform:scale(1.08)"></div><div style="overflow:hidden;"><img src="https://images.pexels.com/photos/6972642/pexels-photo-6972642.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s" style-hover="transform:scale(1.08)"></div><div style="overflow:hidden;"><img src="https://images.pexels.com/photos/8317826/pexels-photo-8317826.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s" style-hover="transform:scale(1.08)"></div><div style="overflow:hidden;"><img src="https://images.pexels.com/photos/4908531/pexels-photo-4908531.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s" style-hover="transform:scale(1.08)"></div><div style="overflow:hidden;"><img src="https://images.pexels.com/photos/5303549/pexels-photo-5303549.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s" style-hover="transform:scale(1.08)"></div><div style="overflow:hidden;"><img src="https://images.pexels.com/photos/6972648/pexels-photo-6972648.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s" style-hover="transform:scale(1.08)"></div><div style="overflow:hidden;"><img src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s" style-hover="transform:scale(1.08)"></div><div style="overflow:hidden;"><img src="https://images.pexels.com/photos/8055848/pexels-photo-8055848.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s" style-hover="transform:scale(1.08)"></div></div>
+    </div>
+  </section>
+
+  <!-- MEDIA -->
+  <section id="blog" data-screen-label="Latest Media" style="position:relative;background:#fff;padding:clamp(44px,5vw,70px) clamp(20px,4vw,40px)">
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0"><div data-float="spin" style="position:absolute;left:12%;top:40px;width:56px"><img src="assets/illus/sun.png" alt="" style="width:100%;display:block"></div></div>
+    <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1;display:flex;flex-direction:column;gap:44px">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;max-width:640px;margin:0 auto">
+        <h2 style="margin:0;font-family:'Nunito',sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,44px);line-height:1.15;color:#1E2A4A">Our Latest Media</h2>
+        <p style="margin:0;font-size:16px;line-height:1.8;color:#5B6478">Reading Matters: ideas and practical tips about reading, learning and education.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(20px,3vw,36px)">
+        <a href="https://readingteacheronline.com.au/blog/why-reading-is-a-big-deal-for-a-childs-brain" style="display:flex;flex-direction:column;gap:14px;color:#1E2A4A" style-hover="color:#00727E">
+          <div style="aspect-ratio:7/5;border-radius:18px;overflow:hidden"><img src="assets/site-blog.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s" style-hover="transform:scale(1.08)"></div>
+          <span style="display:flex;gap:14px;font-size:13px;color:#00727E;font-weight:700"><span>Featured</span><span>By Marilyn</span></span>
+          <h3 style="margin:0;font-family:'Nunito',sans-serif;font-weight:800;font-size:21px;line-height:1.3">Why Reading is a Big Deal for a Child's Brain</h3>
+          <span style="font-size:14px;font-weight:700;color:#00727E">Read More →</span>
+        </a>
+        <a href="https://readingteacheronline.com.au/blog/understanding-dyslexia-beyond-reading-and-writing" style="display:flex;flex-direction:column;gap:14px;color:#1E2A4A" style-hover="color:#00727E">
+          <div style="aspect-ratio:7/5;border-radius:18px;overflow:hidden"><img src="https://cloud.katana.nexigen.digital/katana/k1JeIorrFVv29ZosHKZmxCr3yRRpKaT0pfFpgLKf.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s" style-hover="transform:scale(1.08)"></div>
+          <span style="display:flex;gap:14px;font-size:13px;color:#00727E;font-weight:700"><span>Dyslexia</span><span>By Marilyn</span></span>
+          <h3 style="margin:0;font-family:'Nunito',sans-serif;font-weight:800;font-size:21px;line-height:1.3">Understanding Dyslexia: Beyond Reading and Writing</h3>
+          <span style="font-size:14px;font-weight:700;color:#00727E">Read More →</span>
+        </a>
+        <a href="https://readingteacheronline.com.au/blog/it-is-never-too-late-to-learn-to-read" style="display:flex;flex-direction:column;gap:14px;color:#1E2A4A" style-hover="color:#00727E">
+          <div style="aspect-ratio:7/5;border-radius:18px;overflow:hidden"><img src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s" style-hover="transform:scale(1.08)"></div>
+          <span style="display:flex;gap:14px;font-size:13px;color:#00727E;font-weight:700"><span>Learning</span><span>By Marilyn</span></span>
+          <h3 style="margin:0;font-family:'Nunito',sans-serif;font-weight:800;font-size:21px;line-height:1.3">It Is Never Too Late to Learn to Read</h3>
+          <span style="font-size:14px;font-weight:700;color:#00727E">Read More →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" data-screen-label="Contact" style="position:relative;background:linear-gradient(180deg,#fff 0%,#FBF7F2 100%);padding:clamp(44px,5vw,70px) clamp(20px,4vw,40px)">
+    
+    <div style="max-width:1100px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(36px,5vw,72px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;align-items:center;gap:26px;flex-wrap:wrap">
+          <div style="position:relative;flex:none;width:130px;height:130px">
+          
+          <img src="assets/marilyn.png" alt="Marilyn Martyn" style="position:absolute;inset:0;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 28%;border:4px solid #fff;box-shadow:0 14px 30px -16px rgba(0,27,66,0.45)">
+          
+        </div>
+          <div style="display:flex;flex-direction:column;gap:10px;flex:1 1 220px;min-width:0">
+            <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;color:#00727E">Not sure where to begin?</span>
+        <h2 style="margin:0;font-family:'Nunito',sans-serif;font-weight:800;font-size:clamp(22px,2.3vw,30px);line-height:1.2;color:#1E2A4A">Request a free email consultation</h2>
+          </div>
+        </div>
+        <p style="margin:0;font-size:16px;line-height:1.75;color:#3F5866;max-width:440px">Tell me a little about your reading needs or concerns. I'll reply personally with suggestions for the next step.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px"><span style="display:flex;align-items:center;gap:12px;font-size:15px;color:#3F5866"><span style="flex:none;width:38px;height:38px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -8px rgba(0,27,66,0.35);font-size:16px">✉</span>marilyn@readingteacheronline.com.au</span><span style="display:flex;align-items:center;gap:12px;font-size:15px;color:#3F5866"><span style="flex:none;width:38px;height:38px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -8px rgba(0,27,66,0.35);font-size:16px">⌂</span>Taylors Lakes, Melbourne, Victoria</span><span style="display:flex;align-items:center;gap:12px;font-size:15px;color:#3F5866"><span style="flex:none;width:38px;height:38px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -8px rgba(0,27,66,0.35);font-size:16px">★</span>Lessons held online</span></div>
+      </div>
+      <div style="background:#fff;border-radius:36px;padding:clamp(24px,3.5vw,40px);box-shadow:0 30px 60px -36px rgba(0,27,66,0.45)">
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:30px 10px"><img src="assets/illus/star.png" alt="" style="width:70px"><strong style="font-family:'Nunito',sans-serif;font-weight:800;font-size:24px;color:#1E2A4A">Thank you!</strong><span style="font-size:15px;color:#3F5866">Your enquiry has been sent. Marilyn will reply personally.</span></div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ send }}" style="display:flex;flex-direction:column;gap:14px;margin:0">
+            <strong style="font-family:'Nunito',sans-serif;font-weight:800;font-size:22px;color:#1E2A4A;margin-bottom:4px">Send a message</strong>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:14px">
+              <input required="required" placeholder="Your name" style="width:100%;box-sizing:border-box;border:2px solid transparent;background:#FBF7F2;border-radius:16px;padding:15px 18px;font-size:15px;outline:none;color:#1E2A4A;transition:border-color .25s,background .25s" style-focus="border-color:#00727E;background:#fff">
+              <input type="email" required="required" placeholder="Email address" style="width:100%;box-sizing:border-box;border:2px solid transparent;background:#FBF7F2;border-radius:16px;padding:15px 18px;font-size:15px;outline:none;color:#1E2A4A;transition:border-color .25s,background .25s" style-focus="border-color:#00727E;background:#fff">
+            </div>
+            <textarea rows="4" placeholder="Tell me about your child's reading" style="width:100%;box-sizing:border-box;border:2px solid transparent;background:#FBF7F2;border-radius:16px;padding:15px 18px;font-size:15px;outline:none;color:#1E2A4A;transition:border-color .25s,background .25s;resize:vertical" style-focus="border-color:#00727E;background:#fff"></textarea>
+            <button type="submit" style="align-self:flex-start;margin:6px 4px 0;background:#00727E;color:#fff;border:2px dashed rgba(255,255,255,0.95);box-shadow:0 0 0 4px #00727E;border-radius:999px;padding:14px 34px;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;cursor:pointer;transition:transform .25s,background .25s" style-hover="transform:translateY(-3px);background:#173B4C;box-shadow:0 0 0 4px #173B4C">Send Message</button>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="newsletter" style="position:relative;background:#E6F5F7;color:#5B6478;overflow:hidden">
+    <div style="max-width:1200px;margin:0 auto;padding:20px clamp(20px,4vw,40px) 0;position:relative;z-index:1">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:clamp(24px,3vw,40px)">
+        <div style="display:flex;flex-direction:column;gap:12px"><img src="assets/logo.jpg" alt="Reading Teacher Online" style="width:70px;border-radius:12px;mix-blend-mode:multiply"><p style="margin:0;font-size:14px;line-height:1.7">Helping parents and grandparents become confident reading tutors.</p></div>
+        <div style="display:flex;flex-direction:column;gap:9px;font-size:14px"><h4 style="margin:0 0 6px;font-family:'Nunito',sans-serif;font-weight:800;font-size:18px;color:#1E2A4A">Programs</h4><a href="#services" style="color:#5B6478" style-hover="color:#00727E">Beginning Skills</a><a href="#services" style="color:#5B6478" style-hover="color:#00727E">Consolidating Skills</a><a href="#services" style="color:#5B6478" style-hover="color:#00727E">Advanced Skills</a></div>
+        <div style="display:flex;flex-direction:column;gap:9px;font-size:14px"><h4 style="margin:0 0 6px;font-family:'Nunito',sans-serif;font-weight:800;font-size:18px;color:#1E2A4A">Useful Links</h4><a href="#top" style="color:#5B6478" style-hover="color:#00727E">Home</a><a href="#about" style="color:#5B6478" style-hover="color:#00727E">About Us</a><a href="#blog" style="color:#5B6478" style-hover="color:#00727E">Blog</a><a href="#contact" style="color:#5B6478" style-hover="color:#00727E">Contact</a></div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:14px"><h4 style="margin:0 0 6px;font-family:'Nunito',sans-serif;font-weight:800;font-size:18px;color:#1E2A4A">Newsletter</h4><span style="line-height:1.6">Subscribe for free weekly reading tips. I will not share your email.</span>
+          <sc-if value="{{ subscribed }}" hint-placeholder-val="{{ false }}"><span style="color:#00727E;font-weight:700">Thank you for joining!</span></sc-if>
+          <sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}"><form onSubmit="{{ subscribe }}" style="display:flex;background:#fff;border-radius:10px;padding:4px;margin:0"><input type="email" required="required" placeholder="Email" style="flex:1;min-width:0;border:0;background:transparent;padding:10px 12px;font-size:14px;outline:none;color:#1E2A4A"><button type="submit" aria-label="Subscribe" style="width:40px;border:0;border-radius:8px;background:#00727E;color:#fff;cursor:pointer;font-size:16px">→</button></form></sc-if>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" style="position:relative;height:clamp(150px,16vw,210px);margin-top:20px">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" style="position:absolute;left:0;bottom:0;width:100%;height:70%"><path d="M0 60 C200 20 380 70 560 40 C760 8 940 60 1120 36 C1260 18 1360 40 1440 30 V120 H0 Z" fill="#BFE6C9"></path><path d="M0 90 C240 60 460 100 720 80 C980 60 1200 96 1440 76 V120 H0 Z" fill="#9FD8AE"></path></svg>
+      <img data-float="bob" src="assets/illus/rainbow.png" alt="" style="position:absolute;bottom:18%;left:4%;width:clamp(44px,5vw,70px)"><img data-float="bob" src="assets/illus/bear.png" alt="" style="position:absolute;bottom:26%;left:16%;width:clamp(44px,6vw,84px)"><img data-float="bob" src="assets/illus/owl.png" alt="" style="position:absolute;bottom:34%;left:28%;width:clamp(44px,5vw,70px)"><img data-float="bob" src="assets/illus/books.png" alt="" style="position:absolute;bottom:18%;left:40%;width:clamp(44px,6vw,84px)"><img data-float="bob" src="assets/illus/abc.png" alt="" style="position:absolute;bottom:26%;left:52%;width:clamp(44px,5vw,70px)"><img data-float="bob" src="assets/illus/pencil.png" alt="" style="position:absolute;bottom:34%;left:64%;width:clamp(44px,6vw,84px)"><img data-float="bob" src="assets/illus/grad.png" alt="" style="position:absolute;bottom:18%;left:76%;width:clamp(44px,5vw,70px)"><img data-float="bob" src="assets/illus/sun.png" alt="" style="position:absolute;bottom:26%;left:88%;width:clamp(44px,6vw,84px)">
+    </div>
+    <div style="background:#9FD8AE;text-align:center;padding:12px 20px 16px;font-size:13px;color:#1E2A4A">Reading Teacher Online © 2026. All rights reserved.</div>
+  </footer>
+
+  <div style="position:fixed;left:16px;bottom:22px;z-index:44;display:flex;align-items:flex-end;gap:8px;transition:bottom .5s cubic-bezier(.2,.8,.2,1);pointer-events:none">
+    <button onClick="{{ nextTip }}" aria-label="Reading tip from Ollie the owl" data-float="bob" style="pointer-events:auto;width:78px;height:78px;border:0;padding:0;background:transparent;cursor:pointer"><img src="assets/illus/owl.png" alt="" style="width:100%;display:block;filter:drop-shadow(0 10px 14px rgba(0,27,66,0.3))"></button>
+    <sc-if value="{{ tipOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="pointer-events:auto;position:relative;max-width:min(260px,calc(100vw - 120px));background:#fff;border:3px solid #FFC94A;border-radius:22px 22px 22px 6px;padding:14px 34px 14px 16px;margin-bottom:46px;box-shadow:0 16px 30px -16px rgba(0,27,66,0.45);display:flex;flex-direction:column;gap:6px">
+        <strong style="font-size:13px;color:#00727E;letter-spacing:0.04em">OLLIE SAYS</strong>
+        <span style="font-size:14px;line-height:1.5;color:#173B4C">{{ tipText }}</span>
+        <a href="{{ tipHref }}" onClick="{{ closeTip }}" style="font-size:13px;font-weight:700;color:#00727E">{{ tipCta }}</a>
+        <button onClick="{{ closeTip }}" aria-label="Close tip" style="position:absolute;right:8px;top:8px;width:24px;height:24px;border-radius:50%;border:0;background:#F4EDE4;color:#173B4C;cursor:pointer;font-size:14px;line-height:1">×</button>
+      </div>
+    </sc-if>
+  </div>
+
+  <a href="#top" aria-label="Back to top" style="position:fixed;right:22px;bottom:22px;z-index:40;width:50px;height:50px;border-radius:50%;background:#00727E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;box-shadow:0 10px 20px -8px rgba(0,27,66,0.5);transition:opacity .35s,transform .35s;opacity:{{ topOp }};transform:translateY({{ topY }});pointer-events:{{ topPe }}">↑</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { tip: -1, slide: 0, open: 0, subscribed: false, sent: false, scrolled: false, w: typeof window !== 'undefined' ? window.innerWidth : 1400 };
+  componentDidMount() {
+    this._revealed = []; this._anims = [];
+    this._onScroll = () => { const s = window.scrollY > 500; if (s && !this._tipShown) { this._tipShown = true; this._tipT = setTimeout(() => this.setState({ tip: 0 }), 1200); } if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._t = setTimeout(() => this.initMotion(), 120);
+    this._tipI = setInterval(() => { if (this.state.tip >= 0) this.setState(s => ({ tip: (s.tip + 1) % 4 })); }, 10000);
+    this._auto = setInterval(() => { if (!this._hold) this.setState(s => ({ slide: (s.slide + 1) % 3 })); }, 6000);
+    this._onResize = () => { this.setState({ w: window.innerWidth }); clearTimeout(this._rt); this._rt = setTimeout(() => this.checkDecor(), 150); };
+    window.addEventListener('resize', this._onResize);
+  }
+  componentWillUnmount() {
+    clearInterval(this._tipI); clearTimeout(this._tipT); clearInterval(this._auto); clearTimeout(this._t); clearTimeout(this._ft); clearTimeout(this._ct); clearTimeout(this._rt);
+    window.removeEventListener('scroll', this._onScroll); window.removeEventListener('resize', this._onResize);
+    this._io && this._io.disconnect(); this._dio && this._dio.disconnect();
+    (this._anims || []).forEach(a => a.cancel());
+    (this._revealed || []).forEach(r => { r.el.style.opacity = ''; r.el.style.transform = r.tf; r.el.style.transition = r.tr; });
+    this._anims = []; this._revealed = [];
+  }
+  show(r) {
+    if (!r || r.done) return; r.done = true;
+    r.el.style.opacity = '1'; r.el.style.transform = r.tf;
+    setTimeout(() => { r.el.style.transition = r.tr; }, 1100 + r.d);
+  }
+  initMotion() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) {
+      document.querySelectorAll('[data-float]').forEach((el, i) => {
+        const type = el.getAttribute('data-float');
+        let kf, opt;
+        if (type === 'spin') { kf = [{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }]; opt = { duration: 20000, iterations: Infinity, easing: 'linear' }; }
+        else if (type === 'sway') { el.style.transformOrigin = 'bottom center'; kf = [{ transform: 'rotate(-9deg)' }, { transform: 'rotate(9deg)' }]; opt = { duration: 2800, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' }; }
+        else if (type === 'morph') { const r0 = getComputedStyle(el).borderRadius; kf = [{ borderRadius: r0 }, { borderRadius: '50% 50% 42% 58% / 42% 58% 50% 50%' }, { borderRadius: '58% 42% 55% 45% / 55% 45% 58% 42%' }]; opt = { duration: 9000, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' }; }
+        else { kf = [{ transform: 'translateY(0)' }, { transform: 'translateY(-16px)' }]; opt = { duration: 2600 + (i % 5) * 500, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' }; }
+        this._anims.push(el.animate(kf, opt));
+      });
+      this._dio = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return; this._dio.unobserve(e.target);
+        const p = e.target, len = p.getTotalLength ? p.getTotalLength() : 300;
+        p.style.strokeDasharray = len;
+        this._anims.push(p.animate([{ strokeDashoffset: len }, { strokeDashoffset: 0 }], { duration: 1400, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'both' }));
+      }), { threshold: 0.3 });
+      document.querySelectorAll('[data-draw]').forEach(p => this._dio.observe(p));
+      const map = new Map();
+      this._io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; this._io.unobserve(e.target); this.show(map.get(e.target)); }), { threshold: 0.1 });
+      document.querySelectorAll('section[data-screen-label] > div > *').forEach(el => {
+        if (el.closest('#top') || el.closest('[aria-hidden]') || getComputedStyle(el).position === 'absolute') return;
+        const idx = Array.prototype.indexOf.call(el.parentNode.children, el);
+        const r = { el, d: Math.min(idx, 5) * 130, tf: el.style.transform, tr: el.style.transition, done: false };
+        el.style.opacity = '0'; el.style.transform = 'translateY(50px)';
+        el.style.transition = 'opacity .8s ease ' + r.d + 'ms, transform 1s cubic-bezier(.2,.7,.2,1) ' + r.d + 'ms';
+        this._revealed.push(r);
+        const b = el.getBoundingClientRect();
+        if (b.top < window.innerHeight && b.bottom > 0) requestAnimationFrame(() => requestAnimationFrame(() => this.show(r)));
+        else { map.set(el, r); this._io.observe(el); }
+      });
+      this._ft = setTimeout(() => this._revealed.forEach(r => { if (r.el.getBoundingClientRect().top < window.innerHeight * 1.2) this.show(r); }), 1600);
+    }
+    this.initHoverFx();
+    this.checkDecor();
+    this._ct = setTimeout(() => this.checkDecor(), 1500);
+    document.querySelectorAll('#blog a, #services article').forEach(card => {
+      const img = card.querySelector('img'); if (!img) return;
+      img.style.transition = 'transform .7s cubic-bezier(.2,.7,.2,1)';
+      card.onmouseenter = () => { img.style.transform = 'scale(1.1)'; };
+      card.onmouseleave = () => { img.style.transform = ''; };
+    });
+  }
+  initHoverFx() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const on = (el, enter, leave) => { if (el._hfx) return; el._hfx = 1; el.addEventListener('mouseenter', enter); if (leave) el.addEventListener('mouseleave', leave); };
+    // image zoom inside any card/link with a photo
+    document.querySelectorAll('section[data-screen-label] a, section[data-screen-label] article, [data-screen-label="Photo Gallery"] div').forEach(c => {
+      const img = c.querySelector(':scope img'); if (!img || img.src.includes('/illus/') || c.closest('[aria-hidden]')) return;
+      img.style.transition = 'transform .7s cubic-bezier(.2,.7,.2,1)';
+      on(c, () => { img.style.transform = 'scale(1.08)'; }, () => { img.style.transform = ''; });
+    });
+    // buttons: playful wiggle
+    document.querySelectorAll('a[style*="border-radius: 999px"], a[style*="border-radius:999px"], button[type="submit"]').forEach(b => {
+      on(b, () => b.animate([{ rotate: '0deg' }, { rotate: '-3deg' }, { rotate: '3deg' }, { rotate: '-2deg' }, { rotate: '0deg' }], { duration: 500, easing: 'ease-in-out' }));
+    });
+    // nav + footer links: underline grow
+    document.querySelectorAll('header nav a').forEach(a => {
+      if (a.querySelector('span[aria-hidden]')) return;
+      a.style.position = 'relative'; a.style.isolation = 'isolate';
+      const b = document.createElement('span'); b.setAttribute('aria-hidden', 'true');
+      b.style.cssText = 'position:absolute;left:50%;top:65%;width:36px;height:36px;border-radius:50%;background:#FFE7A3;transform:translate(-50%,-50%) scale(0);transition:transform .35s cubic-bezier(.2,.8,.2,1.4);z-index:-1;pointer-events:none';
+      a.prepend(b);
+      on(a, () => { b.style.transform = 'translate(-50%,-50%) scale(1)'; }, () => { b.style.transform = 'translate(-50%,-50%) scale(0)'; });
+    });
+    document.querySelectorAll('footer a').forEach(a => {
+      if (a.querySelector('img')) return;
+      a.style.alignSelf = 'flex-start';
+      a.style.backgroundImage = 'linear-gradient(currentColor,currentColor)';
+      a.style.backgroundRepeat = 'no-repeat'; a.style.backgroundPosition = '0 100%'; a.style.backgroundSize = '0% 2px';
+      a.style.transition = (a.style.transition ? a.style.transition + ',' : '') + 'background-size .3s ease';
+      on(a, () => { a.style.backgroundSize = '100% 2px'; }, () => { a.style.backgroundSize = '0% 2px'; });
+    });
+    // illustrations in cards: jump
+    document.querySelectorAll('section[data-screen-label] img[src*="/illus/"]').forEach(im => {
+      const host = im.closest('article, a, div[style*="border-radius"]'); if (!host || im.closest('[aria-hidden]')) return;
+      on(host, () => im.animate([{ translate: '0 0' }, { translate: '0 -14px' }, { translate: '0 0' }, { translate: '0 -6px' }, { translate: '0 0' }], { duration: 700, easing: 'ease-out' }));
+    });
+    // round badges/icons spin a little
+    document.querySelectorAll('section[data-screen-label] span[style*="border-radius: 50%"], section[data-screen-label] span[style*="border-radius:50%"]').forEach(s => {
+      const host = s.parentElement; if (!host) return;
+      on(host, () => s.animate([{ rotate: '0deg', scale: 1 }, { rotate: '-12deg', scale: 1.12 }, { rotate: '0deg', scale: 1 }], { duration: 500, easing: 'cubic-bezier(.2,.8,.2,1.4)' }));
+    });
+    // logo wiggle
+    const logo = document.querySelector('header a img');
+    if (logo) on(logo.parentElement, () => logo.animate([{ rotate: '0deg' }, { rotate: '-8deg' }, { rotate: '6deg' }, { rotate: '0deg' }], { duration: 600, easing: 'ease-in-out' }));
+  }
+  checkDecor() {
+    document.querySelectorAll('[aria-hidden] [data-float]').forEach(el => {
+      const sec = el.closest('section'); if (!sec) return;
+      const a = el.getBoundingClientRect(), pad = 20, padY = 50;
+      const hit = Array.from(sec.querySelectorAll('h1,h2,h3,p,a,button,input,textarea,form,img')).some(n => {
+        if (n.closest('[aria-hidden]')) return false;
+        const b = n.getBoundingClientRect(); if (!b.width) return false;
+        return a.left < b.right + pad && a.right > b.left - pad && a.top < b.bottom + padY && a.bottom > b.top - padY;
+      });
+      el.style.visibility = hit ? 'hidden' : 'visible';
+    });
+  }
+  renderVals() {
+    const data = [
+      { q: 'Does my child have dyslexia?', a: 'Only a qualified professional—such as an educational psychologist, speech-language pathologist, or neuropsychologist—can formally diagnose dyslexia through comprehensive assessment. Many early reading difficulties, including occasional letter reversals, are typical developmental stages rather than neurological learning differences.' },
+      { q: 'How can I help my child with reading?', a: 'The most effective way to help your child with reading is to build a consistent daily routine that combines structured practice with positive reinforcement. Keep sessions short and positive: 15–20 minutes of stress-free daily practice is far more productive than long, frustrating sessions.' },
+      { q: 'Will tutoring help my child learn?', a: 'Yes, targeted tutoring helps children with reading by identifying specific learning gaps and providing the structured, one-on-one instruction that large classrooms often cannot accommodate.' },
+    ];
+    const faqs = data.map((f, i) => { const o = this.state.open === i; return { ...f, open: o, rot: o ? '45deg' : '0deg', iconBg: o ? '#173B4C' : '#00727E', toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i })) }; });
+    const sc = this.state.scrolled;
+    const TIPS = [
+      { t: 'Hoot hoot! Hi, I\'m Ollie. Want a free phonics guide? No email needed!', c: 'Get the free guide →', h: '#services' },
+      { t: 'Did you know? 15–20 minutes of happy reading a day works better than long sessions.', c: 'More reading tips →', h: '#blog' },
+      { t: 'Reading builds independence. Every little step counts!', c: 'See how Marilyn helps →', h: '#services' },
+      { t: 'Not sure where to begin? Ask Marilyn for a FREE email consultation.', c: 'Ask Marilyn →', h: '#contact' },
+    ];
+    const HS = [
+      { img: 'https://images.pexels.com/photos/8317829/pexels-photo-8317829.jpeg?auto=compress&cs=tinysrgb&w=1600', t: 'Helping Parents Become Confident Reading Tutors', hl: [4, 5], body: "I'm a qualified and experienced literacy teacher, and I love helping children and adults become more confident readers." },
+      { img: 'https://images.pexels.com/photos/6972770/pexels-photo-6972770.jpeg?auto=compress&cs=tinysrgb&w=1600', t: 'Is Your Child Struggling with Reading?', hl: [5], body: "Whether your child is just beginning to read, finding reading difficult, or you're an adult wanting to improve your English reading skills, I'm here to help." },
+      { img: 'https://images.pexels.com/photos/4908526/pexels-photo-4908526.jpeg?auto=compress&cs=tinysrgb&w=1600', t: 'Reading Builds Independence.', hl: [2], body: 'Through structured, step-by-step lessons and personal online support, I help learners develop their reading skills, understanding and confidence.' },
+    ];
+    const cur = this.state.slide;
+    const heroSlides = HS.map((s, i) => { const on = i === cur; return { ref: el => { if (el && el.getAttribute('src') !== s.img) el.src = s.img; }, img: s.img, zoom: on ? 1.08 : 1, body: s.body, pe: on ? 'auto' : 'none', vis: on ? 'visible' : 'hidden', op: on ? 1 : 0, tf: on ? 'none' : 'translateY(24px)',
+      words: s.t.split(' ').map((w, j) => ({ text: w, color: s.hl.includes(j) ? '#FFC94A' : '#FFFFFF', op: on ? 1 : 0, tf: on ? 'none' : 'translateY(110%)', delay: on ? (0.08 * j) + 's' : '0s' })) }; });
+    const goHero = i => { this._hold = true; clearTimeout(this._holdT); this._holdT = setTimeout(() => { this._hold = false; }, 12000); this.setState({ slide: i }); };
+    const heroDots = HS.map((s, i) => ({ bg: i === cur ? '#00727E' : 'transparent', sc: i === cur ? 1.15 : 1, go: () => goHero(i) }));
+    return {
+      tipOpen: this.state.tip >= 0, tipText: TIPS[Math.max(0, this.state.tip)].t, tipCta: TIPS[Math.max(0, this.state.tip)].c, tipHref: TIPS[Math.max(0, this.state.tip)].h,
+      nextTip: () => this.setState(s => ({ tip: (s.tip + 1) % 4 })),
+      closeTip: () => this.setState({ tip: -1 }),
+      heroSlides, heroDots, heroPrev: () => goHero((cur + 2) % 3), heroNext: () => goHero((cur + 1) % 3),
+      faqs,
+      subscribed: this.state.subscribed, notSubscribed: !this.state.subscribed,
+      sent: this.state.sent, notSent: !this.state.sent,
+      subscribe: e => { e.preventDefault(); this.setState({ subscribed: true }); },
+      send: e => { e.preventDefault(); this.setState({ sent: true }); },
+      ctaDisplay: this.state.w >= 1100 ? 'flex' : 'none', wordmarkDisplay: this.state.w >= 760 ? 'flex' : 'none',
+      topOp: sc ? 1 : 0, topY: sc ? '0' : '20px', topPe: sc ? 'auto' : 'none',
+    };
+  }
+}
+</script>
+</body>
+</html>

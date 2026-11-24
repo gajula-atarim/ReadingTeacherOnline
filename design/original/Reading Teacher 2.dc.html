@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#fff;color:#001B42;font-family:'Lexend',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#00727E;text-decoration:none}
+a:hover{color:#173B4C}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+input,textarea,button{font-family:inherit}
+</style>
+</helmet>
+
+<div style="overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:30;background:#fff;box-shadow:0 6px 24px -18px rgba(0,27,66,0.35)">
+    <div style="max-width:1260px;margin:0 auto;padding:12px clamp(16px,3vw,40px);display:flex;align-items:center;justify-content:space-between;gap:clamp(12px,2vw,20px);flex-wrap:wrap">
+      <a href="#top" style="display:flex;align-items:center;gap:12px">
+        <img src="assets/logo.jpg" alt="Reading Teacher Online" style="height:52px;display:block">
+        <span style="display:{{ wordmarkDisplay }};flex-direction:column;line-height:1.1">
+          <span style="font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:15px;letter-spacing:0.08em;color:#00727E">READING TEACHER</span>
+          <span style="font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.52em;color:#173B4C">ONLINE</span>
+        </span>
+      </a>
+      <nav style="display:flex;flex-wrap:wrap;align-items:center;gap:8px clamp(14px,2vw,30px);font-size:clamp(13px,1.2vw,15px);font-weight:600;letter-spacing:0.04em">
+        <a href="#top" style="position:relative;color:#00727E;display:flex;align-items:center;gap:6px;padding:6px 0">HOME <span style="width:5px;height:5px;border-radius:50%;background:#00727E"></span><svg viewBox="0 0 12 14" width="12" height="14" style="position:absolute;left:50%;bottom:-16px;transform:translateX(-50%)"><path d="M6 1 V12 M2 8 L6 12 L10 8" stroke="#00727E" stroke-width="2" fill="none" stroke-linecap="round"></path></svg></a>
+        <a href="#about" style="color:#173B4C;display:flex;align-items:center;gap:6px;padding:6px 0;transition:color .25s" style-hover="color:#00727E">ABOUT US <span style="width:5px;height:5px;border-radius:50%;background:#173B4C"></span></a>
+        <a href="#services" style="color:#173B4C;display:flex;align-items:center;gap:6px;padding:6px 0;transition:color .25s" style-hover="color:#00727E">SERVICES <span style="width:5px;height:5px;border-radius:50%;background:#173B4C"></span></a>
+        <a href="#blog" style="color:#173B4C;display:flex;align-items:center;gap:6px;padding:6px 0;transition:color .25s" style-hover="color:#00727E">BLOG <span style="width:5px;height:5px;border-radius:50%;background:#173B4C"></span></a>
+        <a href="#contact" style="color:#173B4C;padding:6px 0;transition:color .25s" style-hover="color:#00727E">CONTACT US</a>
+      </nav>
+      <a href="#contact" style="background:#00727E;color:#fff;font-weight:700;font-size:13px;letter-spacing:0.06em;padding:16px 30px;border-radius:999px;display:{{ ctaDisplay }};align-items:center;gap:10px;transition:transform .25s,background .25s,box-shadow .25s" style-hover="background:#173B4C;color:#fff;transform:translateY(-3px);box-shadow:0 14px 26px -12px rgba(0,27,66,0.5)">FREE CONSULTATION <span style="font-size:16px">→</span></a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" data-screen-label="Hero" style="position:relative;background:#F4EDE4;padding:clamp(48px,6vw,90px) clamp(20px,4vw,40px) clamp(90px,10vw,140px)">
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0"><div data-float="bob" style="position:absolute;left:1%;top:20px;width:64px"><img src="assets/illus/owl.png" alt="" style="width:100%;display:block;filter:drop-shadow(0 10px 14px rgba(0,27,66,0.18))"></div><div data-float="spin" style="position:absolute;right:1.5%;top:20px;width:40px"><img src="assets/illus/star.png" alt="" style="width:100%;display:block;filter:drop-shadow(0 10px 14px rgba(0,27,66,0.18))"></div>
+      <div data-float="bob" style="position:absolute;left:3%;top:60px;width:110px"><svg viewBox="0 0 200 110" width="110" height="60" style="display:block"><path data-draw="1" d="M15 105 A85 85 0 0 1 185 105" stroke="#00727E" stroke-width="13" fill="none" stroke-linecap="round"></path><path data-draw="1" d="M40 105 A60 60 0 0 1 160 105" stroke="#7CC4C2" stroke-width="13" fill="none" stroke-linecap="round"></path><path data-draw="1" d="M65 105 A35 35 0 0 1 135 105" stroke="#FFC94A" stroke-width="13" fill="none" stroke-linecap="round"></path></svg></div>
+      <div data-float="bob" style="position:absolute;left:44%;bottom:120px;width:14px;height:14px;border-radius:50%;background:#7CC4C2"></div>
+      <div data-float="spin" style="position:absolute;left:6%;bottom:140px;width:46px;height:46px;border-radius:50%;border:3px dashed #4FA3A5"></div>
+      <div data-float="bob" style="position:absolute;right:3%;top:40px;width:80px"><svg viewBox="0 0 80 20" width="80" height="20" style="display:block"><path d="M2 10 Q12 0 22 10 T42 10 T62 10 T78 10" stroke="#173B4C" stroke-width="3" fill="none" stroke-linecap="round"></path></svg></div>
+    </div>
+    <div style="max-width:1260px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,5vw,72px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <span style="display:flex;align-items:center;gap:10px;font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.2em;font-size:13px;color:#00727E"><svg viewBox="0 0 30 12" width="30" height="12"><path d="M1 6 Q6 0 11 6 T21 6 T29 6" stroke="#00727E" stroke-width="2.5" fill="none" stroke-linecap="round"></path></svg>READING TEACHER ONLINE</span>
+        <h1 style="margin:0;font-size:clamp(40px,5.4vw,70px);font-weight:700;line-height:1.04;letter-spacing:-0.025em;color:#173B4C;text-wrap:balance">Helping Parents Become Confident <span style="color:#00727E;position:relative;white-space:nowrap">Reading Tutors<svg viewBox="0 0 300 16" preserveAspectRatio="none" style="position:absolute;left:0;bottom:-10px;width:100%;height:14px"><path data-draw="1" d="M3 10 Q75 2 150 8 T297 6" stroke="#FFC94A" stroke-width="5" fill="none" stroke-linecap="round"></path></svg></span></h1>
+        <p style="margin:0;font-size:18px;line-height:1.7;font-weight:300;max-width:540px;text-wrap:pretty">I'm a qualified and experienced literacy teacher, and I love helping children and adults become more confident readers.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:6px">
+          <a href="#contact" style="background:#00727E;color:#fff;font-weight:700;font-size:14px;letter-spacing:0.05em;padding:18px 32px;border-radius:999px;display:flex;align-items:center;gap:10px;transition:transform .25s,background .25s,box-shadow .25s" style-hover="background:#173B4C;color:#fff;transform:translateY(-3px);box-shadow:0 14px 26px -12px rgba(0,27,66,0.5)">FREE EMAIL CONSULTATION <span>→</span></a>
+          <a href="#services" style="background:#fff;color:#173B4C;font-weight:700;font-size:14px;letter-spacing:0.05em;padding:18px 32px;border-radius:999px;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-3px);box-shadow:0 14px 26px -12px rgba(0,27,66,0.35);color:#173B4C">OUR SERVICES</a>
+        </div>
+      </div>
+      <div style="position:relative;display:flex;justify-content:center">
+        <div style="position:relative;width:min(100%,560px);aspect-ratio:1.08">
+          <div data-float="morph" style="position:absolute;inset:3% -2% -3% 4%;background:#7CC4C2;border-radius:60% 40% 55% 45% / 50% 60% 40% 50%"></div>
+          <div data-float="morph" style="position:absolute;inset:0 4% 4% 0;overflow:hidden;border-radius:45% 55% 40% 60% / 55% 45% 55% 45%;background:#DDEDEE">
+            <img src="https://images.pexels.com/photos/8317829/pexels-photo-8317829.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Grandmother reading with two children" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;bottom:-1px;width:100%;height:36px;display:block"><path d="M0 20 Q30 4 60 20 T120 20 T180 20 T240 20 T300 20 T360 20 T420 20 T480 20 T540 20 T600 20 T660 20 T720 20 T780 20 T840 20 T900 20 T960 20 T1020 20 T1080 20 T1140 20 T1200 20 T1260 20 T1320 20 T1380 20 T1440 20 V40 H0 Z" fill="#ffffff"></path></svg>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" data-screen-label="About" style="position:relative;background:#fff;padding:clamp(70px,8vw,120px) clamp(20px,4vw,40px)">
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0">
+      <div data-float="bob" style="position:absolute;right:2%;top:60px;width:14px;height:14px;border-radius:50%;background:#7CC4C2"></div>
+      <div data-float="sway" style="position:absolute;right:2%;bottom:60px;width:60px"><svg viewBox="0 0 70 90" width="60" height="77" style="display:block"><path d="M35 88 C34 60 36 35 40 4" stroke="#00727E" stroke-width="3" fill="none" stroke-linecap="round"></path><path d="M37 30 C20 26 10 14 12 4 C26 6 36 16 37 30Z" fill="#7CC4C2"></path><path d="M38 50 C55 46 64 34 62 24 C48 26 39 36 38 50Z" fill="#00727E"></path><path d="M36 70 C20 68 10 56 12 46 C26 48 35 58 36 70Z" fill="#7CC4C2"></path></svg></div>
+    </div>
+    <div style="max-width:1260px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,6vw,90px);align-items:center">
+      <div style="position:relative;width:min(100%,560px);justify-self:center">
+        <img src="assets/marilyn-cutout.png" alt="Marilyn Martyn" style="width:100%;display:block">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span style="font-family:'Josefin Sans',sans-serif;font-weight:600;letter-spacing:0.32em;font-size:15px;color:#00727E">MEET YOUR TEACHER</span>
+        <h2 style="margin:0;font-size:clamp(42px,5.4vw,72px);font-weight:600;letter-spacing:-0.025em;line-height:1;color:#173B4C">About us</h2>
+        <p style="margin:0;font-size:16px;line-height:1.85;font-weight:300;color:#3F5866;max-width:560px">Hello, I'm Marilyn. I'm helping parents and grandparents become confident reading tutors. I believe that every child deserves the opportunity to become a happy, confident reader.</p>
+        <div style="display:grid;grid-template-columns:96px minmax(0,1fr);gap:24px;align-items:start;margin-top:14px">
+          <svg viewBox="0 0 80 84" width="84" height="88" aria-hidden="true" style="display:block"><circle cx="40" cy="32" r="24" fill="none" stroke="#00727E" stroke-width="2.5"></circle><circle cx="40" cy="32" r="14" fill="none" stroke="#00727E" stroke-width="2.5"></circle><path d="M40 6 L45 10 L51 9 L53 15 L59 17 L58 23 L62 28" fill="none" stroke="#00727E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M26 52 L16 76 L26 72 L31 81 L38 58" fill="none" stroke="#7CC4C2" stroke-width="2.5" stroke-linejoin="round"></path><path d="M54 52 L64 76 L54 72 L49 81 L42 58" fill="none" stroke="#7CC4C2" stroke-width="2.5" stroke-linejoin="round"></path></svg>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:500;color:#173B4C">Qualified literacy teacher</h3>
+            <p style="margin:0;font-size:15px;line-height:1.8;font-weight:300;color:#3F5866">Teaching children to read has been an important part of my life, and I love sharing what I've learned over the years.</p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:96px minmax(0,1fr);gap:24px;align-items:start;margin-top:10px">
+          <svg viewBox="0 0 84 84" width="88" height="88" aria-hidden="true" style="display:block"><circle cx="18" cy="16" r="7" fill="none" stroke="#7CC4C2" stroke-width="2.5"></circle><path d="M8 80 V44 C8 34 12 28 18 28 C24 28 28 32 30 38 L42 46" fill="none" stroke="#7CC4C2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 80 V58 M22 80 V58" stroke="#7CC4C2" stroke-width="2.5" stroke-linecap="round"></path><rect x="34" y="10" width="44" height="36" rx="3" fill="none" stroke="#00727E" stroke-width="2.5"></rect><path d="M46 32 L54 24 L60 30 L70 20" fill="none" stroke="#00727E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M56 46 V60 M48 60 H64" stroke="#00727E" stroke-width="2.5" stroke-linecap="round"></path></svg>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:500;color:#173B4C">Guidance for families</h3>
+            <p style="margin:0;font-size:15px;line-height:1.8;font-weight:300;color:#3F5866">Parents and grandparents can make a wonderful difference when they have the right guidance and encouragement. I share practical teaching ideas, helpful resources and personal advice.</p>
+          </div>
+        </div>
+        <a href="#contact" style="align-self:flex-start;margin-top:12px;background:#00727E;color:#fff;font-weight:700;font-size:13px;letter-spacing:0.06em;padding:17px 30px;border-radius:999px;display:flex;align-items:center;gap:10px;transition:transform .25s,background .25s,box-shadow .25s" style-hover="background:#173B4C;color:#fff;transform:translateY(-3px);box-shadow:0 14px 26px -12px rgba(0,27,66,0.5)">CONTACT ME HERE <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORT -->
+  <section id="services" data-screen-label="Reading Support" style="position:relative;background:#fff;padding:clamp(64px,8vw,110px) clamp(20px,4vw,40px)">
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0"><div data-float="sway" style="position:absolute;left:2%;top:70px;width:70px"><img src="assets/illus/pencil.png" alt="" style="width:100%;display:block;filter:drop-shadow(0 10px 14px rgba(0,27,66,0.18))"></div><div data-float="bob" style="position:absolute;right:3%;bottom:70px;width:74px"><img src="assets/illus/abc.png" alt="" style="width:100%;display:block;filter:drop-shadow(0 10px 14px rgba(0,27,66,0.18))"></div>
+      <div data-float="sway" style="position:absolute;right:2%;top:50px;width:70px"><svg viewBox="0 0 70 90" width="70" height="90" style="display:block"><path d="M35 88 C34 60 36 35 40 4" stroke="#4FA3A5" stroke-width="3" fill="none" stroke-linecap="round"></path><path d="M37 30 C20 26 10 14 12 4 C26 6 36 16 37 30Z" fill="#7CC4C2"></path><path d="M38 50 C55 46 64 34 62 24 C48 26 39 36 38 50Z" fill="#4FA3A5"></path><path d="M36 70 C20 68 10 56 12 46 C26 48 35 58 36 70Z" fill="#7CC4C2"></path></svg></div>
+      <div data-float="bob" style="position:absolute;left:3%;bottom:80px;width:18px;height:18px;border-radius:50%;background:#F4EDE4"></div>
+    </div>
+    <div style="max-width:1260px;margin:0 auto;position:relative;z-index:1;display:flex;flex-direction:column;gap:52px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+        <span style="font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.2em;font-size:13px;color:#00727E">IS YOUR CHILD STRUGGLING WITH READING?</span>
+        <h2 style="margin:0;font-size:clamp(32px,4vw,50px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:#173B4C">What type of support do you need?</h2>
+        <p style="margin:0;font-size:17px;line-height:1.65;color:#3F5866;max-width:640px;text-wrap:pretty">Through structured, step-by-step lessons and personal online support, I help learners develop their reading skills, understanding and confidence.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px">
+        <article style="background:#F4EDE4;border-radius:36px;padding:32px 28px 34px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:transform .35s,box-shadow .35s" style-hover="transform:translateY(-10px);box-shadow:0 30px 50px -30px rgba(0,27,66,0.45)">
+          <div style="position:relative;width:190px;height:190px;border-radius:50%;padding:11px"><div data-ring="1" aria-hidden="true" style="position:absolute;inset:0;border-radius:50%;border:3px dashed #00727E;pointer-events:none"></div><div style="width:100%;height:100%;border-radius:50%;overflow:hidden"><img src="https://images.pexels.com/photos/6972770/pexels-photo-6972770.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div></div>
+          <span style="font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.18em;font-size:12px;color:#00727E">BEGINNING SKILLS</span>
+          <h3 style="margin:0;font-size:23px;font-weight:700;color:#173B4C">For a Child Learning to Read</h3>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:#3F5866">Build the foundations of reading through recognising letters, understanding sounds and learning to read simple words.</p>
+          <a href="#contact" style="margin-top:4px;width:48px;height:48px;border-radius:50%;background:#00727E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;transition:transform .25s,background .25s" style-hover="background:#173B4C;color:#fff;transform:rotate(-45deg)">→</a>
+        </article>
+        <article style="background:#DDEDEE;border-radius:36px;padding:32px 28px 34px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:transform .35s,box-shadow .35s" style-hover="transform:translateY(-10px);box-shadow:0 30px 50px -30px rgba(0,27,66,0.45)">
+          <div style="position:relative;width:190px;height:190px;border-radius:50%;padding:11px"><div data-ring="1" aria-hidden="true" style="position:absolute;inset:0;border-radius:50%;border:3px dashed #173B4C;pointer-events:none"></div><div style="width:100%;height:100%;border-radius:50%;overflow:hidden"><img src="https://images.pexels.com/photos/8065063/pexels-photo-8065063.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div></div>
+          <span style="font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.18em;font-size:12px;color:#00727E">CONSOLIDATING SKILLS</span>
+          <h3 style="margin:0;font-size:23px;font-weight:700;color:#173B4C">For Children Who Find Reading Difficult</h3>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:#3F5866">Strengthen essential reading and spelling skills through patient, step-by-step teaching that builds confidence and fluency.</p>
+          <a href="#contact" style="margin-top:4px;width:48px;height:48px;border-radius:50%;background:#173B4C;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;transition:transform .25s,background .25s" style-hover="background:#00727E;color:#fff;transform:rotate(-45deg)">→</a>
+        </article>
+        <article style="background:#F4EDE4;border-radius:36px;padding:32px 28px 34px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:transform .35s,box-shadow .35s" style-hover="transform:translateY(-10px);box-shadow:0 30px 50px -30px rgba(0,27,66,0.45)">
+          <div style="position:relative;width:190px;height:190px;border-radius:50%;padding:11px"><div data-ring="1" aria-hidden="true" style="position:absolute;inset:0;border-radius:50%;border:3px dashed #00727E;pointer-events:none"></div><div style="width:100%;height:100%;border-radius:50%;overflow:hidden"><img src="https://images.pexels.com/photos/8055848/pexels-photo-8055848.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div></div>
+          <span style="font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.18em;font-size:12px;color:#00727E">ADVANCED SKILLS</span>
+          <h3 style="margin:0;font-size:23px;font-weight:700;color:#173B4C">For Older Learners and Adults</h3>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:#3F5866">Develop reading accuracy, fluency, vocabulary and comprehension skills, including support for adults learning English.</p>
+          <a href="#contact" style="margin-top:4px;width:48px;height:48px;border-radius:50%;background:#00727E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;transition:transform .25s,background .25s" style-hover="background:#173B4C;color:#fff;transform:rotate(-45deg)">→</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS (navy) -->
+  <section data-screen-label="Courses and Books" style="position:relative;background:#173B4C;color:#fff;padding:clamp(80px,9vw,130px) clamp(20px,4vw,40px)">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:-35px;width:100%;height:36px;display:block"><path d="M0 20 Q30 4 60 20 T120 20 T180 20 T240 20 T300 20 T360 20 T420 20 T480 20 T540 20 T600 20 T660 20 T720 20 T780 20 T840 20 T900 20 T960 20 T1020 20 T1080 20 T1140 20 T1200 20 T1260 20 T1320 20 T1380 20 T1440 20 V40 H0 Z" fill="#173B4C"></path></svg>
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0"><div data-float="bob" style="position:absolute;left:2%;bottom:70px;width:90px"><img src="assets/illus/laptop.png" alt="" style="width:100%;display:block;filter:drop-shadow(0 10px 14px rgba(0,27,66,0.18))"></div><div data-float="bob" style="position:absolute;right:3%;top:60px;width:96px"><img src="assets/illus/rainbow.png" alt="" style="width:100%;display:block;filter:drop-shadow(0 10px 14px rgba(0,27,66,0.18))"></div>
+      <div data-float="bob" style="position:absolute;left:3%;top:70px;width:120px"><svg viewBox="0 0 200 110" width="120" height="66" style="display:block"><path data-draw="1" d="M15 105 A85 85 0 0 1 185 105" stroke="#7CC4C2" stroke-width="13" fill="none" stroke-linecap="round"></path><path data-draw="1" d="M40 105 A60 60 0 0 1 160 105" stroke="#4FA3A5" stroke-width="13" fill="none" stroke-linecap="round"></path><path data-draw="1" d="M65 105 A35 35 0 0 1 135 105" stroke="#FFC94A" stroke-width="13" fill="none" stroke-linecap="round"></path></svg></div>
+      <div data-float="spin" style="position:absolute;right:4%;bottom:70px;width:56px;height:56px;border-radius:50%;border:3px dashed #7CC4C2"></div>
+    </div>
+    <div style="max-width:1260px;margin:0 auto;position:relative;z-index:1;display:flex;flex-direction:column;gap:48px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+        <span style="font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.2em;font-size:13px;color:#7CC4C2">COURSES &amp; BOOKS</span>
+        <h2 style="margin:0;font-size:clamp(32px,4vw,50px);font-weight:700;letter-spacing:-0.02em;line-height:1.1">Learn at home, at your own pace</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ bentoCols }};gap:clamp(14px,1.8vw,22px)">
+        <a href="#services" style="grid-row:{{ bentoBigRow }};position:relative;min-height:clamp(380px,40vw,540px);border-radius:32px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;transition:transform .35s" style-hover="transform:translateY(-6px);color:#fff">
+          <img src="https://images.pexels.com/photos/4908526/pexels-photo-4908526.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,27,66,0) 35%,rgba(0,27,66,0.85) 100%)"></div>
+          <div style="position:relative;padding:clamp(22px,2.6vw,34px);display:flex;flex-direction:column;gap:12px">
+            <span style="align-self:flex-start;background:#FFC94A;color:#173B4C;font-size:12px;font-weight:700;padding:7px 12px;border-radius:999px">Course · Kit.com</span>
+            <h3 style="margin:0;font-size:clamp(26px,2.8vw,36px);font-weight:700;line-height:1.1">Reading Program for Kids</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#E3F0EF;max-width:420px">Step-by-step lessons by email to guide you as you teach your child at home.</p>
+            <span style="display:flex;align-items:center;gap:12px;font-weight:700;font-size:13px;letter-spacing:0.05em;margin-top:4px">VIEW COURSE <span style="width:44px;height:44px;border-radius:50%;background:#00727E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex:none;transition:transform .3s">→</span></span>
+          </div>
+        </a>
+        <a href="#services" style="grid-column:{{ bentoWideCol }};background:#FFE7A3;border-radius:32px;padding:clamp(22px,2.6vw,32px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;color:#173B4C;overflow:hidden;transition:transform .35s" style-hover="transform:translateY(-6px);color:#173B4C">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="align-self:flex-start;background:#fff;color:#173B4C;font-size:12px;font-weight:700;padding:7px 12px;border-radius:999px">Books · Amazon</span>
+            <h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:700;line-height:1.15">Books by Marilyn</h3>
+            <p style="margin:0;font-size:14px;line-height:1.6;color:#2E4A5A">Reading Program for Kids and Phonics for Kids, step-by-step books for home.</p>
+            <span style="display:flex;align-items:center;gap:12px;font-weight:700;font-size:13px;letter-spacing:0.05em;margin-top:4px">BUY ON AMAZON <span style="width:44px;height:44px;border-radius:50%;background:#173B4C;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex:none;transition:transform .3s">→</span></span>
+          </div>
+          <div style="display:flex;align-items:flex-end">
+            <img src="assets/books/rp1.jpg" alt="Reading Program for Kids" style="width:clamp(78px,8vw,110px);border-radius:6px;rotate:-6deg;box-shadow:0 18px 28px -14px rgba(0,27,66,0.55)">
+            <img src="assets/books/ph3.jpg" alt="Phonics for Kids" style="width:clamp(78px,8vw,110px);border-radius:6px;rotate:5deg;margin-left:-18px;box-shadow:0 18px 28px -14px rgba(0,27,66,0.55)">
+          </div>
+        </a>
+        <a href="#services" style="background:#CFEDE7;border-radius:32px;padding:14px 14px 22px;display:flex;flex-direction:column;gap:12px;color:#173B4C;transition:transform .35s" style-hover="transform:translateY(-6px);color:#173B4C">
+          <div style="border-radius:22px;overflow:hidden;aspect-ratio:16/10"><img src="https://images.pexels.com/photos/6972642/pexels-photo-6972642.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+          <div style="padding:0 8px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+            <span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:700;color:#00727E">Course · Kit.com</span><strong style="font-size:18px;font-weight:700;line-height:1.2">Second course title</strong></span>
+            <span style="width:44px;height:44px;border-radius:50%;background:#00727E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex:none;transition:transform .3s">→</span>
+          </div>
+        </a>
+        <a href="#services" style="background:#D7E9F4;border-radius:32px;padding:14px 14px 22px;display:flex;flex-direction:column;gap:12px;color:#173B4C;transition:transform .35s" style-hover="transform:translateY(-6px);color:#173B4C">
+          <div style="border-radius:22px;overflow:hidden;aspect-ratio:16/10"><img src="assets/phonics-guide.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block"></div>
+          <div style="padding:0 8px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+            <span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:700;color:#00727E">Free · No email needed</span><strong style="font-size:18px;font-weight:700;line-height:1.2">Free Guide &amp; Checklists</strong></span>
+            <span style="width:44px;height:44px;border-radius:50%;background:#173B4C;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex:none;transition:transform .3s">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;bottom:-1px;width:100%;height:36px;display:block"><path d="M0 20 Q30 4 60 20 T120 20 T180 20 T240 20 T300 20 T360 20 T420 20 T480 20 T540 20 T600 20 T660 20 T720 20 T780 20 T840 20 T900 20 T960 20 T1020 20 T1080 20 T1140 20 T1200 20 T1260 20 T1320 20 T1380 20 T1440 20 V40 H0 Z" fill="#FFF8EF"></path></svg>
+  </section>
+
+  <!-- READING OPENS DOORS -->
+  <section data-screen-label="Reading Opens Doors" style="position:relative;background:#FFF8EF;padding:clamp(80px,9vw,120px) clamp(20px,4vw,40px)">
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0">
+      <div data-float="bob" style="position:absolute;left:6%;top:70px;width:22px;height:22px;border-radius:50%;background:#FFC94A;opacity:0.7"></div>
+      <div data-float="bob" style="position:absolute;right:8%;top:110px;width:14px;height:14px;border-radius:50%;background:#7CC4C2"></div>
+      <div data-float="bob" style="position:absolute;right:14%;bottom:60px;width:30px;height:30px;border-radius:50%;border:3px solid #7CC4C2"></div>
+    </div>
+    <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:clamp(36px,4vw,56px)">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;max-width:720px">
+        <span style="font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.2em;font-size:13px;color:#00727E">IT'S NEVER TOO LATE TO LEARN</span>
+        <h2 style="margin:0;font-size:clamp(32px,4vw,50px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:#173B4C;text-wrap:balance">5 reasons reading matters for children</h2>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#3F5866">Small steps, shared support and regular reading can make a difference.</p>
+      </div>
+      <div style="width:100%;display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(10px,1.8vw,28px);align-items:flex-start">
+        <div data-float="bob" style="display:flex;justify-content:center;">
+          <div style="position:relative;width:clamp(140px,15vw,190px);aspect-ratio:1;border-radius:50%;background:#FFC94A;color:#173B4C;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:20px;box-shadow:inset -10px -14px 0 rgba(0,0,0,0.07),0 24px 40px -24px rgba(0,27,66,0.55);transition:scale .35s cubic-bezier(.2,.8,.2,1.4);cursor:default" style-hover="scale:1.1">
+            <span aria-hidden="true" style="position:absolute;left:22%;top:14%;width:22%;height:12%;border-radius:50%;background:rgba(255,255,255,0.45);rotate:-30deg"></span>
+            <span style="font-size:14px;font-weight:700;opacity:0.75">01</span>
+            <strong style="font-size:clamp(16px,1.5vw,19px);font-weight:700;line-height:1.2">To learn</strong>
+            <span style="font-size:13px;line-height:1.35;opacity:0.85">Every subject builds on reading</span>
+          </div>
+        </div>
+        <div data-float="bob" style="display:flex;justify-content:center;margin-top:46px;">
+          <div style="position:relative;width:clamp(140px,15vw,190px);aspect-ratio:1;border-radius:50%;background:#7CC4C2;color:#173B4C;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:20px;box-shadow:inset -10px -14px 0 rgba(0,0,0,0.07),0 24px 40px -24px rgba(0,27,66,0.55);transition:scale .35s cubic-bezier(.2,.8,.2,1.4);cursor:default" style-hover="scale:1.1">
+            <span aria-hidden="true" style="position:absolute;left:22%;top:14%;width:22%;height:12%;border-radius:50%;background:rgba(255,255,255,0.45);rotate:-30deg"></span>
+            <span style="font-size:14px;font-weight:700;opacity:0.75">02</span>
+            <strong style="font-size:clamp(16px,1.5vw,19px);font-weight:700;line-height:1.2">To understand</strong>
+            <span style="font-size:13px;line-height:1.35;opacity:0.85">Read with care</span>
+          </div>
+        </div>
+        <div data-float="bob" style="display:flex;justify-content:center;">
+          <div style="position:relative;width:clamp(140px,15vw,190px);aspect-ratio:1;border-radius:50%;background:#00727E;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:20px;box-shadow:inset -10px -14px 0 rgba(0,0,0,0.07),0 24px 40px -24px rgba(0,27,66,0.55);transition:scale .35s cubic-bezier(.2,.8,.2,1.4);cursor:default" style-hover="scale:1.1">
+            <span aria-hidden="true" style="position:absolute;left:22%;top:14%;width:22%;height:12%;border-radius:50%;background:rgba(255,255,255,0.45);rotate:-30deg"></span>
+            <span style="font-size:14px;font-weight:700;opacity:0.75">03</span>
+            <strong style="font-size:clamp(16px,1.5vw,19px);font-weight:700;line-height:1.2">To think</strong>
+            <span style="font-size:13px;line-height:1.35;opacity:0.85">Ask questions</span>
+          </div>
+        </div>
+        <div data-float="bob" style="display:flex;justify-content:center;margin-top:46px;">
+          <div style="position:relative;width:clamp(140px,15vw,190px);aspect-ratio:1;border-radius:50%;background:#BFE3D0;color:#173B4C;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:20px;box-shadow:inset -10px -14px 0 rgba(0,0,0,0.07),0 24px 40px -24px rgba(0,27,66,0.55);transition:scale .35s cubic-bezier(.2,.8,.2,1.4);cursor:default" style-hover="scale:1.1">
+            <span aria-hidden="true" style="position:absolute;left:22%;top:14%;width:22%;height:12%;border-radius:50%;background:rgba(255,255,255,0.45);rotate:-30deg"></span>
+            <span style="font-size:14px;font-weight:700;opacity:0.75">04</span>
+            <strong style="font-size:clamp(16px,1.5vw,19px);font-weight:700;line-height:1.2">To imagine</strong>
+            <span style="font-size:13px;line-height:1.35;opacity:0.85">Discover new worlds</span>
+          </div>
+        </div>
+        <div data-float="bob" style="display:flex;justify-content:center;">
+          <div style="position:relative;width:clamp(140px,15vw,190px);aspect-ratio:1;border-radius:50%;background:#173B4C;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:20px;box-shadow:inset -10px -14px 0 rgba(0,0,0,0.07),0 24px 40px -24px rgba(0,27,66,0.55);transition:scale .35s cubic-bezier(.2,.8,.2,1.4);cursor:default" style-hover="scale:1.1">
+            <span aria-hidden="true" style="position:absolute;left:22%;top:14%;width:22%;height:12%;border-radius:50%;background:rgba(255,255,255,0.45);rotate:-30deg"></span>
+            <span style="font-size:14px;font-weight:700;opacity:0.75">05</span>
+            <strong style="font-size:clamp(16px,1.5vw,19px);font-weight:700;line-height:1.2">To become independent</strong>
+            <span style="font-size:13px;line-height:1.35;opacity:0.85">Learn on your own</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter" data-screen-label="Newsletter" style="position:relative;padding:clamp(24px,3vw,40px) clamp(20px,4vw,40px) clamp(24px,3vw,40px);background:#fff;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0">
+      <div data-float="bob" style="position:absolute;left:8%;top:60px;width:14px;height:14px;border-radius:50%;background:#FFC94A"></div>
+      <div data-float="spin" style="position:absolute;right:9%;bottom:70px;width:48px;height:48px;border-radius:50%;border:3px dashed #7CC4C2"></div>
+    </div>
+    <div style="max-width:760px;margin:0 auto;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
+      <img data-float="bob" src="assets/illus/envelope.png" alt="" style="width:72px;display:block">
+      <span style="font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.2em;font-size:13px;color:#00727E">GET FREE READING NEWSLETTER</span>
+      <h2 style="margin:0;font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;color:#173B4C;text-wrap:balance">Practical ideas to help your child become a more confident reader</h2>
+      <p style="margin:0;font-size:16px;line-height:1.7;color:#3F5866;max-width:600px">Simple reading tips, practical teaching ideas and encouragement, plus my FREE Reading Behaviours Checklists.</p>
+      <sc-if value="{{ subscribed }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:6px;background:#DDEDEE;color:#173B4C;border-radius:999px;padding:16px 26px;font-size:16px;font-weight:600">Thank you for joining! Check your inbox for your checklists.</div>
+      </sc-if>
+      <sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ subscribe }}" style="width:100%;max-width:560px;display:flex;flex-direction:column;align-items:center;gap:10px;margin:6px 0 0">
+          <div style="width:100%;display:flex;flex-wrap:wrap;gap:8px;background:#FFF8EF;border:1px solid #EDE3D3;border-radius:32px;padding:6px">
+            <input type="email" required="required" placeholder="Your email address" style="flex:1 1 220px;min-width:0;border:0;background:transparent;border-radius:999px;padding:14px 18px;font-size:15px;outline:none;color:#001B42">
+            <button type="submit" style="flex:0 0 auto;background:#00727E;color:#fff;border:0;border-radius:999px;padding:14px 26px;font-size:13px;font-weight:700;letter-spacing:0.06em;cursor:pointer;white-space:nowrap;transition:background .25s" style-hover="background:#173B4C">SUBSCRIBE →</button>
+          </div>
+          <span style="font-size:13px;color:#3F5866">Weekly, free. Unsubscribe any time.</span>
+        </form>
+      </sc-if>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:6px"><span style="display:flex;align-items:center;gap:8px;font-size:14px;color:#173B4C;background:#fff;border:1px solid #EDE3D3;border-radius:999px;padding:8px 14px"><span style="width:8px;height:8px;border-radius:50%;background:#00727E"></span>Weekly reading tips</span><span style="display:flex;align-items:center;gap:8px;font-size:14px;color:#173B4C;background:#fff;border:1px solid #EDE3D3;border-radius:999px;padding:8px 14px"><span style="width:8px;height:8px;border-radius:50%;background:#00727E"></span>Teaching ideas</span><span style="display:flex;align-items:center;gap:8px;font-size:14px;color:#173B4C;background:#fff;border:1px solid #EDE3D3;border-radius:999px;padding:8px 14px"><span style="width:8px;height:8px;border-radius:50%;background:#00727E"></span>Free checklists</span></div>
+    </div>
+  </section>
+
+  <!-- TRUST NUMBERS -->
+  <section data-screen-label="Trust numbers" style="position:relative;background:#fff;padding:clamp(50px,6vw,80px) clamp(20px,4vw,40px)">
+    <div style="max-width:1260px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:18px">
+      <div style="display:flex;align-items:center;gap:16px;padding:22px 24px;border-radius:28px;background:#FFF1C9;transition:transform .35s" style-hover="transform:translateY(-6px) rotate(-1deg)"><img src="assets/illus/grad.png" alt="" style="width:54px;height:54px;flex:none"><span style="display:flex;flex-direction:column"><strong style="font-size:clamp(28px,3vw,38px);font-weight:700;line-height:1;color:#173B4C">30+</strong><span style="font-size:14px;color:#3F5866;margin-top:4px">Years teaching experience</span></span></div>
+      <div style="display:flex;align-items:center;gap:16px;padding:22px 24px;border-radius:28px;background:#DDEDEE;transition:transform .35s" style-hover="transform:translateY(-6px) rotate(-1deg)"><img src="assets/illus/bear.png" alt="" style="width:54px;height:54px;flex:none"><span style="display:flex;flex-direction:column"><strong style="font-size:clamp(28px,3vw,38px);font-weight:700;line-height:1;color:#173B4C">1:1</strong><span style="font-size:14px;color:#3F5866;margin-top:4px">Personal online tutoring</span></span></div>
+      <div style="display:flex;align-items:center;gap:16px;padding:22px 24px;border-radius:28px;background:#E4F1EA;transition:transform .35s" style-hover="transform:translateY(-6px) rotate(-1deg)"><img src="assets/illus/laptop.png" alt="" style="width:54px;height:54px;flex:none"><span style="display:flex;flex-direction:column"><strong style="font-size:clamp(28px,3vw,38px);font-weight:700;line-height:1;color:#173B4C">2</strong><span style="font-size:14px;color:#3F5866;margin-top:4px">Reading courses</span></span></div>
+      <div style="display:flex;align-items:center;gap:16px;padding:22px 24px;border-radius:28px;background:#FFF1C9;transition:transform .35s" style-hover="transform:translateY(-6px) rotate(-1deg)"><img src="assets/illus/books.png" alt="" style="width:54px;height:54px;flex:none"><span style="display:flex;flex-direction:column"><strong style="font-size:clamp(28px,3vw,38px);font-weight:700;line-height:1;color:#173B4C">2</strong><span style="font-size:14px;color:#3F5866;margin-top:4px">Books on Amazon</span></span></div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog" data-screen-label="Blog" style="position:relative;background:#F4EDE4;padding:clamp(80px,9vw,130px) clamp(20px,4vw,40px)">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:-35px;width:100%;height:36px;display:block"><path d="M0 20 Q30 4 60 20 T120 20 T180 20 T240 20 T300 20 T360 20 T420 20 T480 20 T540 20 T600 20 T660 20 T720 20 T780 20 T840 20 T900 20 T960 20 T1020 20 T1080 20 T1140 20 T1200 20 T1260 20 T1320 20 T1380 20 T1440 20 V40 H0 Z" fill="#F4EDE4"></path></svg>
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0"><div data-float="sway" style="position:absolute;left:2%;bottom:80px;width:70px"><img src="assets/illus/crayon.png" alt="" style="width:100%;display:block;filter:drop-shadow(0 10px 14px rgba(0,27,66,0.18))"></div><div data-float="bob" style="position:absolute;right:2%;bottom:120px;width:64px"><img src="assets/illus/bookmark.png" alt="" style="width:100%;display:block;filter:drop-shadow(0 10px 14px rgba(0,27,66,0.18))"></div>
+      <div data-float="bob" style="position:absolute;right:3%;top:70px;width:110px"><svg viewBox="0 0 200 110" width="110" height="60" style="display:block"><path data-draw="1" d="M15 105 A85 85 0 0 1 185 105" stroke="#00727E" stroke-width="13" fill="none" stroke-linecap="round"></path><path data-draw="1" d="M40 105 A60 60 0 0 1 160 105" stroke="#7CC4C2" stroke-width="13" fill="none" stroke-linecap="round"></path><path data-draw="1" d="M65 105 A35 35 0 0 1 135 105" stroke="#FFC94A" stroke-width="13" fill="none" stroke-linecap="round"></path></svg></div>
+      <div data-float="spin" style="position:absolute;left:3%;top:120px;width:44px;height:44px;border-radius:50%;border:3px dashed #00727E"></div>
+    </div>
+    <div style="max-width:1260px;margin:0 auto;position:relative;z-index:1;display:flex;flex-direction:column;gap:48px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+        <span style="font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.2em;font-size:13px;color:#00727E">READING MATTERS · THE BLOG</span>
+        <h2 style="margin:0;font-size:clamp(32px,4vw,50px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:#173B4C;max-width:760px">Because reading does matter, at every age and every stage of life</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px">
+        <a href="https://readingteacheronline.com.au/blog/why-reading-is-a-big-deal-for-a-childs-brain" style="background:#fff;border-radius:32px;overflow:hidden;display:flex;flex-direction:column;color:#001B42;transition:transform .35s,box-shadow .35s" style-hover="transform:translateY(-10px);box-shadow:0 30px 50px -30px rgba(0,27,66,0.45);color:#001B42">
+          <div style="position:relative;aspect-ratio:16/11;overflow:hidden"><img src="assets/site-blog.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:18px;top:18px;background:#00727E;color:#fff;font-size:12px;font-weight:700;padding:7px 12px;border-radius:999px">Featured</span></div>
+          <div style="padding:24px 26px 30px;display:flex;flex-direction:column;gap:10px">
+            <h3 style="margin:0;font-size:20px;font-weight:700;line-height:1.3;color:#173B4C">Why Reading is a Big Deal for a Child's Brain</h3>
+            <p style="margin:0;font-size:14px;line-height:1.65;color:#3F5866">Learning to read is a complex mental challenge. Written language, however, is an invention—a code made of shapes on a page.</p>
+            <span style="font-weight:700;font-size:13px;letter-spacing:0.06em;color:#00727E">READ MORE →</span>
+          </div>
+        </a>
+        <a href="https://readingteacheronline.com.au/blog/understanding-dyslexia-beyond-reading-and-writing" style="background:#fff;border-radius:32px;overflow:hidden;display:flex;flex-direction:column;color:#001B42;transition:transform .35s,box-shadow .35s" style-hover="transform:translateY(-10px);box-shadow:0 30px 50px -30px rgba(0,27,66,0.45);color:#001B42">
+          <div style="position:relative;aspect-ratio:16/11;overflow:hidden"><img src="https://cloud.katana.nexigen.digital/katana/k1JeIorrFVv29ZosHKZmxCr3yRRpKaT0pfFpgLKf.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:18px;top:18px;background:#173B4C;color:#fff;font-size:12px;font-weight:700;padding:7px 12px;border-radius:999px">Dyslexia</span></div>
+          <div style="padding:24px 26px 30px;display:flex;flex-direction:column;gap:10px">
+            <h3 style="margin:0;font-size:20px;font-weight:700;line-height:1.3;color:#173B4C">Understanding Dyslexia: Beyond Reading and Writing</h3>
+            <p style="margin:0;font-size:14px;line-height:1.65;color:#3F5866">Dyslexia has historically been narrowly and inappropriately defined.</p>
+            <span style="font-weight:700;font-size:13px;letter-spacing:0.06em;color:#00727E">READ MORE →</span>
+          </div>
+        </a>
+        <a href="https://readingteacheronline.com.au/blog/it-is-never-too-late-to-learn-to-read" style="background:#fff;border-radius:32px;overflow:hidden;display:flex;flex-direction:column;color:#001B42;transition:transform .35s,box-shadow .35s" style-hover="transform:translateY(-10px);box-shadow:0 30px 50px -30px rgba(0,27,66,0.45);color:#001B42">
+          <div style="position:relative;aspect-ratio:16/11;overflow:hidden"><img src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;left:18px;top:18px;background:#7CC4C2;color:#001B42;font-size:12px;font-weight:700;padding:7px 12px;border-radius:999px">Learning</span></div>
+          <div style="padding:24px 26px 30px;display:flex;flex-direction:column;gap:10px">
+            <h3 style="margin:0;font-size:20px;font-weight:700;line-height:1.3;color:#173B4C">It Is Never Too Late to Learn to Read</h3>
+            <p style="margin:0;font-size:14px;line-height:1.65;color:#3F5866">It is never too late to learn to read. However, reading foundations are best built in the early years of brain development.</p>
+            <span style="font-weight:700;font-size:13px;letter-spacing:0.06em;color:#00727E">READ MORE →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;bottom:-1px;width:100%;height:36px;display:block"><path d="M0 20 Q30 4 60 20 T120 20 T180 20 T240 20 T300 20 T360 20 T420 20 T480 20 T540 20 T600 20 T660 20 T720 20 T780 20 T840 20 T900 20 T960 20 T1020 20 T1080 20 T1140 20 T1200 20 T1260 20 T1320 20 T1380 20 T1440 20 V40 H0 Z" fill="#ffffff"></path></svg>
+  </section>
+
+  <!-- FAQ + CONTACT -->
+  <section id="contact" data-screen-label="FAQ and Contact" style="position:relative;background:#fff;padding:clamp(70px,8vw,110px) clamp(20px,4vw,40px)">
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0">
+      <div data-float="bob" style="position:absolute;left:7%;top:90px;width:16px;height:16px;border-radius:50%;background:#FFC94A"></div>
+      <div data-float="spin" style="position:absolute;right:7%;top:140px;width:44px;height:44px;border-radius:50%;border:3px dashed #7CC4C2"></div>
+    </div>
+    <div style="max-width:1120px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(48px,7vw,100px);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.2em;font-size:13px;color:#00727E">FAQ</span>
+        <h2 style="margin:0 0 10px;font-size:clamp(28px,3.2vw,40px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;color:#173B4C">Questions parents ask</h2>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="3">
+            <div style="border-top:1px solid #EDE3D3">
+              <button onClick="{{ f.toggle }}" style="width:100%;background:transparent;border:0;padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;text-align:left;font-size:17px;font-weight:600;color:#173B4C">
+                <span>{{ f.q }}</span>
+                <span style="flex:none;width:30px;height:30px;border-radius:50%;background:{{ f.iconBg }};color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;transition:transform .35s,background .35s;transform:rotate({{ f.rot }})">+</span>
+              </button>
+              <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+                <p style="margin:0;padding:0 40px 22px 0;font-size:15px;line-height:1.75;color:#3F5866">{{ f.a }}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:0.2em;font-size:13px;color:#00727E">FREE EMAIL CONSULTATION</span>
+        <h2 style="margin:0;font-size:clamp(28px,3.2vw,40px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;color:#173B4C">I'd love to hear from you</h2>
+        <p style="margin:0 0 6px;font-size:16px;line-height:1.7;color:#3F5866">Tell me a little about your reading needs. I'll reply personally.</p>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#DDEDEE;color:#173B4C;border-radius:20px;padding:20px 22px;font-size:16px;font-weight:600">Thank you! Your enquiry has been sent successfully.</div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ send }}" style="display:flex;flex-direction:column;gap:6px;margin:0">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:0 24px">
+              <input required="required" placeholder="Your name" style="border:0;border-bottom:1.5px solid #D9CFBF;background:transparent;padding:14px 2px;font-size:16px;outline:none;color:#001B42;transition:border-color .25s" style-focus="border-color:#00727E">
+              <input type="email" required="required" placeholder="Email address" style="border:0;border-bottom:1.5px solid #D9CFBF;background:transparent;padding:14px 2px;font-size:16px;outline:none;color:#001B42;transition:border-color .25s" style-focus="border-color:#00727E">
+            </div>
+            <textarea rows="3" placeholder="Your message" style="border:0;border-bottom:1.5px solid #D9CFBF;background:transparent;padding:14px 2px;font-size:16px;outline:none;color:#001B42;transition:border-color .25s;resize:vertical" style-focus="border-color:#00727E"></textarea>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:18px">
+              <button type="submit" style="background:#00727E;color:#fff;border:0;border-radius:999px;padding:16px 30px;font-size:13px;font-weight:700;letter-spacing:0.06em;cursor:pointer;transition:transform .25s,background .25s" style-hover="background:#173B4C;transform:translateY(-3px)">SEND MESSAGE →</button>
+              <span style="font-size:13px;color:#3F5866">Taylors Lakes, Melbourne · Lessons online</span>
+            </div>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="position:relative;background:#F4EDE4;color:#173B4C">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:-35px;width:100%;height:36px;display:block"><path d="M0 20 Q30 4 60 20 T120 20 T180 20 T240 20 T300 20 T360 20 T420 20 T480 20 T540 20 T600 20 T660 20 T720 20 T780 20 T840 20 T900 20 T960 20 T1020 20 T1080 20 T1140 20 T1200 20 T1260 20 T1320 20 T1380 20 T1440 20 V40 H0 Z" fill="#F4EDE4"></path></svg>
+    <div style="max-width:1260px;margin:0 auto;padding:clamp(56px,6vw,80px) clamp(20px,4vw,40px) 0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:clamp(24px,3vw,40px);padding-bottom:clamp(40px,5vw,56px)">
+        <div style="display:flex;flex-direction:column;gap:16px;grid-column:span 1;min-width:0">
+          <a href="#top" style="display:flex;align-items:center;gap:10px"><img src="assets/logo.jpg" alt="Reading Teacher Online" style="width:64px;border-radius:12px;mix-blend-mode:multiply;display:block"><span style="display:flex;flex-direction:column;line-height:1.1"><span style="font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:14px;letter-spacing:0.08em;color:#00727E">READING TEACHER</span><span style="font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.5em;color:#173B4C">ONLINE</span></span></a>
+          <p style="margin:0;font-size:15px;line-height:1.7;color:#3F5866">Helping parents and grandparents become confident reading tutors.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px"><h4 style="margin:0 0 6px;font-size:17px;font-weight:700;color:#173B4C">Quick Links</h4><a href="#top" style="color:#3F5866;font-size:15px;transition:color .25s,padding .25s" style-hover="color:#00727E;padding-left:4px">Home</a><a href="#about" style="color:#3F5866;font-size:15px;transition:color .25s,padding .25s" style-hover="color:#00727E;padding-left:4px">About Us</a><a href="#services" style="color:#3F5866;font-size:15px;transition:color .25s,padding .25s" style-hover="color:#00727E;padding-left:4px">Services</a><a href="#blog" style="color:#3F5866;font-size:15px;transition:color .25s,padding .25s" style-hover="color:#00727E;padding-left:4px">Blog</a><a href="#contact" style="color:#3F5866;font-size:15px;transition:color .25s,padding .25s" style-hover="color:#00727E;padding-left:4px">Contact Us</a></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><h4 style="margin:0 0 6px;font-size:17px;font-weight:700;color:#173B4C">Reading Support</h4><a href="#services" style="color:#3F5866;font-size:15px;transition:color .25s,padding .25s" style-hover="color:#00727E;padding-left:4px">Beginning Skills</a><a href="#services" style="color:#3F5866;font-size:15px;transition:color .25s,padding .25s" style-hover="color:#00727E;padding-left:4px">Consolidating Skills</a><a href="#services" style="color:#3F5866;font-size:15px;transition:color .25s,padding .25s" style-hover="color:#00727E;padding-left:4px">Advanced Skills</a><a href="#services" style="color:#3F5866;font-size:15px;transition:color .25s,padding .25s" style-hover="color:#00727E;padding-left:4px">Courses &amp; Books</a><a href="#services" style="color:#3F5866;font-size:15px;transition:color .25s,padding .25s" style-hover="color:#00727E;padding-left:4px">Free Guide</a></div>
+        <div style="display:flex;flex-direction:column;gap:12px"><h4 style="margin:0 0 6px;font-size:17px;font-weight:700;color:#173B4C">Get In Touch</h4><span style="display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.5;color:#3F5866"><svg viewBox="0 0 24 24" width="18" height="18" style="flex:none;margin-top:2px"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="#00727E"></path></svg>Taylors Lakes, Melbourne, Victoria</span><span style="display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.5;color:#3F5866"><svg viewBox="0 0 24 24" width="18" height="18" style="flex:none;margin-top:2px"><path d="M3 4h18v12H3zM9 18h6v2H9z" fill="#00727E"></path></svg>Lessons held online</span><span style="display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5;color:#3F5866;overflow-wrap:anywhere;min-width:0"><svg viewBox="0 0 24 24" width="18" height="18" style="flex:none;margin-top:2px"><path d="M3 5h18v14H3zM4 6.5v.6l8 5.4 8-5.4v-.6z" fill="#00727E"></path></svg>marilyn@readingteacheronline.com.au</span>
+          <a href="#contact" style="align-self:flex-start;margin-top:6px;background:#00727E;color:#fff;font-weight:700;font-size:12px;letter-spacing:0.06em;padding:13px 20px;border-radius:999px;white-space:nowrap;transition:background .25s,transform .25s" style-hover="background:#173B4C;color:#fff;transform:translateY(-2px)">FREE CONSULTATION →</a>
+        </div>
+      </div>
+      <div style="border-top:1px solid #E2D7C6;padding:22px 0 28px;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center;font-size:13px;color:#3F5866">
+        <span>Reading Teacher Online © 2026. All rights reserved.</span>
+        <span style="display:flex;gap:20px"><a href="#top" style="color:#3F5866" style-hover="color:#00727E">Privacy Policy</a><a href="#top" style="color:#3F5866" style-hover="color:#00727E">Terms of Use</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div style="position:fixed;left:16px;bottom:{{ topBottom }};z-index:44;display:flex;align-items:flex-end;gap:8px;transition:bottom .5s cubic-bezier(.2,.8,.2,1);pointer-events:none">
+    <button onClick="{{ nextTip }}" aria-label="Reading tip from Ollie the owl" data-float="bob" style="pointer-events:auto;width:78px;height:78px;border:0;padding:0;background:transparent;cursor:pointer"><img src="assets/illus/owl.png" alt="" style="width:100%;display:block;filter:drop-shadow(0 10px 14px rgba(0,27,66,0.3))"></button>
+    <sc-if value="{{ tipOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="pointer-events:auto;position:relative;max-width:min(260px,calc(100vw - 120px));background:#fff;border:3px solid #FFC94A;border-radius:22px 22px 22px 6px;padding:14px 34px 14px 16px;margin-bottom:46px;box-shadow:0 16px 30px -16px rgba(0,27,66,0.45);display:flex;flex-direction:column;gap:6px">
+        <strong style="font-size:13px;color:#00727E;letter-spacing:0.04em">OLLIE SAYS</strong>
+        <span style="font-size:14px;line-height:1.5;color:#173B4C">{{ tipText }}</span>
+        <a href="{{ tipHref }}" onClick="{{ closeTip }}" style="font-size:13px;font-weight:700;color:#00727E">{{ tipCta }}</a>
+        <button onClick="{{ closeTip }}" aria-label="Close tip" style="position:absolute;right:8px;top:8px;width:24px;height:24px;border-radius:50%;border:0;background:#F4EDE4;color:#173B4C;cursor:pointer;font-size:14px;line-height:1">×</button>
+      </div>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ showBar }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;left:50%;bottom:{{ barBottom }};transform:translateX(-50%);z-index:45;width:min(calc(100% - 24px),980px);background:#173B4C;color:#fff;border-radius:999px;padding:10px 10px 10px 22px;display:flex;align-items:center;gap:14px;box-shadow:0 20px 40px -16px rgba(0,27,66,0.6);transition:bottom .5s cubic-bezier(.2,.8,.2,1)">
+      <img src="assets/marilyn.png" alt="" style="width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center 30%;flex:none;border:2px solid #FFC94A">
+      <span style="flex:1;min-width:0;font-size:15px;line-height:1.35"><strong style="font-weight:600">Not sure where to begin?</strong> <span style="color:#DDEDEE">{{ barText }}</span></span>
+      <a href="#contact" onClick="{{ hideBar }}" style="flex:none;background:#FFC94A;color:#173B4C;font-weight:700;font-size:13px;letter-spacing:0.05em;padding:13px 22px;border-radius:999px;white-space:nowrap;transition:transform .25s" style-hover="transform:scale(1.05);color:#173B4C">FREE CONSULTATION →</a>
+      <button onClick="{{ hideBar }}" aria-label="Close" style="flex:none;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,0.12);color:#fff;font-size:18px;cursor:pointer">×</button>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showPopup }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closePopup }}" style="position:fixed;inset:0;z-index:60;background:rgba(0,27,66,0.55);display:flex;align-items:center;justify-content:center;padding:20px">
+      <div onClick="{{ stop }}" style="position:relative;width:min(100%,720px);background:#FFF8EF;border-radius:36px 36px 36px 90px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));box-shadow:0 40px 80px -30px rgba(0,0,0,0.6)">
+        <div style="background:#FFF1C9;display:flex;align-items:center;justify-content:center;padding:32px;position:relative">
+          <img src="assets/phonics-guide.png" alt="How to Teach Phonics at Home guide" style="width:min(100%,220px);border-radius:12px;rotate:-4deg;box-shadow:0 24px 40px -18px rgba(0,27,66,0.55);display:block">
+          <img src="assets/illus/star.png" alt="" style="position:absolute;right:18px;top:18px;width:44px">
+        </div>
+        <div style="padding:clamp(26px,4vw,40px);display:flex;flex-direction:column;gap:14px">
+          <span style="align-self:flex-start;background:#FFC94A;color:#173B4C;font-weight:700;font-size:12px;letter-spacing:0.08em;padding:7px 12px;border-radius:999px">FREE GUIDE</span>
+          <h3 style="margin:0;font-size:clamp(24px,2.8vw,32px);font-weight:700;line-height:1.15;color:#173B4C">How to Teach Phonics at Home</h3>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:#3F5866">A step-by-step guide for parents and grandparents. No email needed, download it straight away.</p>
+          <a href="#services" onClick="{{ closePopup }}" style="align-self:flex-start;background:#00727E;color:#fff;font-weight:700;font-size:13px;letter-spacing:0.05em;padding:16px 26px;border-radius:999px;transition:background .25s" style-hover="background:#173B4C;color:#fff">DOWNLOAD FREE ↓</a>
+          <button onClick="{{ closePopup }}" style="align-self:flex-start;background:transparent;border:0;padding:0;color:#3F5866;font-size:13px;text-decoration:underline;cursor:pointer">No thanks</button>
+        </div>
+        <button onClick="{{ closePopup }}" aria-label="Close" style="position:absolute;right:14px;top:14px;width:38px;height:38px;border-radius:50%;border:0;background:#fff;color:#173B4C;font-size:20px;cursor:pointer;box-shadow:0 6px 14px -6px rgba(0,27,66,0.4)">×</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <a href="#top" aria-label="Back to top" style="position:fixed;right:24px;bottom:{{ topBottom }};z-index:40;width:62px;height:62px;border-radius:50%;background:#00727E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 14px 28px -12px rgba(0,27,66,0.55);transition:opacity .35s,transform .35s,background .25s;opacity:{{ topOp }};transform:translateY({{ topY }});pointer-events:{{ topPe }}" style-hover="background:#173B4C;color:#fff">↑</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showSpotsNotice&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Lead bar&quot;},&quot;spotsText&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Only a few tutoring spots left this term.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lead bar&quot;}}">
+class Component extends DCLogic {
+  state = { tip: -1, barClosed: false, popup: false, open: 0, subscribed: false, sent: false, scrolled: false, w: typeof window !== 'undefined' ? window.innerWidth : 1400 };
+  componentDidMount() {
+    this._revealed = []; this._anims = [];
+    this._onScroll2 = () => { const max = document.documentElement.scrollHeight - window.innerHeight; if (!this._popped && max > 0 && window.scrollY / max > 0.55) this.openPopup(); };
+    window.addEventListener('scroll', this._onScroll2, { passive: true });
+    this._onLeave = e => { if (e.clientY <= 0 && !this._popped && window.scrollY > 400) this.openPopup(); };
+    document.addEventListener('mouseout', this._onLeave);
+    this._onScroll = () => { const s = window.scrollY > 500; if (s && !this._tipShown) { this._tipShown = true; this._tipT = setTimeout(() => this.setState({ tip: 0 }), 1200); } if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._t = setTimeout(() => this.initMotion(), 120);
+    this._tipI = setInterval(() => { if (this.state.tip >= 0) this.setState(s => ({ tip: (s.tip + 1) % 4 })); }, 10000);
+    this._onResize = () => { this.setState({ w: window.innerWidth }); clearTimeout(this._rt); this._rt = setTimeout(() => this.checkDecor(), 150); };
+    window.addEventListener('resize', this._onResize);
+  }
+  componentWillUnmount() {
+    clearTimeout(this._tipT); clearInterval(this._tipI); clearTimeout(this._t); clearTimeout(this._ft); clearTimeout(this._ct); clearTimeout(this._rt);
+    window.removeEventListener('scroll', this._onScroll); window.removeEventListener('scroll', this._onScroll2); document.removeEventListener('mouseout', this._onLeave); window.removeEventListener('resize', this._onResize);
+    this._io && this._io.disconnect(); this._dio && this._dio.disconnect();
+    (this._anims || []).forEach(a => a.cancel());
+    (this._revealed || []).forEach(r => { r.el.style.opacity = ''; r.el.style.transform = r.tf; r.el.style.transition = r.tr; });
+    this._anims = []; this._revealed = [];
+  }
+  burst(x, y) {
+    const cols = ['#FFC94A', '#00727E', '#7CC4C2', '#173B4C', '#FFFFFF'];
+    for (let i = 0; i < 26; i++) {
+      const d = document.createElement('div');
+      const s = 6 + Math.random() * 8;
+      d.style.cssText = 'position:fixed;z-index:80;pointer-events:none;left:' + x + 'px;top:' + y + 'px;width:' + s + 'px;height:' + s + 'px;border-radius:' + (i % 3 ? '50%' : '2px') + ';background:' + cols[i % cols.length];
+      document.body.appendChild(d);
+      const a = Math.random() * Math.PI * 2, r = 60 + Math.random() * 110;
+      d.animate([{ transform: 'translate(-50%,-50%) scale(1)', opacity: 1 }, { transform: 'translate(calc(-50% + ' + Math.cos(a) * r + 'px), calc(-50% + ' + (Math.sin(a) * r + 60) + 'px)) rotate(' + (Math.random() * 360) + 'deg) scale(.6)', opacity: 0 }], { duration: 900 + Math.random() * 500, easing: 'cubic-bezier(.2,.8,.2,1)' }).onfinish = () => d.remove();
+    }
+  }
+  initPop() {
+    document.querySelectorAll('[data-pop]').forEach(el => {
+      el.onmouseenter = el.onclick = () => {
+        if (el._popping) return; el._popping = true;
+        const r = el.getBoundingClientRect(); this.burst(r.left + r.width / 2, r.top + r.height / 2);
+        el.animate([{ scale: 1 }, { scale: 1.35 }, { scale: 0, opacity: 0 }], { duration: 380, easing: 'ease-in', fill: 'forwards' }).onfinish = () => {
+          setTimeout(() => { el.animate([{ scale: 0, opacity: 0 }, { scale: 1.15, opacity: 1 }, { scale: 1, opacity: 1 }], { duration: 600, easing: 'cubic-bezier(.2,.8,.2,1.4)', fill: 'forwards' }).onfinish = () => { el._popping = false; }; }, 2200);
+        };
+      };
+    });
+  }
+  initDelight() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const pics = ['star', 'owl', 'rainbow', 'book', 'abc', 'pencil', 'bear', 'crayon', 'sun'];
+    const seen = new Set();
+    const targets = [];
+    document.querySelectorAll('section[data-screen-label] img').forEach(img => {
+      if (img.closest('[aria-hidden]') || img.src.includes('/illus/') || img.width < 90) return;
+      const host = img.closest('article, figure, a') || img.parentElement;
+      if (host && !seen.has(host)) { seen.add(host); targets.push(host); }
+    });
+    document.querySelectorAll('section[data-screen-label] article, section[data-screen-label] figure').forEach(el => { if (!seen.has(el)) { seen.add(el); targets.push(el); } });
+    targets.forEach((el, i) => {
+      el.addEventListener('mouseenter', () => {
+        if (el._sticker) return;
+        const r = el.getBoundingClientRect();
+        const s = document.createElement('img');
+        s.src = 'assets/illus/' + pics[(i + Math.floor(Math.random() * pics.length)) % pics.length] + '.png';
+        s.alt = '';
+        s.style.cssText = 'position:absolute;z-index:70;pointer-events:none;width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(0,27,66,0.3));left:' + (r.right + window.scrollX - 46) + 'px;top:' + (r.top + window.scrollY - 30) + 'px';
+        document.body.appendChild(s); el._sticker = s;
+        s.animate([{ transform: 'scale(0) rotate(-40deg)', opacity: 0 }, { transform: 'scale(1.25) rotate(12deg)', opacity: 1, offset: 0.6 }, { transform: 'scale(1) rotate(-6deg)', opacity: 1 }], { duration: 520, easing: 'cubic-bezier(.2,.8,.2,1.3)', fill: 'forwards' });
+        s._wig = s.animate([{ rotate: '-6deg' }, { rotate: '8deg' }], { duration: 700, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out', delay: 520 });
+        this.sparkle(r.right - 14, r.top + 4);
+      });
+      el.addEventListener('mouseleave', () => {
+        const s = el._sticker; if (!s) return; el._sticker = null;
+        s.animate([{ opacity: 1, scale: 1 }, { opacity: 0, scale: 0.3 }], { duration: 260, easing: 'ease-in', fill: 'forwards' }).onfinish = () => s.remove();
+      });
+    });
+  }
+  sparkle(x, y) {
+    const cols = ['#FFC94A', '#7CC4C2', '#00727E', '#FFFFFF'];
+    for (let i = 0; i < 10; i++) {
+      const d = document.createElement('div');
+      const s = 5 + Math.random() * 6;
+      d.style.cssText = 'position:fixed;z-index:71;pointer-events:none;left:' + x + 'px;top:' + y + 'px;width:' + s + 'px;height:' + s + 'px;border-radius:50%;background:' + cols[i % cols.length];
+      document.body.appendChild(d);
+      const a = Math.random() * Math.PI * 2, r = 30 + Math.random() * 50;
+      d.animate([{ transform: 'translate(-50%,-50%)', opacity: 1 }, { transform: 'translate(calc(-50% + ' + Math.cos(a) * r + 'px), calc(-50% + ' + Math.sin(a) * r + 'px)) scale(.4)', opacity: 0 }], { duration: 600 + Math.random() * 300, easing: 'cubic-bezier(.2,.8,.2,1)' }).onfinish = () => d.remove();
+    }
+  }
+  openPopup() {
+    this._popped = true;
+    try { if (localStorage.getItem('rto-guide-popup-dismissed')) return; } catch (e) {}
+    this.setState({ popup: true });
+  }
+  show(r) {
+    if (!r || r.done) return; r.done = true;
+    r.el.style.opacity = '1'; r.el.style.transform = r.tf;
+    setTimeout(() => { r.el.style.transition = r.tr; }, 1100 + r.d);
+  }
+  initMotion() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) {
+      document.querySelectorAll('[data-float]').forEach((el, i) => {
+        const type = el.getAttribute('data-float');
+        let kf, opt;
+        if (type === 'spin') { kf = [{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }]; opt = { duration: 20000, iterations: Infinity, easing: 'linear' }; }
+        else if (type === 'sway') { el.style.transformOrigin = 'bottom center'; kf = [{ transform: 'rotate(-9deg)' }, { transform: 'rotate(9deg)' }]; opt = { duration: 2800, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' }; }
+        else if (type === 'morph') { const r0 = getComputedStyle(el).borderRadius; kf = [{ borderRadius: r0 }, { borderRadius: '50% 50% 42% 58% / 42% 58% 50% 50%' }, { borderRadius: '58% 42% 55% 45% / 55% 45% 58% 42%' }]; opt = { duration: 9000, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' }; }
+        else { kf = [{ transform: 'translateY(0)' }, { transform: 'translateY(-16px)' }]; opt = { duration: 2600 + (i % 5) * 500, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' }; }
+        this._anims.push(el.animate(kf, opt));
+      });
+      this._dio = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return; this._dio.unobserve(e.target);
+        const p = e.target, len = p.getTotalLength ? p.getTotalLength() : 300;
+        p.style.strokeDasharray = len;
+        this._anims.push(p.animate([{ strokeDashoffset: len }, { strokeDashoffset: 0 }], { duration: 1400, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'both' }));
+      }), { threshold: 0.3 });
+      document.querySelectorAll('[data-draw]').forEach(p => this._dio.observe(p));
+      const map = new Map();
+      this._io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; this._io.unobserve(e.target); this.show(map.get(e.target)); }), { threshold: 0.1 });
+      document.querySelectorAll('section[data-screen-label] > div > *').forEach(el => {
+        if (el.closest('[aria-hidden]') || getComputedStyle(el).position === 'absolute') return;
+        const idx = Array.prototype.indexOf.call(el.parentNode.children, el);
+        const r = { el, d: Math.min(idx, 5) * 130, tf: el.style.transform, tr: el.style.transition, done: false };
+        el.style.opacity = '0'; el.style.transform = 'translateY(50px)';
+        el.style.transition = 'opacity .8s ease ' + r.d + 'ms, transform 1s cubic-bezier(.2,.7,.2,1) ' + r.d + 'ms';
+        this._revealed.push(r);
+        const b = el.getBoundingClientRect();
+        if (b.top < window.innerHeight && b.bottom > 0) requestAnimationFrame(() => requestAnimationFrame(() => this.show(r)));
+        else { map.set(el, r); this._io.observe(el); }
+      });
+      this._ft = setTimeout(() => this._revealed.forEach(r => { if (r.el.getBoundingClientRect().top < window.innerHeight * 1.2) this.show(r); }), 1600);
+    }
+    this.initPop();
+    if (!reduce) {
+      let d = 'M-240 20 Q-210 4 -180 20'; for (let x = -120; x <= 1680; x += 60) d += ' T' + x + ' 20'; d += ' V40 H-240 Z';
+      document.querySelectorAll('svg[viewBox="0 0 1440 40"]').forEach(svg => {
+        const p = svg.querySelector('path'); if (!p || p._waveA) return;
+        p.setAttribute('d', d);
+        const st = svg.getAttribute('style') || '';
+        const dir = st.includes('top:-35px') ? 1 : -1;
+        p._waveA = p.animate([{ transform: 'translateX(0px)' }, { transform: 'translateX(' + (120 * dir) + 'px)' }], { duration: 3500, iterations: Infinity, easing: 'linear' });
+        this._anims.push(p._waveA);
+      });
+    }
+    this.checkDecor();
+    this._ct = setTimeout(() => this.checkDecor(), 1500);
+    document.querySelectorAll('#services article').forEach(card => {
+      const ring = card.querySelector('[data-ring]'); if (!ring) return;
+      const anim = ring.animate([{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }], { duration: 8000, iterations: Infinity, easing: 'linear' });
+      anim.pause(); this._anims.push(anim);
+      card.addEventListener('mouseenter', () => { anim.playbackRate = 1; anim.play(); });
+      card.addEventListener('mouseleave', () => anim.pause());
+    });
+    document.querySelectorAll('#blog a, [data-screen-label="Courses and Books"] article, #services article').forEach(card => {
+      const img = card.querySelector('img'); if (!img) return;
+      img.style.transition = 'transform .7s cubic-bezier(.2,.7,.2,1)';
+      card.onmouseenter = () => { img.style.transform = 'scale(1.1)'; };
+      card.onmouseleave = () => { img.style.transform = ''; };
+    });
+  }
+  checkDecor() {
+    document.querySelectorAll('[aria-hidden] [data-float]').forEach(el => {
+      const sec = el.closest('section'); if (!sec) return;
+      const a = el.getBoundingClientRect(), pad = 20, padY = 50;
+      const hit = Array.from(sec.querySelectorAll('h1,h2,h3,p,a,button,input,textarea,form,img')).some(n => {
+        if (n.closest('[aria-hidden]')) return false;
+        const b = n.getBoundingClientRect(); if (!b.width) return false;
+        return a.left < b.right + pad && a.right > b.left - pad && a.top < b.bottom + padY && a.bottom > b.top - padY;
+      });
+      el.style.visibility = hit ? 'hidden' : 'visible';
+    });
+  }
+  renderVals() {
+    const data = [
+      { q: 'Does my child have dyslexia?', a: 'Only a qualified professional—such as an educational psychologist, speech-language pathologist, or neuropsychologist—can formally diagnose dyslexia through comprehensive assessment. Many early reading difficulties, including occasional letter reversals, are typical developmental stages rather than neurological learning differences.' },
+      { q: 'How can I help my child with reading?', a: 'The most effective way to help your child with reading is to build a consistent daily routine that combines structured practice with positive reinforcement. Keep sessions short and positive: 15–20 minutes of stress-free daily practice is far more productive than long, frustrating sessions.' },
+      { q: 'Will tutoring help my child learn?', a: 'Yes, targeted tutoring helps children with reading by identifying specific learning gaps and providing the structured, one-on-one instruction that large classrooms often cannot accommodate.' },
+    ];
+    const faqs = data.map((f, i) => { const o = this.state.open === i; return { ...f, open: o, rot: o ? '45deg' : '0deg', iconBg: o ? '#173B4C' : '#00727E', toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i })) }; });
+    const sc = this.state.scrolled;
+    const TIPS = [
+      { t: 'Hoot hoot! Hi, I\'m Ollie. Want a free phonics guide? No email needed!', c: 'Get the free guide →', h: '#services' },
+      { t: 'Did you know? 15–20 minutes of happy reading a day works better than long sessions.', c: 'More reading tips →', h: '#blog' },
+      { t: 'Reading builds independence. Every little step counts!', c: 'See how Marilyn helps →', h: '#services' },
+      { t: 'Not sure where to begin? Ask Marilyn for a FREE email consultation.', c: 'Ask Marilyn →', h: '#contact' },
+    ];
+    return {
+      faqs,
+      subscribed: this.state.subscribed, notSubscribed: !this.state.subscribed,
+      sent: this.state.sent, notSent: !this.state.sent,
+      subscribe: e => { e.preventDefault(); const r = e.target.getBoundingClientRect(); this.burst(r.left + r.width / 2, r.top + r.height / 2); this.setState({ subscribed: true }); },
+      send: e => { e.preventDefault(); const r = e.target.getBoundingClientRect(); this.burst(r.left + r.width / 2, r.top + r.height / 2); this.setState({ sent: true }); },
+      tipOpen: this.state.tip >= 0, tipText: TIPS[Math.max(0, this.state.tip)].t, tipCta: TIPS[Math.max(0, this.state.tip)].c, tipHref: TIPS[Math.max(0, this.state.tip)].h,
+      nextTip: e => { const r = e.currentTarget.getBoundingClientRect(); this.burst(r.left + r.width / 2, r.top + 10); this.setState(s => ({ tip: (s.tip + 1) % 4 })); },
+      closeTip: () => this.setState({ tip: -1 }),
+      ctaDisplay: this.state.w >= 1100 ? 'flex' : 'none', wordmarkDisplay: this.state.w >= 760 ? 'flex' : 'none',
+      bentoCols: this.state.w >= 820 ? 'minmax(0,1.25fr) minmax(0,1fr) minmax(0,1fr)' : (this.state.w >= 560 ? 'minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr)'),
+      bentoBigRow: this.state.w >= 820 ? 'span 2' : 'auto', bentoWideCol: this.state.w >= 820 ? '2 / 4' : (this.state.w >= 560 ? 'span 1' : 'auto'),
+      showBar: sc && !this.state.barClosed, barBottom: sc ? '18px' : '-120px',
+      barText: (this.props.showSpotsNotice ?? false) ? (this.props.spotsText ?? 'Only a few tutoring spots left this term.') + ' Get a FREE email consultation.' : 'Get a FREE email consultation. Marilyn replies personally.',
+      hideBar: () => this.setState({ barClosed: true }),
+      topBottom: (sc && !this.state.barClosed) ? '96px' : '24px',
+      showPopup: this.state.popup,
+      closePopup: () => { try { localStorage.setItem('rto-guide-popup-dismissed', '1'); } catch (e) {} this.setState({ popup: false }); },
+      stop: e => e.stopPropagation(),
+      topOp: sc ? 1 : 0, topY: sc ? '0' : '20px', topPe: sc ? 'auto' : 'none',
+    };
+  }
+}
+</script>
+</body>
+</html>
