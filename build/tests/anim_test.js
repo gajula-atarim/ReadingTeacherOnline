@@ -156,8 +156,8 @@ const animNamesDuringHover = async (page, hoverSel, idx = 0) => {
   ok('Focus: form field border turns teal', (await cs(page, 'form.rto-cf7 input[type=email]', 'borderTopColor')) === 'rgb(0, 114, 126)', await cs(page, 'form.rto-cf7 input[type=email]', 'borderTopColor'));
   // sticky header
   await page.evaluate(() => scrollTo(0, 2500)); await page.waitForTimeout(300);
-  const hdrTop = await page.evaluate(() => document.querySelector('.rto-mainbar').getBoundingClientRect().top);
-  ok('Sticky header: main bar stays pinned at top', Math.abs(hdrTop) < 2, `top=${hdrTop}`);
+  const hdrTop = await page.evaluate(() => document.querySelector('.rto-topbar').getBoundingClientRect().top);
+  ok('Sticky header: whole header stays pinned at top (desktop)', Math.abs(hdrTop) < 2, `top=${hdrTop}`);
   // lightbox
   await page.locator('.rto-gallery .elementor-widget-image a').nth(2).scrollIntoViewIfNeeded();
   await page.locator('.rto-gallery .elementor-widget-image a').nth(2).click();

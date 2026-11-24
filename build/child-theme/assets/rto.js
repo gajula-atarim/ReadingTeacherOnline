@@ -177,8 +177,10 @@
 			if (!target) return;
 			setTimeout(function () {
 				if (w.jQuery) w.jQuery('html, body').stop(true);
-				var bar = d.querySelector('.rto-mainbar');
-				var y = target.getBoundingClientRect().top + w.scrollY - (bar ? bar.offsetHeight : 0) - 8;
+				// height of the header part that stays pinned (whole header on desktop/tablet, main bar on phones)
+				var head = d.querySelector('#masthead'), bar = d.querySelector('.rto-mainbar');
+				var pinned = head ? head.offsetHeight + Math.min(0, parseFloat(getComputedStyle(head).top) || 0) : (bar ? bar.offsetHeight : 0);
+				var y = target.getBoundingClientRect().top + w.scrollY - pinned - 8;
 				w.scrollTo({ top: Math.max(0, y), behavior: reduce ? 'auto' : 'smooth' });
 			}, 0);
 		});
