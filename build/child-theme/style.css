@@ -445,3 +445,20 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
 }
 .rto-footer-links .elementor-icon-list-item a:hover .elementor-icon-list-text,
 .rto-footer-links .elementor-icon-list-item a:focus-visible .elementor-icon-list-text { background-size: 100% 2px; }
+
+/* Phones: logo and menu stay on one row – text, gaps and logo scale with the screen */
+@media (max-width: 480px) {
+	.rto-mainbar .rto-inner { flex-wrap: nowrap !important; column-gap: clamp(8px, 3vw, 16px) !important; }
+	.rto-mainbar .rto-brand img { width: clamp(38px, 11vw, 51px) !important; height: auto; }
+	.rto-nav .hfe-nav-menu { flex-wrap: nowrap !important; }
+	.rto-nav .hfe-nav-menu > li.menu-item { margin-right: clamp(7px, 2.6vw, 14px) !important; margin-left: 0 !important; }
+	.rto-nav .hfe-nav-menu > li.menu-item:last-child { margin-right: 0 !important; }
+	.rto-nav .hfe-nav-menu a.hfe-menu-item, .rto-nav li.menu-item > a { font-size: clamp(12.5px, 3.75vw, 16px) !important; white-space: nowrap; }
+	.rto-nav li.menu-item > a { background-image: radial-gradient(circle at 50% 65%, var(--rto-blob) 14px, transparent 15px); }
+}
+@media (max-width: 340px) {
+	.rto-mainbar .rto-inner { column-gap: 8px !important; }
+	.rto-nav .hfe-nav-menu > li.menu-item { margin-right: 6px !important; }
+	.rto-nav .hfe-nav-menu a.hfe-menu-item, .rto-nav li.menu-item > a { font-size: 12px !important; }
+	.rto-mainbar .rto-brand img { width: 36px !important; }
+}
