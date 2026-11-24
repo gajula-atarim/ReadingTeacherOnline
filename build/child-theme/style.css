@@ -403,3 +403,20 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
    even when titles wrap to different lengths */
 .e-con.rto-post { height: 100%; }
 .e-con.rto-post > .elementor-widget:last-child { margin-top: auto !important; }
+
+/* Icon centring --------------------------------------------------------------- */
+/* Contact list: icon centred in its white circle, circle centred on the text line */
+.rto-contact-list .elementor-icon-list-item { display: flex !important; align-items: center !important; }
+.rto-contact-list .elementor-icon-list-icon {
+	width: 38px !important; height: 38px !important; min-width: 38px; padding: 0 !important; margin: 0 !important;
+	display: inline-flex !important; align-items: center !important; justify-content: center !important;
+	top: 0 !important; --icon-vertical-offset: 0px; text-align: center;
+}
+.rto-contact-list .elementor-icon-list-icon svg, .rto-contact-list .elementor-icon-list-icon i {
+	position: static !important; top: 0 !important; margin: 0 !important; width: 15px !important; height: 15px !important;
+	font-size: 15px; line-height: 1; display: block;
+}
+.rto-contact-list .elementor-icon-list-text { align-self: center; }
+/* Top bar: inline SVG icons (teal) aligned with their text */
+.rto-tb-item { display: inline-flex; align-items: center; gap: 6px; }
+.rto-tb-ico { width: 14px; height: 14px; flex: none; display: block; }
