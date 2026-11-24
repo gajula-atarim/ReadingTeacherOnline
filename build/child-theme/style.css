@@ -507,3 +507,8 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
 	.rto-media .rto-inner > .e-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
 	.rto-post .rto-post-title .elementor-heading-title { font-size: clamp(17px, 2.1vw, 21px) !important; }
 }
+
+/* Ways to Get Started on tablets/phones: centre the photo (it stacks above the steps there) */
+@media (max-width: 1099px) {
+	.rto-start .rto-start-img { justify-self: center !important; margin-left: auto !important; margin-right: auto !important; }
+}
