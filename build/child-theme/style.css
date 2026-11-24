@@ -434,3 +434,13 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
 	.rto-topbar .rto-tb-email .rto-tb-ico { width: 18px; height: 18px; }
 	.rto-topbar .rto-tb-email::after { content: ""; width: 1px; height: 14px; background: #D8E3E5; margin-left: 16px; }
 }
+
+/* Footer links: underline only under the words (the link box spans the whole column) */
+.rto-footer-links .elementor-icon-list-item a { background-image: none !important; background-size: 0 0 !important; }
+.rto-footer-links .elementor-icon-list-text {
+	background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat;
+	background-position: 0 100%; background-size: 0% 2px; padding-bottom: 2px;
+	transition: background-size .3s ease, color .25s;
+}
+.rto-footer-links .elementor-icon-list-item a:hover .elementor-icon-list-text,
+.rto-footer-links .elementor-icon-list-item a:focus-visible .elementor-icon-list-text { background-size: 100% 2px; }

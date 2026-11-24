@@ -147,7 +147,7 @@ const animNamesDuringHover = async (page, hoverSel, idx = 0) => {
   h = await hoverCheck(page, '.rto-header-cta .elementor-button', '.rto-header-cta .elementor-button', 'backgroundColor', x => x);
   ok('Hover: header "Free Consultation" fills teal', h.after === 'rgb(0, 114, 126)', `${h.before} → ${h.after}`);
   ok('Hover: logo wiggles', (await animNamesDuringHover(page, '.rto-brand')).includes('rto-logo-wiggle'), '');
-  h = await hoverCheck(page, '.rto-footer-links .elementor-icon-list-item a', '.rto-footer-links .elementor-icon-list-item a', 'backgroundSize', x => x, 500);
+  h = await hoverCheck(page, '.rto-footer-links .elementor-icon-list-item a', '.rto-footer-links .elementor-icon-list-text', 'backgroundSize', x => x, 500);
   ok('Hover: footer link underline grows', h.after.startsWith('100%') && h.back.startsWith('0%'), `${h.before} → ${h.after}`);
   h = await hoverCheck(page, 'form.rto-cf7 .wpcf7-submit', 'form.rto-cf7 .wpcf7-submit', 'transform', ty);
   ok('Hover: Send Message button lifts', h.after < 0, `${h.before} → ${h.after}`);
