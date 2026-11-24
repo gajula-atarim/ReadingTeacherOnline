@@ -501,3 +501,9 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
 @media (min-width: 480px) and (max-width: 767px) {
 	.e-grid.rto-footer-inner { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
 }
+
+/* Latest Media on tablets (768–1099px): the three blog cards sit in one row like desktop */
+@media (min-width: 768px) and (max-width: 1099px) {
+	.rto-media .rto-inner > .e-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+	.rto-post .rto-post-title .elementor-heading-title { font-size: clamp(17px, 2.1vw, 21px) !important; }
+}
