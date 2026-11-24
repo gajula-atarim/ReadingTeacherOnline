@@ -96,3 +96,23 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 add_filter( 'emoji_svg_url', '__return_false' );
+
+/**
+ * Gallery lightbox arrows: Elementor 4 only loads its "e-swiper" stylesheet (which positions the
+ * lightbox previous/next arrows) when a carousel widget is on the page. The homepage gallery opens
+ * Elementor's lightbox slideshow without one, so load it on the front page.
+ */
+add_action(
+	'wp_enqueue_scripts',
+	function () {
+		if ( ! is_front_page() ) {
+			return;
+		}
+		if ( wp_style_is( 'e-swiper', 'registered' ) ) {
+			wp_enqueue_style( 'e-swiper' );
+		} elseif ( defined( 'ELEMENTOR_ASSETS_URL' ) ) {
+			wp_enqueue_style( 'rto-e-swiper', ELEMENTOR_ASSETS_URL . 'css/conditionals/e-swiper.min.css', array(), defined( 'ELEMENTOR_VERSION' ) ? ELEMENTOR_VERSION : null );
+		}
+	},
+	30
+);

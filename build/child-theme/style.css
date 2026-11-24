@@ -512,3 +512,19 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
 @media (max-width: 1099px) {
 	.rto-start .rto-start-img { justify-self: center !important; margin-left: auto !important; margin-right: auto !important; }
 }
+
+/* Gallery lightbox: clear previous/next arrows – white circles like the hero slider arrows */
+.elementor-lightbox .elementor-swiper-button svg {
+	width: 20px !important; height: 20px !important; box-sizing: content-box; padding: 14px; border-radius: 50%;
+	background: #fff; fill: var(--rto-ink) !important; box-shadow: 0 8px 20px -8px rgba(0, 0, 0, .5); transition: transform .25s, fill .25s;
+}
+.elementor-lightbox .elementor-swiper-button:hover svg, .elementor-lightbox .elementor-swiper-button:focus-visible svg { fill: var(--rto-teal) !important; transform: scale(1.08); }
+@media (max-width: 767px) {
+	.elementor-lightbox .elementor-swiper-button svg { width: 16px !important; height: 16px !important; padding: 11px; }
+}
+/* Lightbox backdrop nearly solid so the page (header, Ollie) doesn't show through behind the photo */
+.dialog-widget.elementor-lightbox, .elementor-lightbox.dialog-lightbox-widget { background-color: rgba(9, 22, 33, .96) !important; }
+@media (max-width: 767px) {
+	.elementor-lightbox .elementor-swiper-button-prev { justify-content: flex-start !important; padding-left: 10px; }
+	.elementor-lightbox .elementor-swiper-button-next { justify-content: flex-end !important; padding-right: 10px; }
+}
