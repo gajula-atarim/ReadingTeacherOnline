@@ -304,3 +304,14 @@ form.rto-newsletter { margin: 0; position: relative; }
 .rto-footer-logo img { margin: 0; }
 /* Contact Form 7 hidden fieldset should not take up space */
 form.rto-cf7 .hidden-fields-container, form.rto-newsletter .hidden-fields-container { display: none; }
+
+/* Fixes after first live render ------------------------------------------- */
+/* Header: let the menu share the row with the logo and button */
+.rto-mainbar .rto-inner > .elementor-widget.rto-nav { flex: 1 1 0% !important; width: auto !important; min-width: 0; max-width: none; }
+/* Contact: avatar and heading side by side, wrapping only on narrow screens */
+.rto-contact .rto-avatar + .e-con { flex: 1 1 220px !important; width: auto !important; min-width: 0; }
+/* Contact Form 7 may wrap fields in <p>/<br>; keep the design's rows intact */
+form.rto-cf7 p, form.rto-newsletter p { display: contents; }
+form.rto-cf7 br, form.rto-newsletter br { display: none; }
+form.rto-cf7 .rto-form-row .wpcf7-form-control-wrap { min-width: 0; }
+form.rto-newsletter .rto-newsletter-row { align-items: stretch; }
