@@ -69,7 +69,8 @@
 				btn.addEventListener('click', function () { manual(cur + b[3]); });
 				hero.appendChild(btn);
 			});
-			if (!reduce) setInterval(function () { if (!hold && !d.hidden) go(cur + 1); }, 6000);
+			// Autoplay every 6s as in the design (also with reduced motion; CSS then drops the fade/zoom).
+			setInterval(function () { if (!hold && !d.hidden) go(cur + 1); }, 6000);
 		}
 	}
 
