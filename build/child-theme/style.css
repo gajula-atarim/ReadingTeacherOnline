@@ -315,3 +315,13 @@ form.rto-cf7 p, form.rto-newsletter p { display: contents; }
 form.rto-cf7 br, form.rto-newsletter br { display: none; }
 form.rto-cf7 .rto-form-row .wpcf7-form-control-wrap { min-width: 0; }
 form.rto-newsletter .rto-newsletter-row { align-items: stretch; }
+/* Brand block must size to its content so logo, menu and button share one row */
+.rto-mainbar .e-con.rto-brand { --width: auto; width: auto !important; flex: 0 0 auto !important; }
+/* Current-page blob: broader selector for the UAE menu markup */
+.rto-nav li.menu-item > a { position: relative; isolation: isolate; }
+.rto-nav li.menu-item > a::before {
+	content: ""; position: absolute; left: 50%; top: 65%; width: 36px; height: 36px; border-radius: 50%;
+	background: var(--rto-blob); transform: translate(-50%, -50%) scale(0); z-index: -1; pointer-events: none;
+	transition: transform .35s cubic-bezier(.2, .8, .2, 1.4);
+}
+.rto-nav li.rto-current > a::before, .rto-nav li.menu-item > a:hover::before, .rto-nav li.menu-item > a:focus-visible::before { transform: translate(-50%, -50%) scale(1); }
