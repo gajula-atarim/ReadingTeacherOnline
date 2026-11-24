@@ -370,3 +370,17 @@ form.rto-newsletter .rto-newsletter-row { align-items: stretch; }
 /* Hide anything that could poke outside a slide (e.g. hidden slides' buttons) */
 .e-con.rto-slide { overflow: hidden; }
 .rto-hero-cta .elementor-button { max-width: 100%; }
+
+/* Mobile detail pass ------------------------------------------------------- */
+/* Menu starts at the content edge (UAE centres it by default) */
+.rto-nav .hfe-nav-menu, .rto-nav .hfe-nav-menu__layout-horizontal { justify-content: flex-start !important; margin-left: 0 !important; margin-right: 0 !important; }
+.rto-nav .hfe-nav-menu > li:first-child, .rto-nav .hfe-nav-menu > li:first-child > a { margin-left: 0 !important; padding-left: 0 !important; }
+/* CF7 spinner no longer takes its own row under the button */
+form.rto-cf7 { position: relative; }
+form.rto-cf7 .wpcf7-spinner { position: absolute; left: 230px; bottom: 14px; margin: 0; }
+/* Field heights as in the design (Hello's 1.5 line-height made them taller) */
+form.rto-cf7 input[type="text"], form.rto-cf7 input[type="email"], form.rto-cf7 textarea { line-height: normal; }
+form.rto-cf7 textarea { min-height: 0; height: 100px; }
+/* Tighter rhythm in the top bar and footer link lists */
+.rto-topbar p, .rto-topbar .elementor-heading-title { line-height: 1.15 !important; }
+.rto-footer-links .elementor-icon-list-text { line-height: 1.15 !important; }
