@@ -40,6 +40,7 @@ add_action(
 			array(
 				'post_type'      => 'attachment',
 				'name'           => 'illus-owl',
+				'post_status'    => 'inherit', // attachments are stored as "inherit", not "publish"
 				'posts_per_page' => 1,
 				'fields'         => 'ids',
 			)

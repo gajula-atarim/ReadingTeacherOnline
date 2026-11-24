@@ -112,9 +112,22 @@
 		});
 	}
 
-	/* Ollie the owl tips + back to top ------------------------------------ */
+	/* Back to top (independent of Ollie so it always works) ----------------- */
+	function initToTop() {
+		if (inEditor) return;
+		var top = d.createElement('a');
+		top.className = 'rto-totop'; top.href = '#top'; top.setAttribute('aria-label', 'Back to top'); top.textContent = '↑';
+		d.body.appendChild(top);
+		top.addEventListener('click', function (e) { e.preventDefault(); w.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
+		w.addEventListener('scroll', function () { top.classList.toggle('is-on', w.scrollY > 500); }, { passive: true });
+	}
+
+	/* Ollie the owl tips -------------------------------------------------- */
 	function initOllie() {
-		if (inEditor || !cfg.owl) return;
+		if (inEditor) return;
+		var owl = cfg.owl || (d.querySelector('img[src*="illus-owl"]') || {}).src;
+		if (!owl) return;
+		cfg.owl = owl;
 		var tips = cfg.tips || [];
 		var wrap = d.createElement('div');
 		wrap.className = 'rto-ollie';
@@ -135,14 +148,8 @@
 		wrap.querySelector('.rto-ollie__cta').addEventListener('click', function () { idx = -1; render(); });
 		setInterval(function () { if (idx >= 0) { idx = (idx + 1) % tips.length; render(); } }, 10000);
 
-		var top = d.createElement('a');
-		top.className = 'rto-totop'; top.href = '#top'; top.setAttribute('aria-label', 'Back to top'); top.textContent = '↑';
-		d.body.appendChild(top);
-
 		w.addEventListener('scroll', function () {
-			var s = w.scrollY > 500;
-			top.classList.toggle('is-on', s);
-			if (s && !shown) { shown = true; setTimeout(function () { if (idx < 0) { idx = 0; render(); } }, 1200); }
+			if (w.scrollY > 500 && !shown) { shown = true; setTimeout(function () { if (idx < 0) { idx = 0; render(); } }, 1200); }
 		}, { passive: true });
 	}
 
@@ -161,7 +168,7 @@
 
 	function ready() {
 		initGallery();
-		setTopbar(); initHero(); initReveal(); initOllie();
+		setTopbar(); initHero(); initReveal(); initToTop(); initOllie();
 		checkDecor(); setTimeout(checkDecor, 1500);
 		var rt;
 		w.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { setTopbar(); checkDecor(); }, 150); });
