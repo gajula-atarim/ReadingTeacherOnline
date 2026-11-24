@@ -1,0 +1,51 @@
+const { chromium } = require('playwright'); const fs=require('fs'), path=require('path');
+const ROOT=process.argv[2], OUT=process.argv[3], F=process.env.FONTDIR, O='https://readingteacheronline.wsdfy.com';
+const res=[]; const ok=(n,p,d='')=>res.push((p?'PASS ':'FAIL ')+n+(d?'  '+d:''));
+async function open(b,w,h=800){ const ctx=await b.newContext({viewport:{width:w,height:h},hasTouch:w<768,isMobile:w<768}); const p=await ctx.newPage();
+ p.on('pageerror',e=>res.push('JSERR '+e.message.slice(0,120)));
+ await p.route('**/*', r=>{const u=r.request().url();
+  if(u.startsWith('https://fonts.googleapis.com/css') && u.includes('Nunito')) return r.fulfill({contentType:'text/css', body:[400,600,700,800].map(x=>`@font-face{font-family:'Nunito';font-weight:${x};src:url(https://fonts.gstatic.com/nunito-${x}.woff2)}`).join('')});
+  if(u.startsWith('https://fonts.gstatic.com/nunito-')) return r.fulfill({path:`${F}/nunito-latin-${u.match(/nunito-(\d+)/)[1]}-normal.woff2`});
+  if(!u.startsWith(O)) return r.abort(); const q=decodeURIComponent(new URL(u).pathname);
+  if(q==='/') return r.fulfill({path:path.join(ROOT,'index.html'),contentType:'text/html'});
+  if(/\.(webp|jpe?g|png)$/.test(q)) return r.fulfill({path:path.join(ROOT,'placeholder.jpg')});
+  if(q.startsWith('/wp-json/')) return r.fulfill({status:200,body:'{}',contentType:'application/json'});
+  const f=path.join(ROOT,'site',q); return fs.existsSync(f)?r.fulfill({path:f,contentType:q.endsWith('.css')?'text/css':'application/javascript'}):r.fulfill({status:404,body:''});});
+ await p.goto(O+'/'); await p.waitForTimeout(900); return p; }
+const box=(p,s)=>p.evaluate(s=>{const e=document.querySelector(s); if(!e) return null; const b=e.getBoundingClientRect(); const c=getComputedStyle(e); return {l:Math.round(b.left),r:Math.round(b.right),t:Math.round(b.top),b:Math.round(b.bottom),w:Math.round(b.width),h:Math.round(b.height),vis:c.visibility,op:c.opacity,disp:c.display}},s);
+(async()=>{ const b=await chromium.launch();
+ for (const w of [430,390,375,360,320]) {
+  const p=await open(b,w);
+  const brand=await box(p,'.rto-brand'), cta=await box(p,'.rto-header-cta'), tog=await box(p,'.rto-nav .hfe-nav-menu__toggle'), bar=await box(p,'.rto-mainbar');
+  ok(`${w}px order Logo | Free Consultation | ☰`, brand && cta && tog && brand.r<cta.l && cta.r<tog.l && tog.disp!=='none', `logo ${brand.l}-${brand.r}, cta ${cta.l}-${cta.r}, ☰ ${tog.l}-${tog.r}`);
+  ok(`${w}px all three on one row`, Math.abs((brand.t+brand.b)/2-(tog.t+tog.b)/2)<8 && Math.abs((cta.t+cta.b)/2-(tog.t+tog.b)/2)<8, `bar h=${bar.h}`);
+  ok(`${w}px ☰ at right edge`, w-tog.r <= 34 && w-tog.r>=12, `${w-tog.r}px from edge`);
+  const menuClosed=await box(p,'.rto-nav .hfe-nav-menu__layout-horizontal');
+  ok(`${w}px menu hidden until tapped`, menuClosed.vis==='hidden'||+menuClosed.op===0||menuClosed.h===0, JSON.stringify({vis:menuClosed.vis,op:menuClosed.op,h:menuClosed.h}));
+  ok(`${w}px no sideways scroll`, (await p.evaluate(()=>document.documentElement.scrollWidth-innerWidth))<=0);
+  if (w===390) await p.screenshot({path:OUT+'/hb_closed.png',clip:{x:0,y:0,width:w,height:170}});
+  await p.tap('.rto-nav .hfe-nav-menu__toggle'); await p.waitForTimeout(600);
+  const panel=await box(p,'.rto-nav .hfe-nav-menu__layout-horizontal'), ul=await box(p,'.rto-nav .hfe-nav-menu__layout-horizontal ul');
+  const items=await p.evaluate(()=>[...document.querySelectorAll('.rto-nav .hfe-nav-menu__layout-horizontal li.menu-item > a')].map(a=>{const r=a.getBoundingClientRect();return {t:a.textContent.trim(),vis:r.height>0&&getComputedStyle(a).visibility!=='hidden',h:Math.round(r.height)}}));
+  ok(`${w}px tap ☰ opens menu`, panel.vis==='visible' && +panel.op>0.9 && ul.h>100, `panel h=${ul.h}`);
+  ok(`${w}px menu full width under header`, panel.l<=1 && panel.r>=w-1 && Math.abs(panel.t-bar.b)<=2, `x ${panel.l}-${panel.r}, top ${panel.t} vs header bottom ${bar.b}`);
+  ok(`${w}px all 5 links visible (tap target ≥44px)`, items.length===5 && items.every(i=>i.vis && i.h>=44), items.map(i=>i.t+':'+i.h).join(', '));
+  ok(`${w}px ☰ turns into ✕ when open`, await p.evaluate(()=>document.querySelector('.rto-nav .hfe-nav-menu__toggle').classList.contains('hfe-active-menu')));
+  if (w===390) await p.screenshot({path:OUT+'/hb_open.png',clip:{x:0,y:0,width:w,height:520}});
+  await p.tap('.rto-nav .hfe-nav-menu__toggle'); await p.waitForTimeout(600);
+  const closed=await box(p,'.rto-nav .hfe-nav-menu__layout-horizontal');
+  ok(`${w}px tap again closes menu`, closed.vis==='hidden'||+closed.op===0||closed.h===0);
+  await p.tap('.rto-nav .hfe-nav-menu__toggle'); await p.waitForTimeout(500);
+  await p.tap('.rto-nav .hfe-nav-menu__layout-horizontal li.menu-item:nth-child(5) > a'); await p.waitForTimeout(3500);
+  const after=await box(p,'.rto-nav .hfe-nav-menu__layout-horizontal');
+  const ct=await p.evaluate(()=>({c:Math.round(document.getElementById('contact').getBoundingClientRect().top), h:Math.round(document.querySelector('.rto-mainbar').getBoundingClientRect().bottom)}));
+  ok(`${w}px tapping "Contact" scrolls to contact section, not hidden under header`, ct.c>=ct.h-2 && ct.c<ct.h+30, `section top ${ct.c}px, header bottom ${ct.h}px`);
+  ok(`${w}px menu closes after choosing a link`, after.vis==='hidden'||+after.op===0||after.h===0, JSON.stringify({vis:after.vis,op:after.op}));
+  await p.context().close();
+ }
+ for (const w of [1440,1024,768]) { const p=await open(b,w);
+  const tog=await box(p,'.rto-nav .hfe-nav-menu__toggle'), nav=await box(p,'.rto-nav .hfe-nav-menu__layout-horizontal ul');
+  ok(`${w}px full menu shown, no hamburger`, (tog===null||tog.disp==='none'||tog.vis==='hidden') && nav.vis==='visible' && nav.h<60, `menu h=${nav.h}`);
+  const cta=await box(p,'.rto-header-cta'); ok(`${w}px Free Consultation ${w>=1100?'shown':'hidden (tablet)'}`, w>=1100 ? cta.disp!=='none' : cta===null||cta.disp==='none'||cta.w===0);
+  await p.context().close(); }
+ await b.close(); console.log(res.join('\n')); console.log(`\n${res.filter(r=>r.startsWith('PASS')).length}/${res.length} passed`); })();

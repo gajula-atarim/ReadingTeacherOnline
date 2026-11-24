@@ -166,7 +166,26 @@
 		});
 	}
 
+	/* Menu anchors: the UAE menu scrolls to a section's exact top (under the sticky header).
+	   After its click handler runs (it also closes the mobile menu), replace that scroll with
+	   one that stops just below the header. */
+	function initAnchorOffset() {
+		d.addEventListener('click', function (e) {
+			var a = e.target.closest && e.target.closest('.rto-nav a[href*="#"]');
+			if (!a || a.pathname !== w.location.pathname) return;
+			var id = a.hash.slice(1), target = id && d.getElementById(id);
+			if (!target) return;
+			setTimeout(function () {
+				if (w.jQuery) w.jQuery('html, body').stop(true);
+				var bar = d.querySelector('.rto-mainbar');
+				var y = target.getBoundingClientRect().top + w.scrollY - (bar ? bar.offsetHeight : 0) - 8;
+				w.scrollTo({ top: Math.max(0, y), behavior: reduce ? 'auto' : 'smooth' });
+			}, 0);
+		});
+	}
+
 	function ready() {
+		initAnchorOffset();
 		initGallery();
 		setTopbar(); initHero(); initReveal(); initToTop(); initOllie();
 		checkDecor(); setTimeout(checkDecor, 1500);

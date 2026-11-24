@@ -488,3 +488,6 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
 	.rto-nav .hfe-nav-menu__layout-horizontal li.menu-item > a:focus-visible { background: #F3FAFA; color: var(--rto-teal); }
 	.rto-nav .hfe-nav-menu__layout-horizontal li.rto-current > a { color: var(--rto-teal); box-shadow: inset 4px 0 0 var(--rto-yellow); }
 }
+
+/* Menu anchors (#about, #services, #blog, #contact) stop below the sticky header instead of under it */
+.e-con.rto-section, .e-con.rto-hero, #newsletter { scroll-margin-top: 76px; }
