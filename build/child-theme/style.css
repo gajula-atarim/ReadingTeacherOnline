@@ -398,3 +398,8 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
 .e-con.rto-prog-card { height: 100%; }
 .e-con.rto-prog-card > .e-con:last-child { flex: 1 1 auto !important; }
 .e-con.rto-prog-card .rto-more { margin-top: auto !important; }
+
+/* Latest Media: "Read More" sits on the bottom line of each card so the links align
+   even when titles wrap to different lengths */
+.e-con.rto-post { height: 100%; }
+.e-con.rto-post > .elementor-widget:last-child { margin-top: auto !important; }
