@@ -291,3 +291,8 @@ input, textarea, button, select { font-family: inherit; }
 	.rto-slide-bg img, .rto-slide.is-active .rto-slide-bg img { transform: none !important; transition: none !important; }
 	*, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Additions: header side padding, full-width gallery, contact intro width */
+.e-con.rto-topbar, .e-con.rto-mainbar { --padding-top: 0; --padding-bottom: 0; --padding-left: clamp(16px, 3vw, 32px); --padding-right: clamp(16px, 3vw, 32px); }
+.e-con.rto-inner.rto-gallery-inner { max-width: none; }
+.rto-maxw-440 { max-width: 440px; }
