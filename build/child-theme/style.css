@@ -420,3 +420,17 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
 /* Top bar: inline SVG icons (teal) aligned with their text */
 .rto-tb-item { display: inline-flex; align-items: center; gap: 6px; }
 .rto-tb-ico { width: 14px; height: 14px; flex: none; display: block; }
+
+/* Top bar on phones: one compact centred line – email icon (tap to email) + newsletter link */
+.rto-tb-email, .rto-tb-email:hover { color: inherit; }
+.rto-tb-email:hover .rto-tb-text { text-decoration: underline; }
+@media (max-width: 767px) {
+	.rto-topbar .rto-inner { flex-wrap: nowrap !important; justify-content: center !important; align-items: center !important; gap: 16px !important; padding-top: 7px !important; padding-bottom: 7px !important; }
+	.rto-topbar .rto-inner > .elementor-widget { width: auto !important; flex: 0 0 auto !important; }
+	.rto-topbar .rto-topbar-info p { gap: 0; }
+	.rto-topbar .rto-tb-loc { display: none !important; }
+	.rto-topbar .rto-tb-email .rto-tb-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+	.rto-topbar .rto-tb-email { padding: 2px; }
+	.rto-topbar .rto-tb-email .rto-tb-ico { width: 18px; height: 18px; }
+	.rto-topbar .rto-tb-email::after { content: ""; width: 1px; height: 14px; background: #D8E3E5; margin-left: 16px; }
+}

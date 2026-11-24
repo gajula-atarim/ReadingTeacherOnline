@@ -398,11 +398,12 @@ def homepage():
 # ---------------------------------------------------------------------------
 # HEADER (UAE)
 # ---------------------------------------------------------------------------
-TOPBAR_INFO = ('<p><span class="rto-tb-item"><svg class="rto-tb-ico" viewBox="0 0 24 24" aria-hidden="true">'
+TOPBAR_INFO = ('<p><a class="rto-tb-item rto-tb-email" href="mailto:marilyn@readingteacheronline.com.au">'
+               '<svg class="rto-tb-ico" viewBox="0 0 24 24" aria-hidden="true">'
                '<rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>'
                '<path d="M3.5 6.5 12 13l8.5-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>'
-               'marilyn@readingteacheronline.com.au</span>'
-               '<span class="rto-tb-item"><svg class="rto-tb-ico" viewBox="0 0 24 24" aria-hidden="true">'
+               '<span class="rto-tb-text">marilyn@readingteacheronline.com.au</span></a>'
+               '<span class="rto-tb-item rto-tb-loc"><svg class="rto-tb-ico" viewBox="0 0 24 24" aria-hidden="true">'
                '<path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5" fill="none" stroke="currentColor" stroke-width="2" '
                'stroke-linecap="round" stroke-linejoin="round"/></svg>Taylors Lakes, Melbourne</span></p>')
 
