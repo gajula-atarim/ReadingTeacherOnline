@@ -110,7 +110,7 @@ input, textarea, button, select { font-family: inherit; }
 .rto-slide-bg { position: absolute !important; inset: 0; width: 100% !important; height: 100%; margin: 0 !important; z-index: 0 !important; }
 .rto-slide-bg img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1); transition: transform 7s ease; }
 .rto-slide.is-active .rto-slide-bg img { transform: scale(1.08); }
-.e-con.rto-slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0, 27, 66, .35), rgba(0, 27, 66, .55)); z-index: 1; pointer-events: none; }
+.e-con.rto-slide::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: linear-gradient(180deg, rgba(0, 27, 66, .35), rgba(0, 27, 66, .55)); z-index: 1; pointer-events: none; }
 .e-con.rto-slide-inner { position: relative; z-index: 3; height: 100%; max-width: 900px; margin: 0 auto; --padding-left: clamp(60px, 8vw, 90px); --padding-right: clamp(60px, 8vw, 90px); }
 .rto-hero-title .elementor-heading-title { text-shadow: 0 4px 18px rgba(0, 0, 0, .25); display: flex; flex-wrap: wrap; justify-content: center; column-gap: .24em; }
 .rto-hero-title .hl, .rto-hero-title .hl .rto-w-i { color: var(--rto-yellow); }
@@ -138,8 +138,8 @@ input, textarea, button, select { font-family: inherit; }
    What We Offer
    ========================================================================== */
 .e-con.rto-offer { --padding-top: clamp(40px, 4.5vw, 60px); --padding-bottom: clamp(40px, 4.5vw, 60px); }
-.e-con.rto-offer::before {
-	content: ""; position: absolute; left: -30px; top: -10px; width: 180px; height: 120px; pointer-events: none; z-index: 0;
+.e-con.rto-offer::after {
+	content: ""; position: absolute; left: -30px; top: -10px; right: auto; bottom: auto; width: 180px; height: 120px; pointer-events: none; z-index: 0;
 	background: repeating-linear-gradient(-45deg, #9FE3E0 0 6px, transparent 6px 16px); opacity: .7; border-radius: 0 0 60px 0;
 }
 .e-con.rto-offer-card { overflow: hidden; border-radius: 28px; box-shadow: 0 26px 40px -30px rgba(0, 27, 66, .55); transition: transform .35s; color: #fff; }
@@ -210,8 +210,8 @@ input, textarea, button, select { font-family: inherit; }
 .e-con.rto-form-card { background: #fff; border-radius: 36px; box-shadow: 0 30px 60px -36px rgba(0, 27, 66, .45); --padding-top: clamp(24px, 3.5vw, 40px); --padding-bottom: clamp(24px, 3.5vw, 40px); --padding-left: clamp(24px, 3.5vw, 40px); --padding-right: clamp(24px, 3.5vw, 40px); }
 
 /* Contact Form 7 – consultation form */
-.rto-cf7 .wpcf7-form { display: flex; flex-direction: column; gap: 14px; margin: 0; }
-.rto-cf7 .wpcf7-form > p { margin: 0; }
+form.rto-cf7 { display: flex; flex-direction: column; gap: 14px; margin: 0; }
+form.rto-cf7 > p, form.rto-cf7 > div:not(.rto-form-row):not(.wpcf7-response-output) { margin: 0; }
 .rto-cf7 .rto-form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 14px; }
 .rto-cf7 .wpcf7-form-control-wrap { display: block; }
 .rto-cf7 input[type="text"], .rto-cf7 input[type="email"], .rto-cf7 textarea {
@@ -238,7 +238,7 @@ input, textarea, button, select { font-family: inherit; }
 .rto-footer-logo img { width: 70px; border-radius: 12px; mix-blend-mode: multiply; display: block; }
 .rto-footer-links .elementor-icon-list-item a { display: inline-block; background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 2px; transition: background-size .3s ease, color .25s; }
 .rto-footer-links .elementor-icon-list-item a:hover, .rto-footer-links .elementor-icon-list-item a:focus-visible { background-size: 100% 2px; }
-.rto-newsletter .wpcf7-form > p { margin: 0; }
+form.rto-newsletter { margin: 0; position: relative; }
 .rto-newsletter .rto-newsletter-row { display: flex; background: #fff; border-radius: 10px; padding: 4px; }
 .rto-newsletter .wpcf7-form-control-wrap { flex: 1; min-width: 0; display: block; }
 .rto-newsletter input[type="email"] { width: 100%; border: 0; background: transparent; padding: 10px 12px; font-size: 14px; outline: none; color: var(--rto-ink); box-shadow: none; border-radius: 8px; }
@@ -247,8 +247,8 @@ input, textarea, button, select { font-family: inherit; }
 .rto-newsletter .wpcf7-spinner { position: absolute; }
 .rto-newsletter .wpcf7-response-output { margin: 8px 0 0 !important; font-size: 13px; border-radius: 8px; }
 .e-con.rto-landscape { position: relative; height: clamp(150px, 16vw, 210px); margin-top: 20px; --padding-top: 0; --padding-bottom: 0; --padding-left: 0; --padding-right: 0; }
-.e-con.rto-landscape::before {
-	content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 70%; pointer-events: none; z-index: 0;
+.e-con.rto-landscape::after {
+	content: ""; position: absolute; left: 0; right: 0; bottom: 0; top: auto; width: 100%; height: 70%; pointer-events: none; z-index: 0;
 	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 60 C200 20 380 70 560 40 C760 8 940 60 1120 36 C1260 18 1360 40 1440 30 V120 H0 Z' fill='%23BFE6C9'/%3E%3Cpath d='M0 90 C240 60 460 100 720 80 C980 60 1200 96 1440 76 V120 H0 Z' fill='%239FD8AE'/%3E%3C/svg%3E") no-repeat bottom / 100% 100%;
 }
 .rto-landscape .rto-decor { z-index: 1 !important; }
@@ -296,3 +296,11 @@ input, textarea, button, select { font-family: inherit; }
 .e-con.rto-topbar, .e-con.rto-mainbar { --padding-top: 0; --padding-bottom: 0; --padding-left: clamp(16px, 3vw, 32px); --padding-right: clamp(16px, 3vw, 32px); }
 .e-con.rto-inner.rto-gallery-inner { max-width: none; }
 .rto-maxw-440 { max-width: 440px; }
+
+/* Header layout: brand and CTA keep their size, the menu takes the middle */
+.rto-brand, .rto-header-cta { flex: 0 0 auto; }
+.rto-nav { flex: 1 1 auto; min-width: 0; }
+.rto-footer-logo { text-align: left; }
+.rto-footer-logo img { margin: 0; }
+/* Contact Form 7 hidden fieldset should not take up space */
+form.rto-cf7 .hidden-fields-container, form.rto-newsletter .hidden-fields-container { display: none; }

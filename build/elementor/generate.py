@@ -94,7 +94,7 @@ def section(children, css, **kw):
     return s
 
 
-def grid(children, cols, css="", gap=0, row_gap=None, cols_tablet=None, cols_mobile=None, **kw):
+def grid(children, cols, css="", gap=0, row_gap=None, cols_tablet=None, cols_mobile=None, pad=0, **kw):
     rg = gap if row_gap is None else row_gap
     c = cols if isinstance(cols, dict) else custom(cols)
     s = {"container_type": "grid", "content_width": "full",
@@ -106,8 +106,9 @@ def grid(children, cols, css="", gap=0, row_gap=None, cols_tablet=None, cols_mob
          "grid_rows_grid_mobile": custom("auto"),
          "grid_gaps": {"unit": "px", "column": str(gap), "row": str(rg), "isLinked": gap == rg},
          "grid_gaps_tablet": {"unit": "px", "column": str(gap), "row": str(rg), "isLinked": gap == rg},
-         "grid_gaps_mobile": {"unit": "px", "column": str(gap), "row": str(rg), "isLinked": gap == rg},
-         "padding": dims(0)}
+         "grid_gaps_mobile": {"unit": "px", "column": str(gap), "row": str(rg), "isLinked": gap == rg}}
+    if pad is not None:
+        s["padding"] = dims(pad)
     if css:
         s["css_classes"] = css
     s.update(kw)
@@ -209,7 +210,7 @@ def hero():
                         css="rto-hero-title"),
                 text("<p>%s</p>" % body, 17, "#FFFFFF", 1.75, "center", css="rto-hero-text"),
                 button("View More", "#services", TEAL, css="rto-btn rto-hero-cta"),
-            ], css="rto-slide-inner", gap=22, flex_justify_content="center", flex_align_items="center"),
+            ], css="rto-slide-inner", gap=22, pad=None, flex_justify_content="center", flex_align_items="center"),
         ], css="rto-slide", title="Hero slide %d" % (i + 1)))
     decor_items = [
         decor("d_book", 64, "start", pct(6), "end", pct(16)),
@@ -217,7 +218,7 @@ def hero():
         decor("d_star", 50, "end", pct(9), "end", pct(20), "rto-spin"),
         decor("d_heart_w", 46, "end", pct(12), "start", pct(18)),
     ]
-    return con(slides + decor_items, css="rto-hero", title="Hero slider", _element_id="top", html_tag="section")
+    return con(slides + decor_items, css="rto-hero", pad=None, title="Hero slider", _element_id="top", html_tag="section")
 
 
 def offer_card(key, label, bg, bar):
@@ -384,7 +385,7 @@ def contact():
         heading("Send a message", "h3", 22, 800, INK, None, 1.3),
         widget("shortcode", {"shortcode": '[contact-form-7 id="33" title="Homepage – Free Email Consultation" html_class="rto-cf7"]'},
                "rto-cf7-wrap"),
-    ], css="rto-form-card", gap=18)
+    ], css="rto-form-card", gap=18, pad=None)
     inner = grid([left, right], "repeat(auto-fit,minmax(min(100%,380px),1fr))", "rto-inner", gap=72,
                   grid_align_items="center")
     return section([inner], "rto-contact", title="Contact", _element_id="contact")
@@ -400,7 +401,7 @@ def homepage():
 def header():
     topbar = con([
         con([
-            text("<p><span>✉ marilyn@readingteacheronline.com.au</span><span>⌂ Taylors Lakes, Melbourne</span></p>",
+            text("<p><span>✉︎ marilyn@readingteacheronline.com.au</span><span>⌂︎ Taylors Lakes, Melbourne</span></p>",
                  13, TEAL, 1.4, css="rto-topbar-info", weight=700),
             heading("Free weekly reading tips →", "p", 13, 700, TEAL, None, 1.4, link="#newsletter"),
         ], css="rto-inner", direction="row", gap=8, flex_justify_content="space-between", flex_align_items="center",
@@ -415,7 +416,7 @@ def header():
         "color_menu_item": INK, "color_menu_item_hover": TEAL, "color_menu_item_active": INK,
         "padding_horizontal_menu_item": px(0), "padding_vertical_menu_item": px(4),
         "menu_space_between": custom("clamp(14px,2.6vw,40px)"), "menu_row_space": px(8),
-        "pointer": "none", **typo("menu_", 16, 800, 1.3)}, "rto-nav")
+        "pointer": "none", "_flex_size": "grow", **typo("menu_", 16, 800, 1.3)}, "rto-nav")
     cta = button("Free Consultation", "/#contact", "#FFFFFF", ring="#FFFFFF", color=TEAL, css="rto-header-cta")
     cta["settings"].update({"border_border": "solid", "border_color": TEAL, "border_width": dims(2),
                             "text_padding": dims(11, 26), "hover_color": "#FFFFFF",
@@ -454,7 +455,7 @@ def footer():
              text("<p>Subscribe for free weekly reading tips. I will not share your email.</p>", 14, BODY, 1.6),
              widget("shortcode", {"shortcode": '[contact-form-7 id="34" title="Footer – Newsletter signup" html_class="rto-newsletter"]'})],
             gap=10),
-    ], "repeat(auto-fit,minmax(min(100%,170px),1fr))", "rto-footer-inner", gap=40)
+    ], "repeat(auto-fit,minmax(min(100%,170px),1fr))", "rto-footer-inner", gap=40, pad=None)
     strip = [("rainbow", 4, 18, 70), ("bear", 16, 26, 84), ("owl", 28, 34, 70), ("books", 40, 18, 84),
              ("abc", 52, 26, 70), ("pencil", 64, 34, 84), ("grad", 76, 18, 70), ("sun", 88, 26, 84)]
     items = []
@@ -465,7 +466,7 @@ def footer():
     landscape = con(items, css="rto-landscape", title="Illustration strip")
     copy = con([widget("copyright", {"shortcode": "Reading Teacher Online © [hfe_current_year]. All rights reserved.",
                                      "align": "center", "title_color": INK, **typo("caption_", 13, None, 1.5)})],
-               css="rto-copy")
+               css="rto-copy", pad=None)
     return [con([cols, landscape, copy], css="rto-footer", title="Footer", _element_id="newsletter")]
 
 

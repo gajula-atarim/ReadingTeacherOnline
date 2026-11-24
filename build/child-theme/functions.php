@@ -79,3 +79,19 @@ add_filter(
 	20,
 	2
 );
+
+/**
+ * Contact Form 7: output the form markup as written (no automatic <p>/<br>), so the
+ * design's inline field rows lay out correctly.
+ */
+add_filter( 'wpcf7_autop_or_not', '__return_false' );
+
+/**
+ * Performance: the site does not use WordPress emoji images; drop the emoji detection
+ * script and styles (also keeps the design's ✉ and ⌂ glyphs as text).
+ */
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+add_filter( 'emoji_svg_url', '__return_false' );
