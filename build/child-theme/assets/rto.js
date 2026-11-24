@@ -146,7 +146,21 @@
 		}, { passive: true });
 	}
 
+	/* Gallery lightbox: group the 12 photos so Elementor's lightbox shows next/previous arrows */
+	function initGallery() {
+		$$('.rto-gallery .elementor-widget-image a').forEach(function (a) {
+			a.setAttribute('data-elementor-open-lightbox', 'yes');
+			a.setAttribute('data-elementor-lightbox-slideshow', 'rto-gallery');
+			var img = a.querySelector('img');
+			if (img && img.alt) {
+				a.setAttribute('data-elementor-lightbox-title', img.alt);
+				a.setAttribute('aria-label', 'Open photo: ' + img.alt);
+			}
+		});
+	}
+
 	function ready() {
+		initGallery();
 		setTopbar(); initHero(); initReveal(); initOllie();
 		checkDecor(); setTimeout(checkDecor, 1500);
 		var rt;

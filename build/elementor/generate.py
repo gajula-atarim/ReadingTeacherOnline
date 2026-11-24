@@ -324,7 +324,7 @@ def gallery():
     inner = con([
         con([section_head("Our Photo Gallery", "Reading together at home, one page at a time.")],
             pad=dims(0, 20)),
-        grid([image(k, s, c) for k, c, s in GALLERY], four, "rto-gallery", gap=0),
+        grid([image(k, s, c, link_to="file", open_lightbox="yes") for k, c, s in GALLERY], four, "rto-gallery", gap=0),
     ], css="rto-inner rto-gallery-inner", gap=40)
     return section([
         decor("sun", 60, "start", pct(4), "start", px(20), "rto-spin"),

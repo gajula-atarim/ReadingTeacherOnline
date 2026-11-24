@@ -388,3 +388,7 @@ form.rto-cf7 textarea { min-height: 0; height: 100px; }
    longest slide enough height so its button stays visible */
 .e-con.rto-slide-inner { flex-wrap: nowrap !important; }
 @media (max-width: 420px) { .e-con.rto-hero { height: 580px; } }
+
+/* Gallery: photos open in Elementor's lightbox */
+.rto-gallery .elementor-widget-image a { cursor: zoom-in; }
+.rto-gallery .elementor-widget-image a:focus-visible { outline: 3px solid var(--rto-yellow); outline-offset: -3px; }
